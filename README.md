@@ -1,5 +1,5 @@
 # Fog Project <img align="right" width="100" height="100" src="http://shop.johannesfog.dk/gfx/foglogok.png">
-
+This is project made by 5 students from Copenhagen Business Academy on 2nd semester 
 
 ## The Task
 
