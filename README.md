@@ -1,7 +1,8 @@
 # Fog Project <img align="right" width="100" height="100" src="http://shop.johannesfog.dk/gfx/foglogok.png">
 
 
-The task
+## The Task
+
 Working in groups and using Scrum as the process model, you must develop major parts of a multi-user database application.
 
 The project constitutes the formal basis for the exam on 2nd semester.
