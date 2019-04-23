@@ -13,9 +13,23 @@ what you have to develop (the product)
 how you have to work (the process)
 what you must hand in or demonstrate (the documentation).
 
-## Getting Started
+## Product requirements
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The case you work with is the Fog-case, which was presented by Fog. Further documentation can be found in the project folder on github.
+
+You must develop and (partly) test a system that meets (parts of) the needs of the customer.
+
+Note that the requirements may be subject to changes and “clarifications” during the project period.
+
+The solution must respect the following set of technical and design related constraints:
+
+It must use a MySQL database.
+The design must reflect a logical multilayer architecture running on a Java server.
+Your application must use both plain java classes, servlets and JSP’s.
+The web page must be usable in either Chrome or Firefox.
+The developed application must be deployed in the cloud (e.g. Digital Ocean).
+The source code must be available in a github repository.
+The Javadoc should be available online put link on front page of reports.
 
 ### Prerequisites
 
