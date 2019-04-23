@@ -24,12 +24,19 @@ Note that the requirements may be subject to changes and “clarifications” du
 The solution must respect the following set of technical and design related constraints:
 
 It must use a MySQL database.
+
 The design must reflect a logical multilayer architecture running on a Java server.
+
 Your application must use both plain java classes, servlets and JSP’s.
+
 The web page must be usable in either Chrome or Firefox.
+
 The developed application must be deployed in the cloud (e.g. Digital Ocean).
+
 The source code must be available in a github repository.
+
 The Javadoc should be available online put link on front page of reports.
+
 
 ### Prerequisites
 
