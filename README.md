@@ -1,6 +1,5 @@
-# Fog Project
+# Fog Project <img align="right" width="100" height="100" src="http://shop.johannesfog.dk/gfx/foglogok.png">
 
-![alt text](http://shop.johannesfog.dk/gfx/foglogok.png)
 
 The task
 Working in groups and using Scrum as the process model, you must develop major parts of a multi-user database application.
