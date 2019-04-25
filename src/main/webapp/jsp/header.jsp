@@ -36,7 +36,6 @@
     </head>
     <body>
         <div id="HeaderStyle">
-
             <h1><a  href="." ></a></h1>
             <div id="NavBar">
 
@@ -46,10 +45,7 @@
         </nav>
   
         <nav id ="shop">
-                <a href="FrontController/cart">Shop</a>
-        </nav>
-<nav id="orders">
-            <a href="FrontController/orders">Orders</a>
+                <a href="jsp/cart.jsp">Cart</a>
         </nav>
     </div>
     <div id ="rightBar">

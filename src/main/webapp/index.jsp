@@ -14,7 +14,9 @@
     </head>
     <body>
           <div id="index">
-      <img src="img/foglogok.png" alt="fog" width="500" height="333">
+      <img src="img/foglogok.png" alt="fog" width="500" height="500">
+      <br>
+      
 </div>
     </body>
     <jsp:include page='jsp/footer.jsp'></jsp:include>
