@@ -53,11 +53,8 @@
         </nav>
     </div>
     <div id ="rightBar">
-
-      
-
         <nav id="user">
-            <a href="/login">Login/Register</a>
+            <a href="jsp/login.jsp">Login/Register</a>
        <!-- <nav id="logout">
             <form id = "logoutform" action="FrontController/logout" method="post">
                 <button class ="button" id="logoutbutton" type="submit"/>Log out</button>

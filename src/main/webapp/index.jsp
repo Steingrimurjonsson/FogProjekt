@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <jsp:include page='WEB-INF/header.jsp'></jsp:include>
+        <jsp:include page='jsp/header.jsp'></jsp:include>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Fog</title>
     </head>
@@ -17,5 +17,5 @@
       <img src="img/foglogok.png" alt="fog" width="500" height="333">
 </div>
     </body>
-    <jsp:include page='WEB-INF/footer.jsp'></jsp:include>
+    <jsp:include page='jsp/footer.jsp'></jsp:include>
 </html>
