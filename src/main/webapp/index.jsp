@@ -8,10 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <jsp:include page='WEB-INF/header.jsp'></jsp:include>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Fog</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+          <div id="index">
+      <img src="img/foglogok.png" alt="fog" width="500" height="333">
+</div>
     </body>
+    <jsp:include page='WEB-INF/footer.jsp'></jsp:include>
 </html>
