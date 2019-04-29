@@ -1,11 +1,9 @@
 package Logic;
 
 import Data.Mapper_User;
+import Data.OrderMapper;
+import java.util.List;
 
-/**
- * The purpose of LogicFacade is to...
- * @author kasper
- */
 public class LogicFacade {
 
     public static User login( String email, String password ) throws LoginSampleException {
@@ -18,4 +16,9 @@ public class LogicFacade {
         return user;
     }
 
+     public static List<Invoice> getOrders(int idUser) throws Exception
+   {
+        List<Invoice> orders = OrderMapper.getInvoice(idUser);
+        return orders;
+   }
 }

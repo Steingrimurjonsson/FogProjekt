@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page='header.jsp'></jsp:include>
-        <title>Login page</title>
+        <title>Login & Registration Page</title>
     </head>
     <body>
         <h1>Please login or create an account</h1>

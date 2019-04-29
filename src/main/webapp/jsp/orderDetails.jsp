@@ -1,6 +1,6 @@
 <%-- 
-    Document   : user
-    Created on : Apr 24, 2019, 2:11:45 PM
+    Document   : orderDetail
+    Created on : Apr 24, 2019, 2:10:55 PM
     Author     : stein
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Order Details</title>
     </head>
     <body>
         <h1>Hello World!</h1>
