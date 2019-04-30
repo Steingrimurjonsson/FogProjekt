@@ -13,5 +13,20 @@ import java.util.ArrayList;
  */
 public class CartLogic 
 {
-    private ArrayList<Model_Carport> Carpot = new ArrayList();
+    private ArrayList<Model_Carport> carports = new ArrayList();
+    
+    public ArrayList<Model_Carport> getCarport()
+    {
+        return carports;
+    }
+    
+    public void setCarport(ArrayList<Model_Carport> carport)
+    {
+        this.carports = carport;
+    }
+    
+    public void addToCart(Model_Carport carport)
+    {
+        carports.add(carport);
+    }
 }

@@ -11,4 +11,9 @@ package Data;
  */
 public class Model_Carport {
     
+    
+    public Model_Carport()
+    {
+        
+    }
 }
