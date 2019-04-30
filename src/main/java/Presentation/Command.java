@@ -13,6 +13,7 @@ abstract class Command {
         commands.put( "login", new Login() );
         commands.put( "register", new Register() );
         commands.put ( "orders", new Orders() );
+        commands.put("Cart", new Cart() );
         
     }
 
@@ -26,5 +27,6 @@ abstract class Command {
 
     abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
             throws Exception;
+    
 
 }
