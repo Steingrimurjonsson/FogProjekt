@@ -5,10 +5,13 @@
  */
 package Data;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author stoff
  */
-public class CartLogic {
-    
+public class CartLogic 
+{
+    private ArrayList<Model_Carport> Carpot = new ArrayList();
 }
