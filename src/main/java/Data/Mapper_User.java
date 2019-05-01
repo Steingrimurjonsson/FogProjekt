@@ -13,11 +13,18 @@ public class Mapper_User {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO User (email, password, role) VALUES (?, ?, ?)";
+            String SQL = "INSERT INTO User (email, password, firstName, lastName, phone, street, city, zip, country, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
-            ps.setString( 1, user.getEmail() );
-            ps.setString( 2, user.getPassword() );
-            ps.setString( 3, user.getRole() );
+            ps.setString(1, user.getEmail() );
+            ps.setString(2, user.getPassword() );
+            ps.setString(3, user.getFirstName());
+            ps.setString(4, user.getLastName());
+            ps.setString(5, user.getPhone());
+            ps.setString(6, user.getStreet());
+            ps.setString(7, user.getCity());
+            ps.setString(8, user.getZip());
+            ps.setString(9, user.getCountry());
+            ps.setString(10, user.getRole() );
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
@@ -31,7 +38,7 @@ public class Mapper_User {
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM User "
+            String SQL = "SELECT id, firstName, lastName, phone, street, city, zip, country, role FROM User  "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -39,8 +46,15 @@ public class Mapper_User {
             ResultSet rs = ps.executeQuery();
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
+                String firstName = rs.getString( "firstName" );
+                String lastName = rs.getString( "lastName" );
+                String phone = rs.getString( "phone" );
+                String street = rs.getString( "street" );
+                String city = rs.getString( "city" );
+                String zip = rs.getString( "zip" );
+                String country = rs.getString( "country" );
                 int id = rs.getInt( "id" );
-                User user = new User( email, password, role );
+                User user = new User( email, password, firstName,lastName, phone, street, city, zip, country, role );
                 user.setId( id );
                 return user;
             } else {
