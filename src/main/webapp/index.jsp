@@ -16,7 +16,7 @@
           <div id="index">
       <img src="img/foglogok.png" alt="fog" width="500" height="500">
       <br>
-      
+           <h1>Hello <%=request.getParameter( "email" )%> </h1>
 </div>
     </body>
     <jsp:include page='jsp/footer.jsp'></jsp:include>
