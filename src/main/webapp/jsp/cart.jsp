@@ -37,6 +37,35 @@
              </tr>
              <% 
                  for (int i = 0; i < cart.getCarport().size(); i++){%>
+                 <tr>
+                     <td>
+                         <%=cart.getCarport().get(i).getLength()%>
+                     </td>
+                     
+                     <td>
+                         <%=cart.getCarport().get(i).getWidth()%>
+                     </td>
+                     
+                     <td>
+                         <%=cart.getCarport().get(i).getMaterial()%>
+                     </td>
+                     <td>
+                         <%=cart.getCarport().get(i).isShed()%>
+                     </td>
+                     <td>
+                         <%=cart.getCarport().get(i).getRoofslope()%>
+                     </td>
+                     <td>
+                         <%=cart.getCarport().get(i).getShedlength()%>
+                     </td>
+                     <td>
+                         <%=cart.getCarport().get(i).getShedwidth()%>
+                         
+                     </td>
+                     <td>
+                         <%=cart.getCarport().get(i).getDetails()%>
+                     </td>
+                 </tr>
    </div>
      
      
