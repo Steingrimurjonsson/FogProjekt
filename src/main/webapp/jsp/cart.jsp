@@ -55,13 +55,13 @@
                          <%=cart.getCarport().get(i).isShed()%>
                      </td>
                      <td>
-                         <%=cart.getCarport().get(i).getRoofslope()%>
+                         <%=cart.getCarport().get(i).getRoofSlope()%>
                      </td>
                      <td>
-                         <%=cart.getCarport().get(i).getShedlength()%>
+                         <%=cart.getCarport().get(i).getShedLength()%>
                      </td>
                      <td>
-                         <%=cart.getCarport().get(i).getShedwidth()%>
+                         <%=cart.getCarport().get(i).getShedWidth()%>
                          
                      </td>
                      <td>
