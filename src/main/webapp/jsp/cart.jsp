@@ -34,6 +34,8 @@
                  <th> Carport roof slope</th>
                  <th> Carport shed</th>
                  <th> Carport details</th>
+                 <th> Carport shed width</th>
+                 <th> Carport shed length</th> 
              </tr>
              <% 
                  for (int i = 0; i < cart.getCarport().size(); i++){%>
