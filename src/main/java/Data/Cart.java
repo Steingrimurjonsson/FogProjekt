@@ -14,11 +14,11 @@ import java.util.ArrayList;
 public class Cart 
 {
     private ArrayList<Carport> carports = new ArrayList();
-    private int id;
+    private int userID;
     
     public Cart(int id)
     {
-        this.id = id;
+        this.userID = id;
     }
     public ArrayList<Carport> getCarport()
     {
@@ -35,9 +35,15 @@ public class Cart
         carports.add(carport);
     }
     
-    //deltes contents of the arraylist and returns a new cart
+    //deletes contents of the arraylist and returns a new cart
     public void clearCart()
     {
         carports = new ArrayList();
+    }
+    
+    
+    public void removeSpecificItem(int itemNumber)
+    {
+        carports.remove(itemNumber);
     }
 }
