@@ -47,15 +47,15 @@ public class Carport {
         return shed;
     }
 
-    public int getRoofslope() {
+    public int getRoofSlope() {
         return roofSlope;
     }
 
-    public int getShedwidth() {
+    public int getShedWidth() {
         return shedWidth;
     }
 
-    public int getShedlength() {
+    public int getShedLength() {
         return shedLength;
     }
 

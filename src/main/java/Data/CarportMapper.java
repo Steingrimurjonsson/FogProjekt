@@ -26,8 +26,8 @@ public class CarportMapper {
             ps.setInt(2, carport.getWidth());
             ps.setString(3, carport.getMaterial());
             ps.setBoolean(4, false);
-            ps.setInt(5, carport.getShedwidth());
-            ps.setInt(6, carport.getShedlength());
+            ps.setInt(5, carport.getShedWidth());
+            ps.setInt(6, carport.getShedLength());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());
@@ -42,10 +42,10 @@ public class CarportMapper {
             ps.setInt(1, carport.getLength());
             ps.setInt(2, carport.getWidth());
             ps.setString(3, carport.getMaterial());
-            ps.setInt(7, carport.getRoofslope());
+            ps.setInt(7, carport.getRoofSlope());
             ps.setBoolean(4, false);
-            ps.setInt(5, carport.getShedwidth());
-            ps.setInt(6, carport.getShedlength());
+            ps.setInt(5, carport.getShedWidth());
+            ps.setInt(6, carport.getShedLength());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());
