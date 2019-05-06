@@ -68,7 +68,9 @@
                 </td>
             </tr>
         </table>
-        </br>
+                </br>
+                <INPUT TYPE=submit name="submit" value="remove">
+        
         
     </div>
 
