@@ -31,8 +31,12 @@
                  <th> Carport width</th>
                  <th> Carport material</th>
                  <th> Carport shed</th>
-                 <th> Carport roofSlope</th>
-                 <th> Carport Shed</th>
+                 <th> Carport roof slope</th>
+                 <th> Carport shed</th>
+                 <th> Carport details</th>
+             </tr>
+             <% 
+                 for (int i = 0; i < cart.getCarport().size(); i++){%>
    </div>
      
      
