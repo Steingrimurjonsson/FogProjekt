@@ -15,9 +15,9 @@ public class Carport {
     private final int width;
     private final String material;
     private final boolean shed;
-    private final int Roofslope;
-    private final int shedwidth;
-    private final int shedlength;
+    private final int roofSlope;
+    private final int shedWidth;
+    private final int shedLength;
     private final String details;
 
     public Carport(int length, int width, String material, boolean shed, int shedwidth, int shedlength, String details, int roofslope) {
@@ -25,10 +25,10 @@ public class Carport {
         this.width = width;
         this.material = material;
         this.shed = shed;
-        this.shedwidth = shedwidth;
-        this.shedlength = shedlength;
+        this.shedWidth = shedwidth;
+        this.shedLength = shedlength;
         this.details = details;
-        this.Roofslope = roofslope;
+        this.roofSlope = roofslope;
     }
 
     public int getLength() {
@@ -48,15 +48,15 @@ public class Carport {
     }
 
     public int getRoofslope() {
-        return Roofslope;
+        return roofSlope;
     }
 
     public int getShedwidth() {
-        return shedwidth;
+        return shedWidth;
     }
 
     public int getShedlength() {
-        return shedlength;
+        return shedLength;
     }
 
     public String getDetails() {
@@ -65,7 +65,7 @@ public class Carport {
 
     @Override
     public String toString() {
-        return "Carport{" + "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", Roofslope=" + Roofslope + ", shedwidth=" + shedwidth + ", shedlength=" + shedlength + ", details=" + details + '}';
+        return "Carport{" + "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details + '}';
     }
     
 }

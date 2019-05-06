@@ -12,9 +12,28 @@
 <%
     Cart cart = (Cart) request.getSession().getAttribute("cart");
     User user = (User) request.getSession().getAttribute("user");
-    if (user == null) {
+    if (user == null)
+    {
         response.sendRedirect("/");
         return;
     }
- 
+    
+    String username = user.getFirstName();
 %>
+ <div class ="padding">
+     <div>
+         <h4> Your cart</h4>
+         <p>< User: <%= username%></p>
+         <br/>
+         <table class ="table table - striped">
+             <tr> 
+                 <th> Carport length</th>
+                 <th> Carport width</th>
+                 <th> Carport material</th>
+                 <th> Carport shed</th>
+                 <th> Carport roofSlope</th>
+                 <th> Carport Shed</th>
+   </div>
+     
+     
+ </div>
