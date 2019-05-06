@@ -11,10 +11,15 @@ import java.util.ArrayList;
  *
  * @author stoff
  */
-public class CartLogic 
+public class Cart 
 {
     private ArrayList<Carport> carports = new ArrayList();
+    private int id;
     
+    public Cart(int id)
+    {
+        this.id = id;
+    }
     public ArrayList<Carport> getCarport()
     {
         return carports;
@@ -28,5 +33,11 @@ public class CartLogic
     public void addToCart(Carport carport)
     {
         carports.add(carport);
+    }
+    
+    //deltes contents of the arraylist and returns a new cart
+    public void clearCart()
+    {
+        carports = new ArrayList();
     }
 }
