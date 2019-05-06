@@ -4,14 +4,21 @@
     Author     : stein
 --%>
 
+<%@page import="Data.Model_User"%>
+<%@page import="Data.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%
+    Cart cart = (Cart) request.getSession().getAttribute("cart");
+    Model_User user = (Model_User) request.getSession().getAttribute("user");
+    if (user == null) {
+        response.sendRedirect("/");
+        return;
+    }
+    double cash = user.getBalance();
+    String username = user.getUserName();
+    double finalPrice = 0;
+    boolean enoughCash = false;
+    String finalPriceTag = "";
+%>
