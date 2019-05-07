@@ -5,7 +5,7 @@
 --%>
 
 
-<%@page import="Data.Model_User"%>
+
 <%
    /*Model_User user = (Model_User) session.getAttribute("user");
     String username = "NULL";
