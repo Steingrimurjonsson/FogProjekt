@@ -1,8 +1,7 @@
 <%-- 
-    Document   : carport
-    Created on : Apr 24, 2019, 2:10:31 PM
-    Author     : stein
-//TODO. create input fields from user to customize carport measurements
+    Document   : calculatedCarport
+    Created on : 07-05-2019, 15:13:01
+    Author     : NoellZane
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,5 +13,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        ${materials.carport.description}
     </body>
 </html>
