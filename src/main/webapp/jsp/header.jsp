@@ -34,7 +34,10 @@
         
         
     </head>
+    <a href=".">
+<img alt="fog" src="img/foglogok.png" width="100" height="100">
     <body>
+        
         <div id="HeaderStyle">
             <h1><a  href="." ></a></h1>
             <div id="NavBar">
@@ -43,7 +46,9 @@
         <nav id="home">
             <a href=".">Home</a>
         </nav>
-  
+    <nav id="carport">
+            <a href="jsp/carport.jsp">Carport</a>
+        </nav>
         <nav id ="shop">
                 <a href="jsp/cart.jsp">Cart</a>
         </nav>
