@@ -38,7 +38,7 @@ public class FrontController extends HttpServlet {
             Command action = Command.from( request );
             String view = action.execute( request, response );
             
-            request.getRequestDispatcher(  view + ".jsp" ).forward( request, response );
+            request.getRequestDispatcher( "/jsp/"+ view + ".jsp" ).forward( request, response );
         } catch ( Exception ex ) {
             PrintWriter out = response.getWriter();
             out.println("<p>"+ex.getMessage()+"</p>");
