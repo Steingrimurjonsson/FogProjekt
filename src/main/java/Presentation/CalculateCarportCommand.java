@@ -22,6 +22,7 @@ public class CalculateCarportCommand extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+        
         HttpSession session = request.getSession();
         String lengthText = request.getParameter("length");
         int length = Integer.parseInt(lengthText);
@@ -36,7 +37,7 @@ public class CalculateCarportCommand extends Command
         MaterialList materials = Calculator.calculateMaterials(carport);
         
         session.setAttribute("materials", materials);
-        return "calculatedCarport.jsp";
+        return "calculatedCarport";
     }
 
 }
