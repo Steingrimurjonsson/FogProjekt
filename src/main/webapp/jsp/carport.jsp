@@ -17,7 +17,7 @@
         <label title="Carport bredde" for="Input_858750582">
     Carport bredde
 </label>
-        <form action ="FrontController" method = "POST">
+        <form action ="../FrontController" method = "POST">
 <select class="form-control" id="Input_858750582" name="width" title="Carport bredde"><option selected="selected" value="">Vælg bredde</option>
 <option value="240 cm">240 cm</option>
 <option value="270 cm">270 cm</option>
