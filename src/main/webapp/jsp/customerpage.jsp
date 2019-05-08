@@ -12,7 +12,7 @@
         <title>Customer Page</title>
     </head>
        <body>
-        <h1>Hello <%=request.getParameter( "email" )%> </h1>
+        <h1>Hello <%=request.getParameter("email" )%> </h1>
            
             Here you can check your orders.
              <form method="post" action="FrontController">
