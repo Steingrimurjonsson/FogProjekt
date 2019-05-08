@@ -99,7 +99,15 @@
 
             </div>
             </div>
-           
+
+<label title="Tag" for="Input_507378691">
+    Tag
+</label>
+<select class="form-control" id="Input_507378691" name="roof" title="Tag"><option selected="selected" value="Plasttrapezplader">Plasttrapezplader</option>
+<option selected="selected" value="Plasttrapezplader">Plasttrapezplader</option>
+</select>
+            </div>
+            </div>
             <div class="form-group">
             <div class="col-md-12 col-xs-12">
             <span>
