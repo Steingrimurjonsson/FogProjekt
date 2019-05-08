@@ -99,18 +99,13 @@
 
             </div>
             </div>
-            <div class="form-group">
-            <div class="col-md-12 col-xs-12">
-            
 
-<label title="Tag" for="Input_1001409807">
+<label title="Tag" for="Input_507378691">
     Tag
 </label>
-<select class="form-control" id="Input_1001409807" name="roof" title="Tag"><option selected="selected" value="Plasttrapezplader">Plasttrapezplader</option>
+<select class="form-control" id="Input_507378691" name="roof" title="Tag"><option selected="selected" value="Plasttrapezplader">Plasttrapezplader</option>
 <option selected="selected" value="Plasttrapezplader">Plasttrapezplader</option>
 </select>
-<span class="field-validation-valid" data-valmsg-for="Tag_bb5d7cb44a81405c83ad94bbaffbb8e6" data-valmsg-replace="true"></span>
-
             </div>
             </div>
             <div class="form-group">
