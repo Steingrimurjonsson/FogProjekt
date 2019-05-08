@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        ${materials.carport.description}
+        <p>${message}</p>
     </body>
 </html>

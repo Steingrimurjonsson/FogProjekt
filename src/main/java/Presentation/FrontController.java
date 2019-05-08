@@ -7,6 +7,7 @@ package Presentation;
 
 import Logic.LoginSampleException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -37,10 +38,15 @@ public class FrontController extends HttpServlet {
             Command action = Command.from( request );
             String view = action.execute( request, response );
             
-            request.getRequestDispatcher( "/jsp/" + view + ".jsp" ).forward( request, response );
-        } catch ( LoginSampleException ex ) {
-            request.setAttribute( "error", ex.getMessage() );
-            request.getRequestDispatcher( "index.jsp" ).forward( request, response );
+            request.getRequestDispatcher(  view + ".jsp" ).forward( request, response );
+        } catch ( Exception ex ) {
+            PrintWriter out = response.getWriter();
+            out.println("<p>"+ex.getMessage()+"</p>");
+            out.print("<pre>");
+            ex.printStackTrace(out);
+            out.println("</pre>");
+            // request.setAttribute( "error", ex.getMessage() );
+            // request.getRequestDispatcher( "index.jsp" ).forward( request, response );
         }
     }
 
