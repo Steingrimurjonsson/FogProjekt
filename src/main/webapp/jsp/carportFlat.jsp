@@ -26,9 +26,7 @@
 
 <div class="formbuilder-block">
     <div class="row">
-        <div class="col-md-12" data-form-table-to-div="">
-<form action="/byggecenter/service/quickbyg/quick-byg-carport-med-fladt-tag/XFormPost/?XFormId=b9230a1a-d2f8-43d8-bf5b-e9de5215f366&amp;failedAction=Failed&amp;successAction=Success" method="post" class="ng-pristine ng-valid">
-            <div id="table" class="form-horizontal col-md-12 col-xs-12">
+        <div class="col-md-12" data-form-table-to-div="">       <div id="table" class="form-horizontal col-md-12 col-xs-12">
             <div class="form-group">
             <div class="col-md-12 col-xs-12">
             <span>
