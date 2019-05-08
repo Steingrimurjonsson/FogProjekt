@@ -46,9 +46,6 @@
         <nav id="home">
             <a href=".">Home</a>
         </nav>
-    <nav id="carport">
-            <a href="jsp/carport.jsp">Carport</a>
-        </nav>
         <nav id ="shop">
                 <a href="jsp/cart.jsp">Cart</a>
         </nav>
