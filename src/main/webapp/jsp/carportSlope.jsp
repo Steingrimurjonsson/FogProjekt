@@ -26,7 +26,6 @@
 <div class="formbuilder-block">
     <div class="row">
         <div class="col-md-12" data-form-table-to-div="">
-<form action="/byggecenter/service/quickbyg/quick-byg-carport-med-rejsning/XFormPost/?XFormId=d4b34611-b433-4039-857e-ddfbc33987bd&amp;failedAction=Failed&amp;successAction=Success" method="post" class="ng-pristine ng-valid">
             <div id="table" class="form-horizontal col-md-12 col-xs-12">
             <div class="form-group">
             <div class="col-md-12 col-xs-12">
@@ -42,25 +41,26 @@
 <label title="Carport bredde" for="Input_1868253726">
     Carport bredde
 </label>
+<form action ="../FrontController" method = "POST">
 <select class="form-control" id="Input_1868253726" name="Carport_bredde" title="Carport bredde"><option selected="selected" value="">Vælg bredde</option>
-<option value="240 cm">240 cm</option>
-<option value="270 cm">270 cm</option>
-<option value="300 cm">300 cm</option>
-<option value="330 cm">330 cm</option>
-<option value="360 cm">360 cm</option>
-<option value="390 cm">390 cm</option>
-<option value="420 cm">420 cm</option>
-<option value="450 cm">450 cm</option>
-<option value="480 cm">480 cm</option>
-<option value="510 cm">510 cm</option>
-<option value="540 cm">540 cm</option>
-<option value="570 cm">570 cm</option>
-<option value="600 cm">600 cm</option>
-<option value="630 cm">630 cm</option>
-<option value="660 cm">660 cm</option>
-<option value="690 cm">690 cm</option>
-<option value="720 cm">720 cm</option>
-<option value="750 cm">750 cm</option>
+<option value="240">240 cm</option>
+<option value="270">270 cm</option>
+<option value="300">300 cm</option>
+<option value="330">330 cm</option>
+<option value="360">360 cm</option>
+<option value="390">390 cm</option>
+<option value="420">420 cm</option>
+<option value="450">450 cm</option>
+<option value="480">480 cm</option>
+<option value="510">510 cm</option>
+<option value="540">540 cm</option>
+<option value="570">570 cm</option>
+<option value="600">600 cm</option>
+<option value="630">630 cm</option>
+<option value="660">660 cm</option>
+<option value="690">690 cm</option>
+<option value="720">720 cm</option>
+<option value="750">750 cm</option>
 </select>
 <span class="field-validation-valid" data-valmsg-for="Carport_bredde_4a3f359ad4574d27b17b47192d5407c4" data-valmsg-replace="true"></span>
 
@@ -74,25 +74,25 @@
     Carport længde
 </label>
 <select class="form-control" id="Input_1868253726" name="Carport_laengde" title="Carport længde"><option selected="selected" value="">Vælg længde</option>
-<option value="240 cm">240 cm</option>
-<option value="270 cm">270 cm</option>
-<option value="300 cm">300 cm</option>
-<option value="330 cm">330 cm</option>
-<option value="360 cm">360 cm</option>
-<option value="390 cm">390 cm</option>
-<option value="420 cm">420 cm</option>
-<option value="450 cm">450 cm</option>
-<option value="480 cm">480 cm</option>
-<option value="510 cm">510 cm</option>
-<option value="540 cm">540 cm</option>
-<option value="570 cm">570 cm</option>
-<option value="600 cm">600 cm</option>
-<option value="630 cm">630 cm</option>
-<option value="660 cm">660 cm</option>
-<option value="690 cm">690 cm</option>
-<option value="720 cm">720 cm</option>
-<option value="750 cm">750 cm</option>
-<option value="780 cm">780 cm</option>
+<option value="240">240 cm</option>
+<option value="270">270 cm</option>
+<option value="300">300 cm</option>
+<option value="330">330 cm</option>
+<option value="360">360 cm</option>
+<option value="390">390 cm</option>
+<option value="420">420 cm</option>
+<option value="450">450 cm</option>
+<option value="480">480 cm</option>
+<option value="510">510 cm</option>
+<option value="540">540 cm</option>
+<option value="570">570 cm</option>
+<option value="600">600 cm</option>
+<option value="630">630 cm</option>
+<option value="660">660 cm</option>
+<option value="690">690 cm</option>
+<option value="720">720 cm</option>
+<option value="750">750 cm</option>
+<option value="780">780 cm</option>
 </select>
 <span class="field-validation-valid" data-valmsg-for="Carport_laengde_6479aad50c114c8f890201e753193145" data-valmsg-replace="true"></span>
 
@@ -134,12 +134,12 @@
     Taghældning
 </label>
 <select class="form-control" id="Input_1868253726" name="Taghaeldning" title="Taghældning"><option value="15 grader">15 grader</option>
-<option value="20 grader">20 grader</option>
-<option selected="selected" value="25 grader">25 grader</option>
-<option value="30 grader">30 grader</option>
-<option value="35 grader">35 grader</option>
-<option value="40 grader">40 grader</option>
-<option value="45 grader">45 grader</option>
+<option value="20">20 grader</option>
+<option selected="selected" value="25">25 grader</option>
+<option value="30">30 grader</option>
+<option value="35">35 grader</option>
+<option value="40">40 grader</option>
+<option value="45">45 grader</option>
 </select>
 <span class="field-validation-valid" data-valmsg-for="Taghaeldning_ec1d75fe35ae4bd590f18fb12009ec5c" data-valmsg-replace="true"></span>
 
@@ -164,24 +164,24 @@
     Redskabsrum bredde
 </label>
 <select class="form-control" id="Input_1868253726" name="Redskabsrum_bredde" title="Redskabsrum bredde"><option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke redskabsrum</option>
-<option value="210 cm">210 cm</option>
-<option value="240 cm">240 cm</option>
-<option value="270 cm">270 cm</option>
-<option value="300 cm">300 cm</option>
-<option value="330 cm">330 cm</option>
-<option value="360 cm">360 cm</option>
-<option value="390 cm">390 cm</option>
-<option value="420 cm">420 cm</option>
-<option value="450 cm">450 cm</option>
-<option value="480 cm">480 cm</option>
-<option value="510 cm">510 cm</option>
-<option value="540 cm">540 cm</option>
-<option value="570 cm">570 cm</option>
-<option value="600 cm">600 cm</option>
-<option value="630 cm">630 cm</option>
-<option value="660 cm">660 cm</option>
-<option value="690 cm">690 cm</option>
-<option value="720 cm">720 cm</option>
+<option value="210">210 cm</option>
+<option value="240">240 cm</option>
+<option value="270">270 cm</option>
+<option value="300">300 cm</option>
+<option value="330">330 cm</option>
+<option value="360">360 cm</option>
+<option value="390">390 cm</option>
+<option value="420">420 cm</option>
+<option value="450">450 cm</option>
+<option value="480">480 cm</option>
+<option value="510">510 cm</option>
+<option value="540">540 cm</option>
+<option value="570">570 cm</option>
+<option value="600">600 cm</option>
+<option value="630">630 cm</option>
+<option value="660">660 cm</option>
+<option value="690">690 cm</option>
+<option value="720">720 cm</option>
 </select>
 <span class="field-validation-valid" data-valmsg-for="Redskabsrum_bredde_b0d18528d44a45d1b53f0f628e7df179" data-valmsg-replace="true"></span>
 
@@ -195,44 +195,28 @@
     Redskabsrum længde
 </label>
 <select class="form-control" id="Input_1868253726" name="Redskabsrum_laengde" title="Redskabsrum bredde"><option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke redskabsrum</option>
-<option value="150 cm">150 cm</option>
-<option value="180 cm">180 cm</option>
-<option value="210 cm">210 cm</option>
-<option value="240 cm">240 cm</option>
-<option value="270 cm">270 cm</option>
-<option value="300 cm">300 cm</option>
-<option value="330 cm">330 cm</option>
-<option value="360 cm">360 cm</option>
-<option value="390 cm">390 cm</option>
-<option value="420 cm">420 cm</option>
-<option value="450 cm">450 cm</option>
-<option value="480 cm">480 cm</option>
-<option value="510 cm">510 cm</option>
-<option value="540 cm">540 cm</option>
-<option value="570 cm">570 cm</option>
-<option value="600 cm">600 cm</option>
-<option value="630 cm">630 cm</option>
-<option value="660 cm">660 cm</option>
-<option value="690 cm">690 cm</option>
+<option value="150">150 cm</option>
+<option value="180">180 cm</option>
+<option value="210">210 cm</option>
+<option value="240">240 cm</option>
+<option value="270">270 cm</option>
+<option value="300">300 cm</option>
+<option value="330">330 cm</option>
+<option value="360">360 cm</option>
+<option value="390">390 cm</option>
+<option value="420">420 cm</option>
+<option value="450">450 cm</option>
+<option value="480">480 cm</option>
+<option value="510">510 cm</option>
+<option value="540">540 cm</option>
+<option value="570">570 cm</option>
+<option value="600">600 cm</option>
+<option value="630">630 cm</option>
+<option value="660">660 cm</option>
+<option value="690">690 cm</option>
 </select>
-
-<span class="field-validation-valid" data-valmsg-for="bemaerkninger_87d5c0bf25a24e50b802614b7ee0c195" data-valmsg-replace="true"></span>
-
-            </div>
-            </div>
-            <div class="form-group">
-            <div class="col-md-6 col-xs-12">
-            
-<div class="col-md-6 col-xs-12">
-    <input type="submit" name="XFormsSubmit_7RVlEIdUUrUw3DaSy62a2xLs8zHojUjHQi5EQAsTcWk" title="Send forespørgsel" value="Send forespørgsel" class="">
-</div>
-            </div>
-            </div>
-            <div class="form-group">
-            
-            </div>
-            </div>
-            
+  <button name="command" value="calculate">Add to cart</button>
+  </form>
             </form>        </div>
     </div>
 </div>
