@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <jsp:include page='header.jsp'></jsp:include>
+       <jsp:include page='header.jsp'></jsp:include> 
         <title>Login & Registration Page</title>
     </head>
     <body>
@@ -41,6 +41,27 @@
                         <br>
                         Retype Password:<br>
                         <input type="password" name="password2" value="sesam">
+                        <br>
+                         First Name: <br>
+                        <input type="text" name="fname" value="Someone">
+                        <br>
+                         Last Name: <br>
+                        <input type="text" name="lname" value="Someone">
+                        <br>
+                         Phone Number<br>
+                        <input type="text" name="phone" value="12345678">
+                        <br>
+                         Street<br>
+                        <input type="text" name="street" value="Somewhere">
+                        <br>
+                         City<br>
+                        <input type="text" name="city" value="SomeCity">
+                        <br>
+                         Zip Code<br>
+                        <input type="text" name="zip" value="3000">
+                        <br>
+                         Country<br>
+                        <input type="text" name="country" value="SomeCountry">
                         <br>
                         <input type="submit" value="Submit">
                     </form>

@@ -5,7 +5,7 @@
 --%>
 
 
-<%@page import="Data.Model_User"%>
+
 <%
    /*Model_User user = (Model_User) session.getAttribute("user");
     String username = "NULL";
@@ -52,16 +52,22 @@
         <nav id ="shop">
                 <a href="jsp/cart.jsp">Cart</a>
         </nav>
+             <nav id="Customize Carport">
+            <a href="jsp/carport.jsp"> Carport </a>
+      
     </div>
     <div id ="rightBar">
         <nav id="user">
             <a href="jsp/login.jsp">Login/Register</a>
+         
        <!-- <nav id="logout">
             <form id = "logoutform" action="FrontController/logout" method="post">
                 <button class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
         </nav>
        -->
+       
+       
     </div>
 </div>
         </div>
