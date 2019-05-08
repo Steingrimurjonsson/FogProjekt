@@ -22,8 +22,9 @@
 <div class ="padding">
     <div>
         <h4> Your cart</h4>
+        <%  if(username != null){ %>
         <p>< User: <%= username%></p>
-
+        <% } %>
         <br/>
         <table class ="table table - striped">
             <tr> 
@@ -70,7 +71,6 @@
         </table>
                 </br>
                 <INPUT TYPE=submit name="submit" value="remove">
-        
         
     </div>
 
