@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stein
  */
-public class Cart extends Command {
+public class CartCommand extends Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
