@@ -6,14 +6,15 @@
 
 
 
+<%@page import="Logic.User"%>
 <%
-   /*Model_User user = (Model_User) session.getAttribute("user");
+     User user = (User) request.getSession().getAttribute("user");
     String username = "NULL";
     if (user != null)
     {
-        username = user.getUserName().toUpperCase();
+        username = user.getFirstName().toUpperCase();
     }
-*/
+
 %>
 
 
@@ -54,15 +55,22 @@
       
     </div>
     <div id ="rightBar">
-        <nav id="user">
-            <a href="jsp/login.jsp">Login/Register</a>
-         
-       <!-- <nav id="logout">
+            <% if(user == null){%>
+            <nav id="user">
+                 <a href="jsp/login.jsp">Login/Register</a>
+            <% }else {%>
+            <nav id="user">
+            <a href="jsp/customerpage.jsp"><%= username %>  </a>
+              <nav id="logout">
             <form id = "logoutform" action="FrontController/logout" method="post">
                 <button class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
         </nav>
-       -->
+               <%}%>
+
+         
+      
+      
        
        
     </div>

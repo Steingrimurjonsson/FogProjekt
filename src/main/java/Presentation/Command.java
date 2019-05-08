@@ -15,6 +15,8 @@ abstract class Command {
         commands.put ( "orders", new OrdersCommand() );
         commands.put("Cart", new CartCommand() );
         commands.put("calculate", new CalculateCarportCommand());
+        commands.put("LogoutCommand", new LogoutCommand());
+        
         
     }
 
