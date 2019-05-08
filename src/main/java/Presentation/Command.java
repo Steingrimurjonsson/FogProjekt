@@ -10,10 +10,10 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login", new Login() );
-        commands.put( "register", new Register() );
-        commands.put ( "orders", new Orders() );
-        commands.put("Cart", new Cart() );
+        commands.put( "login", new LoginCommand() );
+        commands.put( "register", new RegisterCommand() );
+        commands.put ( "orders", new OrdersCommand() );
+        commands.put("Cart", new CartCommand() );
         commands.put("calculate", new CalculateCarportCommand());
         
     }

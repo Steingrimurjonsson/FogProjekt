@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stein
  */
-public class Orders extends Command {
+public class OrdersCommand extends Command {
       @Override
       String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
