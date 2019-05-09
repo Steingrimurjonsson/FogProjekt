@@ -46,10 +46,7 @@ public class CalculateCarportCommand extends Command
         int shedlength = shedLength1 - 30;
         int shedwidth = width - 30;
         }
-        
-      
-        
-        
+
         String roofText = request.getParameter("roof");
       
         if(roofText == null){
@@ -69,7 +66,7 @@ public class CalculateCarportCommand extends Command
         request.setAttribute("message", "okay");
         request.setAttribute("message", length);
         
-        return "Carport{" + "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details + '}';
+      //"Carport{" + "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details + '}';
 
 
         }
