@@ -19,6 +19,13 @@ public class Calculator
      MaterialList matList = new MaterialList(carport);
      //add materials here. or dont. im not your mom
      //matList.add(mats)
+     
+     //main Post cal (bolts)
+     
+     //Shed (post and bolts)
+     
+     //
+     
      return matList;
  }
 }
