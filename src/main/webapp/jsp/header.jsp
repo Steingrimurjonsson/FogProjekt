@@ -50,7 +50,7 @@
             <a href=".">Home</a>
         </nav>
         <nav id ="shop">
-                <a href="jsp/cart.jsp">Cart</a>
+                <a name="Cart" href="FrontController" value="command">Cart</a>
         </nav>
              <nav id="Carport">
             <a href="jsp/carport.jsp"> Carport </a>
