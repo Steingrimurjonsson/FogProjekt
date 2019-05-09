@@ -35,14 +35,16 @@
         
         
     </head>
-    <a href=".">
-<img alt="fog" src="img/foglogok.png" width="100" height="100">
+  
     <body>
         
         <div id="HeaderStyle">
             <h1><a  href="." ></a></h1>
             <div id="NavBar">
-
+                <nav id="logopic">
+  <a href=".">
+<img alt="fog" src="img/foglogok.png" width="100" height="100">
+</nav>
     <div id="leftBar">
         <nav id="home">
             <a href=".">Home</a>
@@ -50,7 +52,7 @@
         <nav id ="shop">
                 <a href="jsp/cart.jsp">Cart</a>
         </nav>
-             <nav id="Customize Carport">
+             <nav id="Carport">
             <a href="jsp/carport.jsp"> Carport </a>
       
     </div>
@@ -62,17 +64,11 @@
             <nav id="user">
             <a href="jsp/customerpage.jsp"><%= username %>  </a>
               <nav id="logout">
-            <form action="FrontController/logout" method="post">
-                <button class ="button" id="logoutbutton" name="logout" type="submit"/>Log out</button>
+            <form name="logout" action="FrontController" method="post">
+                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
         </nav>
                <%}%>
-
-         
-      
-      
-       
-       
     </div>
 </div>
         </div>

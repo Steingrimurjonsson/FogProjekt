@@ -60,8 +60,17 @@ and open the template in the editor.
     float: left;
     text-align: left;
 }
+#NavBar #logopic
+{
+    float: left;
+}
+
 
 #NavBar #shop
+{
+    float: right;
+}
+#NavBar #Carport
 {
     float: right;
 }
