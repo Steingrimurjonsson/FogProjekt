@@ -35,20 +35,18 @@ public class CalculateCarportCommand extends Command
         int width = Integer.parseInt(widthText);
        
         String shedLengthText = request.getParameter("shedLength");
-      
+        int shedLength = 0;
+        int shedwidth = 0;
         if(shedLengthText == null){
         String shed = "NO SHED";
-        int shedlength = 0;
-        int shedwidth = 0;
         }else{
         String shed = "YES";
         int shedLength1 = Integer.parseInt(shedLengthText);
-        int shedlength = shedLength1 - 30;
-        int shedwidth = width - 30;
+        shedLength = shedLength1 - 30;
+        shedwidth = width - 30;
         }
 
         String roofText = request.getParameter("roof");
-      
         if(roofText == null){
         int Roofslope = 0;
         }else{
