@@ -8,7 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    User user = (User) request.getAttribute("User");
+     User user = (User) session.getAttribute("user");
     request.getAttribute(user.getLastName());
     request.getAttribute(user.getCity());
     request.getAttribute(user.getCountry());
