@@ -57,7 +57,7 @@
                         <br>
                          Country: <%= country%><br>
                         <br>
-                        <a href="editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
+                        <a href="jsp/editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
                         </div>
                         <div class="customerOrders" style="float:right; padding-right: 50px ;">
                             <table class="data">
