@@ -14,10 +14,9 @@
     </head>
     <body>
         <h1>Please login or create an account</h1>
-        
-        <table>
-            <tr><td>Login</td>
-                <td>
+        <div id="loginStyle">
+    <div id="loginStyle" style="margin-bottom: 20px; min-height: 230px">
+            <h3>Login</h3>
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="login">
                         Email:<br>
@@ -28,9 +27,9 @@
                         <br>
                         <input type="submit" value="Submit">
                     </form>
-                </td>
-                <td>Or Register</td>
-                <td>
+    </div>
+    <div id="registerStyle" style="min-height: 230px">
+                <h3>Register</h3>
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="register">
                         Email:<br>
@@ -65,9 +64,8 @@
                         <br>
                         <input type="submit" value="Submit">
                     </form>
-                </td>
-            </tr>
-        </table>
+        </div>
+       </div>
         <% String error = (String) request.getAttribute( "error");
            if ( error != null) { 
                out.println("<H2>Error!!</h2>");

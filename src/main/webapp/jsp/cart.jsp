@@ -12,10 +12,7 @@
 <%
     Cart cart = (Cart) request.getSession().getAttribute("cart");
     User user = (User) request.getSession().getAttribute("user");
-    if (user == null) {
-        response.sendRedirect("/");
-        return;
-    }
+    
 
     String username = user.getFirstName();
 %>

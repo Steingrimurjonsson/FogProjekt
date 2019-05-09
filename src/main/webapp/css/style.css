@@ -142,17 +142,30 @@ and open the template in the editor.
 }
 
 /*-------Login.jsp css-------*/
-#login
+#logindiv
 {
-    border: solid 1px black;
-    text-align: center;
+    border: solid 2px black;
     padding-bottom: 25px;
+    align-content:center;
 }
-#register
+
+#loginStyle
 {
     border: solid 1px black;
     text-align: center;
     padding-bottom: 25px;
+    float: left;
+    margin: 50px;
+       padding: 50px ;
+}
+#registerStyle
+{
+    border: solid 1px black;
+    text-align: center;
+    float: right;
+    margin: 50px;
+    padding: 50px ;
+   
 }
 
 #LoginSubmit

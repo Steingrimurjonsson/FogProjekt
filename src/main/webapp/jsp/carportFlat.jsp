@@ -126,7 +126,7 @@
 <label title="Redskabsrum bredde" for="Input_1001409807">
     Redskabsrum bredde
 </label>
-<select class="form-control" id="Input_1001409807" name="shedWidth" title="Redskabsrum bredde"><option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke redskabsrum</option>
+<select class="form-control" id="Input_1001409807" name="shedWidth" title="Redskabsrum bredde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
 <option value="210">210 cm</option>
 <option value="240">240 cm</option>
 <option value="270">270 cm</option>
@@ -157,7 +157,7 @@
 <label title="Redskabsrum længde" for="Input_1001409807">
     Redskabsrum længde
 </label>
-<select class="form-control" id="Input_1001409807" name="shedLength" title="Redskabsrum længde"><option selected="selected" value="Ønsker ikke redskabsrum">Ønsker ikke redskabsrum</option>
+<select class="form-control" id="Input_1001409807" name="shedLength" title="Redskabsrum længde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
 <option value="150">150 cm</option>
 <option value="180">180 cm</option>
 <option value="210">210 cm</option>
