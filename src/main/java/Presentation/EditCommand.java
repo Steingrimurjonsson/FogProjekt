@@ -11,8 +11,9 @@ public class EditCommand extends Command {
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+        
         String email = request.getParameter( "email" );
-        String password1 = request.getParameter( "password1" );
+        String password = request.getParameter( "password1" );
         String firstName = request.getParameter( "fname" );
         String lastName = request.getParameter( "lname" );
         String phone = request.getParameter( "phone" );
@@ -21,12 +22,12 @@ public class EditCommand extends Command {
         String zip = request.getParameter( "zip" );
         String country = request.getParameter( "country" );
         
-            User user = LogicFacade.editUser(email, firstName,lastName, phone, street, city, zip, country);
-            HttpSession session = request.getSession();
+            HttpSession session = request.getSession();   
+            User user = LogicFacade.editUser(email, password, firstName, lastName, phone, street, city, zip, country);
             session.setAttribute( "user", user );
            // session.setAttribute( "role", user.getRole() );
            // return user.getRole() + "page";
-                   return "carport";
+                   return "editcustomerinfo";
     }
 
 }
