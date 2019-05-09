@@ -14,9 +14,10 @@ abstract class Command {
         commands.put( "register", new RegisterCommand() );
         commands.put ( "orders", new OrdersCommand() );
         commands.put ( "carport", new CarportShop() );
-        commands.put("Cart", new CartCommand() );
-        commands.put("calculate", new CalculateCarportCommand());
-        commands.put("logout", new LogoutCommand());
+        commands.put( "Cart", new CartCommand() );
+        commands.put( "logout", new LogoutCommand() );
+        commands.put( "calculate", new CalculateCarportCommand());
+        
         
         
     }

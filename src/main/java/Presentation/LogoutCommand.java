@@ -19,7 +19,7 @@ public class LogoutCommand extends Command{
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         request.getSession().invalidate();
-        return "index";
+        return "carport";
     }
 }
 
