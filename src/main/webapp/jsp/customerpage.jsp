@@ -6,9 +6,20 @@
 
 <%@page import="Logic.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    User user = (User) request.getAttribute("user");
 
+<!DOCTYPE html>
+
+<%
+    User user = (User) session.getAttribute("user");
+    request.getAttribute(user.getLastName());
+    request.getAttribute(user.getCity());
+    request.getAttribute(user.getCountry());
+    request.getAttribute(user.getPhone());
+    request.getAttribute(user.getStreet());
+    request.getAttribute(user.getZip());
+    request.getAttribute(user.getPassword());
+    request.getAttribute(user.getEmail());
+    
     String firstName = user.getFirstName();
     String lastName = user.getLastName();
     String userEmail = user.getEmail();
@@ -20,7 +31,6 @@
 
 %>
 
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
