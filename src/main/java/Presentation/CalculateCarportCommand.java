@@ -36,22 +36,23 @@ public class CalculateCarportCommand extends Command
        
         String shedLengthText = request.getParameter("shedLength");
         int shedLength = 0;
-        int shedwidth = 0;
+        int shedWidth = 0;
+        String shed = "";
         if(shedLengthText == null){
-        String shed = "NO SHED";
+        shed = "NO SHED";
         }else{
-        String shed = "YES";
+        shed = "YES";
         int shedLength1 = Integer.parseInt(shedLengthText);
         shedLength = shedLength1 - 30;
-        shedwidth = width - 30;
+        shedWidth = width - 30;
         }
-
+       
+        int roofSlope = 0;
         String roofText = request.getParameter("roof");
         if(roofText == null){
-        int Roofslope = 0;
         }else{
         int roof = Integer.parseInt(roofText);
-        int Roofslope = roof;
+        roofSlope = roof;
         }
         
         
@@ -62,7 +63,8 @@ public class CalculateCarportCommand extends Command
         
         session.setAttribute("materials", materials);
         request.setAttribute("message", "okay");
-        request.setAttribute("message", length);
+        request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
+                + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
         
       //"Carport{" + "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details + '}';
 
