@@ -28,7 +28,7 @@ public class RegisterCommand extends Command {
             session.setAttribute( "user", user );
            // session.setAttribute( "role", user.getRole() );
            // return user.getRole() + "page";
-                   return user.getRole();
+                   return "carport";
 
         } else {
             throw new LoginSampleException( "the two passwords did not match" );
