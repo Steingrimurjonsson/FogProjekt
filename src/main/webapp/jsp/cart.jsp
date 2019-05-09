@@ -70,7 +70,8 @@
             </tr>
         </table>
                 </br>
-                <INPUT TYPE=submit name="submit" value="remove">
+                <INPUT TYPE=submit name="slet" value="remove">
+               
         
     </div>
 
