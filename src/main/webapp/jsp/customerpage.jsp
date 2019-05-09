@@ -28,20 +28,19 @@
     String country = user.getCountry();
 
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
+      <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Page</title>
+        <title>Customer Info</title>
     </head>
-       <body>
+    <body> 
         
-        <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="command">
-                        Here you can change your customer information. 
+        <div class="customerInfo" style='padding: 50px'>              
+        <h1>Welcome <%= firstName%> <%= lastName%> here is your information and orders</h1> <br>
                         Email: <%= userEmail%><br>
-                        <br>
-                        Password:<br>
                         <br>
                          First Name: <%= firstName%><br>
                         <br>
@@ -58,11 +57,35 @@
                         <br>
                          Country: <%= country%><br>
                         <br>
-                    </form>
-           
-            
-             <form method="post" action="FrontController">
-                <input type="hidden" name="command" > 
-            </form>
+                        <a href="editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
+                        </div>
+                        <div class="customerOrders" style="float:right; padding-right: 50px ;">
+                            <table class="data">
+  <tr>
+    <th>Entry Header 1</th>
+    <th>Entry Header 2</th>
+    <th>Entry Header 3</th>
+    <th>Entry Header 4</th>
+  </tr>
+  <tr>
+    <td>Entry First Line 1</td>
+    <td>Entry First Line 2</td>
+    <td>Entry First Line 3</td>
+    <td>Entry First Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Line 1</td>
+    <td>Entry Line 2</td>
+    <td>Entry Line 3</td>
+    <td>Entry Line 4</td>
+  </tr>
+  <tr>
+    <td>Entry Last Line 1</td>
+    <td>Entry Last Line 2</td>
+    <td>Entry Last Line 3</td>
+    <td>Entry Last Line 4</td>
+  </tr>
+</table>
+                        </div>
     </body>
 </html>
