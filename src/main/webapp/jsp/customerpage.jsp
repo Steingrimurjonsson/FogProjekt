@@ -4,51 +4,65 @@
     Author     : stein
 --%>
 
+<%@page import="java.lang.String"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+   
+	<% String Email = request.getParameter("email");   %>
+        <% String password = request.getParameter("password"); %>
+        <% String firstName = request.getParameter("fname"); %>
+        <% String lastName = request.getParameter("lname"); %>
+        <% String phone = request.getParameter("phone"); %>
+        <% String street = request.getParameter("street"); %>
+        <% String city = request.getParameter("city"); %>
+        <% String zip = request.getParameter("zip"); %>
+        <% String country = request.getParameter("country");%>    
         <title>Customer Page</title>
     </head>
     <body>
         <h1>Hello <%=request.getParameter("email")%> </h1>
-        <form name="register" action="FrontController" method="POST">
-            <input type="hidden" name="command" value="register">
-            Email:<br>
-            <input type="text" name="email" value="">
+        <form name="login" action="FrontController" method="POST">
+            <input type="hidden" name="command" value="login">
+         
+            Email:
+             <% out.println(Email);%>
             <input type="submit" value="change">
             <br>
-            Password:<br>
-            <input type="password" name="password1" value="">
+            Password:
+            <% out.println(password); %>
             <input type="submit" value="change">
             <br>
-            First Name: <br>
-            <input type="text" name="fname" value="">
+            First Name: 
+            <% out.println(firstName); %>
             <input type="submit" value="change">
             <br>
-            Last Name: <br>
-            <input type="text" name="lname" value="">
+            Last Name: 
+             <%out.println(lastName);%>
             <input type="submit" value="change">
             <br>
-            Phone Number<br>
-            <input type="text" name="phone" value="">
+            Phone Number:
+            <%out.println(phone);%>
             <input type="submit" value="change">
             <br>
-            Street<br>
-            <input type="text" name="street" value="">
+            Street:
+            <%out.println(street); %>
             <input type="submit" value="change">
             <br>
-            City<br>
-            <input type="text" name="city" value="">
+            City:
+           <% out.println(city); %>
             <input type="submit" value="change">
             <br>
-            Zip Code<br>
-            <input type="text" name="zip" value="">
+            Zip Code:
+            <%out.println(zip); %>
             <input type="submit" value="change">
             <br>
-            Country<br>
-            <input type="text" name="country" value="">
+            Country:
+            <% out.println(country); %>
             <input type="submit" value="change">
             <br>
 
