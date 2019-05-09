@@ -62,8 +62,8 @@
             <nav id="user">
             <a href="jsp/customerpage.jsp"><%= username %>  </a>
               <nav id="logout">
-            <form id = "logoutform" action="FrontController/logout" method="post">
-                <button class ="button" id="logoutbutton" type="submit"/>Log out</button>
+            <form action="FrontController/logout" method="post">
+                <button class ="button" id="logoutbutton" name="logout" type="submit"/>Log out</button>
             </form>
         </nav>
                <%}%>

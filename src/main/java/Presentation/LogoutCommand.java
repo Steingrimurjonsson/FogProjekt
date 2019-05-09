@@ -13,17 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class LogoutCommand extends Command {
+public class LogoutCommand extends Command{
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException, IOException {
-        HttpSession session = request.getSession();
-      
-            session.invalidate();
-
-            
-            response.sendRedirect("/");
-        return null;
-        }
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        request.getSession().invalidate();
+        return "index";
     }
+}
 
