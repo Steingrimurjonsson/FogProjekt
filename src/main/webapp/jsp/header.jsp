@@ -63,7 +63,7 @@
             <a href="jsp/customerpage.jsp"><%= username %>  </a>
               <nav id="logout">
             <form name="logout" action="FrontController" method="post">
-                <button class ="button" id="logoutbutton" type="submit"/>Log out</button>
+                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
         </nav>
                <%}%>

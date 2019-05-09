@@ -17,9 +17,6 @@ abstract class Command {
         commands.put( "Cart", new CartCommand() );
         commands.put( "logout", new LogoutCommand() );
         commands.put( "calculate", new CalculateCarportCommand());
-        
-        
-        
     }
 
     static Command from( HttpServletRequest request ) {
