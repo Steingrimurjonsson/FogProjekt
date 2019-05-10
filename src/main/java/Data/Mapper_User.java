@@ -38,8 +38,7 @@ public class Mapper_User {
       public static void editUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-           String SQL = "UPDATE User" + "SET password =?, firstName =?, lastName =?, phone =?, street =?, city =?, zip =?, country =?"+
-                    "WHERE `email` = '?';";
+           String SQL = "UPDATE User SET password =?, firstName =?, lastName =?, phone =?, street =?, city =?, zip =?, country =? WHERE email = '?';";
             PreparedStatement ps = con.prepareStatement( SQL);
             ps.setString(1, user.getEmail() );
             ps.setString(2, user.getPassword() );
@@ -50,9 +49,9 @@ public class Mapper_User {
             ps.setString(7, user.getCity());
             ps.setString(8, user.getZip());
             ps.setString(9, user.getCountry());
-       
+
             ps.executeUpdate();
-  
+
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
         }

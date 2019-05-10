@@ -9,6 +9,7 @@
 
 <%
      User user = (User) session.getAttribute("user");
+    request.getAttribute(user.getFirstName());
     request.getAttribute(user.getLastName());
     request.getAttribute(user.getCity());
     request.getAttribute(user.getCountry());

@@ -8,6 +8,7 @@
 
 <%
      User user = (User) session.getAttribute("user");
+    request.getAttribute(user.getFirstName());
     request.getAttribute(user.getLastName());
     request.getAttribute(user.getCity());
     request.getAttribute(user.getCountry());
@@ -19,6 +20,7 @@
     
     String firstName = user.getFirstName();
     String lastName = user.getLastName();
+    String password = user.getPassword();
     String userEmail = user.getEmail();
     String phone = user.getPhone();
     String street = user.getStreet();
@@ -42,9 +44,10 @@
             
                                           <form name="editUser" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="editUser">
-                       
+                       Email<br>
+                        <input type="text" name="email" value="<%= userEmail%>">
                         Password:<br>
-                        <input type="text" name="password1" value="sesam">
+                        <input type="text" name="password1" value="<%= password%>">
                         <br>
                          First Name: <br>
                         <input type="text" name="fname" value="<%= firstName%>">

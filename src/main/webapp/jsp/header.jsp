@@ -50,7 +50,9 @@
             <a href=".">Home</a>
         </nav>
         <nav id ="shop">
-                <a name="Cart" href="FrontController" value="command">Cart</a>
+              <form name="cart" action="FrontController" method="post">
+                <button value="cart" name="command" type="submit"/>Cart</button>
+            </form>
         </nav>
              <nav id="Carport">
             <a href="jsp/carport.jsp"> Carport </a>

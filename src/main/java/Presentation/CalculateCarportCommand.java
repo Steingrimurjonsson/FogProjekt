@@ -7,7 +7,10 @@ package Presentation;
 
 import Data.Carport;
 import Data.MaterialList;
+import Data.Cart;
 import Logic.Calculator;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,7 +29,8 @@ public class CalculateCarportCommand extends Command
         {
         HttpSession session = request.getSession();
         int height = 220;
-        String material = "DEFAULT";
+        
+        
         String details = "IDONTKNOW";
         String lengthText = request.getParameter("length");
         int length = Integer.parseInt(lengthText);
@@ -34,6 +38,13 @@ public class CalculateCarportCommand extends Command
         String widthText = request.getParameter("width");
         int width = Integer.parseInt(widthText);
        
+        String roofMaterial = "Plasttrapezplader";
+        /*  String roofMaterialText = request.getParameter("Tag");
+        if(roofMaterialText == null){
+        }else{
+        roofMaterial = request.getParameter("Tag");
+        }
+        */
         String shedLengthText = request.getParameter("shedLength");
         int shedLength = 0;
         int shedWidth = 0;
@@ -46,9 +57,12 @@ public class CalculateCarportCommand extends Command
         shedLength = shedLength1 - 30;
         shedWidth = width - 30;
         }
+        
        
+               
+               
         int roofSlope = 0;
-        String roofText = request.getParameter("roof");
+        String roofText = request.getParameter("Taghaeldning");
         if(roofText == null){
         }else{
         int roof = Integer.parseInt(roofText);
@@ -56,18 +70,19 @@ public class CalculateCarportCommand extends Command
         }
     
         //Carport Input
-        Carport carport = new Carport(length, width, material, shed, shedWidth, shedLength, details, roofSlope);
-        session.setAttribute("carports", carport);
+        Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
+        session.setAttribute("carport", carport);
         
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
         
        // Prints out the carport
-        //request.setAttribute("message", carport);
+        request.setAttribute("message", carport);
         // request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
         //   + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
         
-
+        //List<Carport> carports = new ArrayList<Carport>();
+        //carports.add(carport);
 
         }
         catch (Exception e){
