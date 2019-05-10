@@ -6,6 +6,7 @@
 package Presentation;
 
 import Data.Carport;
+import Data.Cart;
 import Data.MaterialList;
 import Logic.Calculator;
 import javax.servlet.http.HttpServletRequest;
@@ -58,7 +59,9 @@ public class CalculateCarportCommand extends Command
         //Carport Input
         Carport carport = new Carport(length, width, material, shed, shedWidth, shedLength, details, roofSlope);
         session.setAttribute("carports", carport);
-        
+        Cart cart = new Cart();
+        cart.addToCart(carport);
+        System.out.println("this is yo cart, boi" + cart.getCarport());
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
         
@@ -73,7 +76,7 @@ public class CalculateCarportCommand extends Command
         catch (Exception e){
         request.setAttribute("message", e.getMessage());
         }
-        return "calculatedCarport";
+        return "cart";
     }
         
 

@@ -16,10 +16,10 @@ public class Cart
     private ArrayList<Carport> carports = new ArrayList();
     private int userID;
     
-    public Cart(int id)
+   /* public Cart(int id)
     {
         this.userID = id;
-    }
+    }*/
     public ArrayList<Carport> getCarport()
     {
         return carports;
