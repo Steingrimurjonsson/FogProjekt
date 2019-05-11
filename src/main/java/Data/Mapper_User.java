@@ -38,17 +38,18 @@ public class Mapper_User {
       public static void editUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-           String SQL = "UPDATE User SET password =?, firstName =?, lastName =?, phone =?, street =?, city =?, zip =?, country =? WHERE email = '?';";
+           String SQL = "UPDATE User SET password =?, firstName =?, lastName =?, phone =?, street =?, city =?, zip =?, country =? WHERE email = ?;";
             PreparedStatement ps = con.prepareStatement( SQL);
-            ps.setString(1, user.getEmail() );
-            ps.setString(2, user.getPassword() );
-            ps.setString(3, user.getFirstName());
-            ps.setString(4, user.getLastName());
-            ps.setString(5, user.getPhone());
-            ps.setString(6, user.getStreet());
-            ps.setString(7, user.getCity());
-            ps.setString(8, user.getZip());
-            ps.setString(9, user.getCountry());
+        
+            ps.setString(1, user.getPassword());
+            ps.setString(2, user.getFirstName());
+            ps.setString(3, user.getLastName());
+            ps.setString(4, user.getPhone());
+            ps.setString(5, user.getStreet());
+            ps.setString(6, user.getCity());
+            ps.setString(7, user.getZip());
+            ps.setString(8, user.getCountry());
+            ps.setString(9, user.getEmail());
 
             ps.executeUpdate();
 
