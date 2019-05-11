@@ -22,9 +22,9 @@ public class LogicFacade {
         return orders;
    }
      
-    public static User editUser(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws LoginSampleException
+    public static User editUser(int userID, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws LoginSampleException
     {
-        User user = new User(email, password, firstName, lastName, phone, street, city, zip, country, phone);
+        User user = new User(userID, email, password, firstName, lastName, phone, street, city, zip, country, phone);
         Mapper_User.editUser(user);
         return user;
     }

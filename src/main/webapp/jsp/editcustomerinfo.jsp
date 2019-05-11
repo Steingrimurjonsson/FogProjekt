@@ -42,33 +42,34 @@
         <div class="customerInfo" style='padding: 50px'>              
         <h1>Welcome <%= firstName%> <%= lastName%> here you can edit your information and password</h1> <br>
             
-                                          <form name="editUser" action="FrontController" method="POST">
+                        <form name="editUser" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="editUser">
-                       Email<br>
-                        <input type="text" name="email" value="<%= userEmail%>">
+                        Email: 
                         <br>
-                        Password:<br>
+                        <input type="text" name="email" value="<%=userEmail%>">
+                        <br>
+                        Password: <br>
                         <input type="text" name="password1" value="<%= password%>">
                         <br>
                          First Name: <br>
                         <input type="text" name="fname" value="<%= firstName%>">
                         <br>
                          Last Name: <br>
-                        <input type="text" name="lname" value=" <%= lastName%>">
+                        <input type="text" name="lname" value="<%= lastName%>">
                         <br>
-                         Phone Number<br>
+                         Phone Number: <br>
                         <input type="text" name="phone" value="<%= phone%>">
                         <br>
-                         Street<br>
+                         Street:<br>
                         <input type="text" name="street" value="<%= street%>">
                         <br>
-                         City<br>
+                         City:<br>
                         <input type="text" name="city" value="<%= city%>">
                         <br>
-                         Zip Code<br>
+                         Zip Code: <br>
                         <input type="text" name="zip" value="<%= zip%>">
                         <br>
-                         Country<br>
+                         Country: <br>
                         <input type="text" name="country" value="<%= country%>">
                         <br>
                         <input type="submit" value="Submit">

@@ -22,9 +22,12 @@ public class EditCommand extends Command {
         String zip = request.getParameter( "zip" );
         String country = request.getParameter( "country" );
         
-            HttpSession session = request.getSession();   
-            User user = LogicFacade.editUser(email, password, firstName, lastName, phone, street, city, zip, country);
-            session.setAttribute( "user", user );
+            HttpSession session = request.getSession();
+            User oldUserData = (User) session.getAttribute("user");
+            User user = LogicFacade.editUser(oldUserData.getId(), email, password, firstName, lastName, phone, street, city, zip, country);
+            
+            session.setAttribute( "user", user);
+            
            // session.setAttribute( "role", user.getRole() );
            // return user.getRole() + "page";
                    return "customerpage";
