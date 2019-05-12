@@ -21,36 +21,35 @@ import static org.junit.Assert.*;
  */
 public class Mapper_UserTest {
 
-    private static Connection con;
+    private static Connection singleton;
     private static final String URL = "jdbc:mysql://167.99.209.146:3306/FOG?UseSSL=false";
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "admin2019";
 
     public static void setConnection(Connection con) {
-        con = con;
+        singleton = con;
     }
 
     @Before
     public void setUp() {
         try {
             // awoid making a new connection for each test
-            if (con == null) {
-                String url = URL;
-                Class.forName("com.mysql.cj.jdbc.Driver");
+            if (singleton == null) {
 
-                con = DriverManager.getConnection(url);
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                singleton = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 // Make mappers use test 
-                Connector.setConnection(con);
+                Connector.setConnection(singleton);
             }
             // reset test database
-            try (Statement stmt = con.createStatement()) {
+            try (Statement stmt = singleton.createStatement()) {
                 stmt.execute("drop table if exists Users");
                 stmt.execute("create table Users like UsersTest");
                 stmt.execute("insert into Users select * from UsersTest");
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            con = null;
+            singleton = null;
             System.out.println("Could not open connection to database: " + ex.getMessage());
         }
     }
@@ -58,7 +57,7 @@ public class Mapper_UserTest {
     @Test
     public void testSetUpOK() {
         // Just check that we have a connection.
-        assertNotNull(con);
+        assertNotNull(singleton);
     }
 
     @Test
@@ -83,6 +82,7 @@ public class Mapper_UserTest {
         Mapper_User.createUser(original);
         User retrieved = Mapper_User.login("king@kong.com", "uhahvorhemmeligt");
         assertEquals("konge", retrieved.getRole());
+
     }
 
 }
