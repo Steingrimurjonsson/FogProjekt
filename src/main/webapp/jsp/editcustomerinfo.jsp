@@ -49,7 +49,7 @@
                         <input type="text" name="email" value="<%=userEmail%>">
                         <br>
                         Password: <br>
-                        <input type="text" name="password1" value="<%= password%>">
+                        <input type="password" name="password1" value="<%= password%>">
                         <br>
                          First Name: <br>
                         <input type="text" name="fname" value="<%= firstName%>">
