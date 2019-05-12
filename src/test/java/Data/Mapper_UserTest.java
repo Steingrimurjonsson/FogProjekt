@@ -5,11 +5,15 @@
  */
 package Data;
 
+import Logic.FogException;
+import Logic.LoginSampleException;
 import Logic.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -61,23 +65,23 @@ public class Mapper_UserTest {
     }
 
     @Test
-    public void testLogin01() throws FogException  {
+    public void testLogin01() throws LoginSampleException  {
         // Can we log in
-        User user = Mapper_User.login( "jens@somewhere.com", "jensen" );
+        User user = Mapper_User.login("jens@somewhere.com", "jensen" );
         assertTrue( user != null );
     }
 
    
 
     @Test
-    public void testLogin03() throws FogException   {
+    public void testLogin03() throws   LoginSampleException {
         // Jens is supposed to be a customer
         User user = Mapper_User.login( "jens@somewhere.com", "jensen" );
         assertEquals( "customer", user.getRole() );
     }
-
+    
     @Test
-    public void testCreateUser01() throws FogException {
+    public void testCreateUser01() throws LoginSampleException {
         // Can we create a new user - Notice, if login fails, this will fail
         // but so would login01, so this is OK
         User original = new User( "king@kong.com", "uhahvorhemmeligt", "konge" );
