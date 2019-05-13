@@ -57,10 +57,7 @@ public class CalculateCarportCommand extends Command
         shedLength = shedLength1 - 30;
         shedWidth = width - 30;
         }
-        
-       
-               
-               
+            
         int roofSlope = 0;
         String roofText = request.getParameter("Taghaeldning");
         if(roofText == null){
@@ -68,7 +65,106 @@ public class CalculateCarportCommand extends Command
         int roof = Integer.parseInt(roofText);
         roofSlope = roof;
         }
-    
+        
+        //DEAFAULT ELEMENTS IN A CARPORT
+        int post = 4;
+        int skruer = 12;
+        
+        
+        //DEAFAULT PRICES IN A CARPORT
+        int lengthPrice = 0;
+        int widthPrice = 0;
+        int shedWidthPrice = 0;
+        int shedLengthPrice = 0;
+        
+        //CARPORT LENGHT
+        if(length > 1 && length < 250){
+             lengthPrice = 500;
+            
+        } else if (length > 250 && length < 500) {
+            
+             lengthPrice = 1000;
+            
+        } else if (length > 500 && length < 1000) {
+            
+             lengthPrice = 1500;
+            
+        }
+        
+        //CARPORT WIDTH
+        if(width > 1 && width < 250){
+            
+             widthPrice = 500;
+            
+        } else if (width > 250 && width < 500) {
+            
+             widthPrice = 1000;
+            
+        } else if (width > 500 && width < 1000) {
+            
+             widthPrice = 1500;
+            
+        }
+        
+         //CARPORT SHED WIDTH
+         if(shedWidth > 1 && shedWidth < 250){
+             
+             shedWidthPrice = 500;
+            
+        } else if (shedWidth > 250 && shedWidth < 500) {
+            
+             shedWidthPrice = 1000;
+            
+        } else if (shedWidth > 500 && shedWidth < 1000) {
+            
+             shedWidthPrice = 1500;
+            
+        }
+        
+         //CARPORT SHED LENGHT
+          if(shedLength > 1 && shedLength < 250){
+              
+             shedLengthPrice = 500;
+            
+        } else if (shedLength > 250 && shedLength < 500) {
+            
+             shedWidthPrice = 1000;
+            
+        } else if (shedLength > 500 && shedLength < 1000) {
+            
+             shedLengthPrice = 1500;
+            
+        }
+          
+          
+        //ROOF PRICE
+        int roofMatPrice = 0;
+        if(roofMaterial == "Plasttrapezplader"){
+        roofMatPrice = 500;
+        } else {
+            roofMatPrice = 600;
+        }
+          
+        //TOTAL ELEMENTS
+        /* 
+        skruer 
+        post
+        wood (check how much based on their pdf)
+        tag
+        IF SHED door
+        
+        */
+        
+          
+        //TOTAL PRICE
+        int totalPrice = lengthPrice + widthPrice + shedWidthPrice + shedLengthPrice;
+        
+        
+        
+       //  request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
+       //  + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
+        
+        
         //Carport Input
         Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
         session.setAttribute("carport", carport);
