@@ -13,7 +13,8 @@ public class EditCommand extends Command {
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
         
         String email = request.getParameter( "email" );
-        String password = request.getParameter( "password1" );
+        String password1 = request.getParameter( "password1" );
+        String password2 = request.getParameter( "password2" );
         String firstName = request.getParameter( "fname" );
         String lastName = request.getParameter( "lname" );
         String phone = request.getParameter( "phone" );
@@ -24,13 +25,16 @@ public class EditCommand extends Command {
         
             HttpSession session = request.getSession();
             User oldUserData = (User) session.getAttribute("user");
-            User user = LogicFacade.editUser(oldUserData.getId(), email, password, firstName, lastName, phone, street, city, zip, country);
+            
+            if ( password1.equals( password2 ) ){
+            User user = LogicFacade.editUser(oldUserData.getId(), email, password1, firstName, lastName, phone, street, city, zip, country);
             
             session.setAttribute( "user", user);
             
            // session.setAttribute( "role", user.getRole() );
            // return user.getRole() + "page";
-                   return "customerpage";
+                 
     }
-
+     return "customerpage";
+    }
 }
