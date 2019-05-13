@@ -23,10 +23,10 @@
    /* request.getAttribute(carport.getLength());
     request.getAttribute(carport.getWidth());
     request.getAttribute(carport.getMaterial());
-    request.getAttribute(carport.isShed());
-    request.getAttribute(carport.getRoofSlope());
-    request.getAttribute(carport.getShedWidth());
-    request.getAttribute(carport.getShedLength());
+   // request.getAttribute(carport.isShed());
+   // request.getAttribute(carport.getRoofSlope());
+   // request.getAttribute(carport.getShedWidth());
+    //request.getAttribute(carport.getShedLength());
     request.getAttribute(carport.getDetails());
  
    
@@ -38,7 +38,7 @@
     int shedW = carport.getShedWidth();
     int shedL = carport.getShedLength();
     String details = carport.getDetails();
-     */
+     
     String username = "";
     if (user != null)
     {
@@ -69,7 +69,8 @@
             </tr>
         
         </table>
-        <%= carport%>
+        <%= carport %>
+                <%=details %>
                 </br>
                 <INPUT TYPE=submit name="slet" value="remove">
     </div>

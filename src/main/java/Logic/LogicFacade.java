@@ -28,4 +28,10 @@ public class LogicFacade {
         Mapper_User.editUser(user);
         return user;
     }
+    
+    public static List<User>allUsers() throws Exception
+    {
+        return Mapper_User.allUsers();
+        
+    }
 }
