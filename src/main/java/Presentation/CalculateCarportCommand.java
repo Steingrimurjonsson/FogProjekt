@@ -48,6 +48,7 @@ public class CalculateCarportCommand extends Command
         int roofSlope = 0;
         String roofMaterial= "";
         String roofText = request.getParameter("Taghaeldning");
+        //String roofMaterial = request.getParameter("Tag");
         
         if(roofText == null){
                 roofMaterial = "Plasttrapezplader";
