@@ -154,7 +154,7 @@ public class CarportTest {
     /**
      * Test of toString method, of class Carport.
      */
-//    @Test TODO spørg Anders!
+//    @Test TODO spørg Anders! 
 //    public void testToString() {
 //        System.out.println("toString");
 //        Carport instance = carportInstance;
