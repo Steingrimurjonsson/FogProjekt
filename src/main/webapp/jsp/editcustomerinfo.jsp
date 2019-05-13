@@ -51,6 +51,9 @@
                         Password: <br>
                         <input type="password" name="password1" value="<%= password%>">
                         <br>
+                        Confirm Password: <br>
+                        <input type="password" name="password2" value="<%= password%>">
+                        <br>
                          First Name: <br>
                         <input type="text" name="fname" value="<%= firstName%>">
                         <br>
