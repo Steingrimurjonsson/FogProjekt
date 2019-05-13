@@ -42,7 +42,7 @@
     Carport bredde
 </label>
 <form action ="FrontController" method = "POST">
-<select class="form-control" id="Input_1868253726" name="Carport_bredde" title="Carport bredde"><option selected="selected" value="">Vælg bredde</option>
+<select class="form-control" id="Input_1868253726" name="width" title="Carport bredde"><option selected="selected" value="">Vælg bredde</option>
 <option value="240">240 cm</option>
 <option value="270">270 cm</option>
 <option value="300">300 cm</option>
@@ -73,7 +73,7 @@
 <label title="Carport længde" for="Input_1868253726">
     Carport længde
 </label>
-<select class="form-control" id="Input_1868253726" name="Carport_laengde" title="Carport længde"><option selected="selected" value="">Vælg længde</option>
+<select class="form-control" id="Input_1868253726" name="length" title="Carport længde"><option selected="selected" value="">Vælg længde</option>
 <option value="240">240 cm</option>
 <option value="270">270 cm</option>
 <option value="300">300 cm</option>
@@ -163,7 +163,7 @@
 <label title="Redskabsrum bredde" for="Input_1868253726">
     Redskabsrum bredde
 </label>
-<select class="form-control" id="Input_1868253726" name="Redskabsrum_bredde" title="Redskabsrum bredde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
+<select class="form-control" id="Input_1868253726" name="shedWidth" title="Redskabsrum bredde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
 <option value="210">210 cm</option>
 <option value="240">240 cm</option>
 <option value="270">270 cm</option>
@@ -194,7 +194,7 @@
 <label title="Redskabsrum bredde" for="Input_1868253726">
     Redskabsrum længde
 </label>
-<select class="form-control" id="Input_1868253726" name="Redskabsrum_laengde" title="Redskabsrum bredde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
+<select class="form-control" id="Input_1868253726" name="shedLength" title="Redskabsrum bredde"><option selected="selected" value="">Ønsker ikke redskabsrum</option>
 <option value="150">150 cm</option>
 <option value="180">180 cm</option>
 <option value="210">210 cm</option>
