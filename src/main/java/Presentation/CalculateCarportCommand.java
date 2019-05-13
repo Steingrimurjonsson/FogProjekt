@@ -133,7 +133,7 @@ public class CalculateCarportCommand extends Command
         } else if (shedLength > 500 && shedLength < 1000) {
             
              shedLengthPrice = 1500;
-            
+             skruer = 1;
         }
           
           
@@ -145,9 +145,9 @@ public class CalculateCarportCommand extends Command
             roofMatPrice = 600;
         }
           
-        //TOTAL ELEMENTS
+        //TOTAL ELEMENTS (ADD IDS FROM MAT LIST)
         /* 
-        skruer 
+        skruer ()
         post
         wood (check how much based on their pdf)
         tag
