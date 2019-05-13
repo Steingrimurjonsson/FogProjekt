@@ -70,8 +70,6 @@
         <%= carport%>
                 </br>
                 <INPUT TYPE=submit name="slet" value="remove">
-               
-        
     </div>
 
 
