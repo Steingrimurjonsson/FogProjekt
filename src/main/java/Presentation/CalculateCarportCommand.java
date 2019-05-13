@@ -78,9 +78,17 @@ public class CalculateCarportCommand extends Command
         shedWidth = width - 30;
         }
             
+        /*DEAFULT PRICES
+        post            50 DKK
+        skrue           2 DKK
+        hinges          5 DKK
+        door            100 DKK
+        doorhandle      20 DKK
+        wooden planks   10 DKK
         
-        
+        */
         //DEAFAULT ELEMENTS IN A CARPORT
+        
         int post = 4;
         int skruer = 12;
         
@@ -183,7 +191,9 @@ public class CalculateCarportCommand extends Command
         //Carport Input
         Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
         session.setAttribute("carport", carport);
-        
+        List<Carport> carports = new ArrayList<Carport>();
+        carports.add(carport);
+        session.setAttribute("carports", carports);
         
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
