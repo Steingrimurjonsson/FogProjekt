@@ -19,25 +19,25 @@
     Cart cart = (Cart) request.getSession().getAttribute("cart");
     User user = (User) request.getSession().getAttribute("user");
     Carport carport = (Carport) request.getSession().getAttribute("carport");
-/*
-    request.getAttribute(user.getLength()());
-    request.getAttribute(user.getWidth());
-    request.getAttribute(user.getMaterial());
-    request.getAttribute(user.isShed());
-    request.getAttribute(user.getRoofSlope());
-    request.getAttribute(user.getShedWidth());
-    request.getAttribute(user.getShedLength());
-    request.getAttribute(user.getDetails());
+
+   /* request.getAttribute(carport.getLength());
+    request.getAttribute(carport.getWidth());
+    request.getAttribute(carport.getMaterial());
+    request.getAttribute(carport.isShed());
+    request.getAttribute(carport.getRoofSlope());
+    request.getAttribute(carport.getShedWidth());
+    request.getAttribute(carport.getShedLength());
+    request.getAttribute(carport.getDetails());
  
    
-    String length = cart.getLength();
-    String width = cart.getWidth();
-    String mat = cart.getPassword();
-    String shed = cart.getEmail();
-    String rSlope = cart.getPhone();
-    String shedW = cart.getStreet();
-    String shedL = cart.getCity();
-    String details = cart.getZip();
+    int length = carport.getLength();
+    int width = carport.getWidth();
+    String mat = carport.getMaterial();
+    boolean shed = carport.isShed();
+    int rSlope = carport.getRoofSlope();
+    int shedW = carport.getShedWidth();
+    int shedL = carport.getShedLength();
+    String details = carport.getDetails();
      */
     String username = "";
     if (user != null)
@@ -51,7 +51,9 @@
 <div class ="padding">
     <div>
         <h4> Your cart <%= username%></h4>
-      
+  
+      <br>
+   
         <br/>
         <table class ="table table - striped">
             <tr> 
