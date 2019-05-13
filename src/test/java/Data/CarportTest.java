@@ -45,12 +45,12 @@ public class CarportTest {
     @Test
     public void testGetLength() {
         System.out.println("getLength");
-        Carport instance = null;
-        int expResult = 0;
+        Carport instance = carportInstance;
+        int expResult = 420;
         int result = instance.getLength();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -59,12 +59,12 @@ public class CarportTest {
     @Test
     public void testGetWidth() {
         System.out.println("getWidth");
-        Carport instance = null;
-        int expResult = 0;
+        Carport instance = carportInstance;
+        int expResult = 69;
         int result = instance.getWidth();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +73,12 @@ public class CarportTest {
     @Test
     public void testGetMaterial() {
         System.out.println("getMaterial");
-        Carport instance = null;
-        String expResult = "";
+        Carport instance = carportInstance;
+        String expResult = "skur";
         String result = instance.getMaterial();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -87,12 +87,12 @@ public class CarportTest {
     @Test
     public void testIsShed() {
         System.out.println("isShed");
-        Carport instance = null;
-        boolean expResult = false;
+        Carport instance = carportInstance;
+        boolean expResult = true;
         boolean result = instance.isShed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -101,12 +101,12 @@ public class CarportTest {
     @Test
     public void testGetRoofSlope() {
         System.out.println("getRoofSlope");
-        Carport instance = null;
-        int expResult = 0;
+        Carport instance = carportInstance;
+        int expResult = 50;
         int result = instance.getRoofSlope();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -115,12 +115,12 @@ public class CarportTest {
     @Test
     public void testGetShedWidth() {
         System.out.println("getShedWidth");
-        Carport instance = null;
-        int expResult = 0;
+        Carport instance = carportInstance;
+        int expResult = 720;
         int result = instance.getShedWidth();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -129,12 +129,12 @@ public class CarportTest {
     @Test
     public void testGetShedLength() {
         System.out.println("getShedLength");
-        Carport instance = null;
-        int expResult = 0;
+        Carport instance = carportInstance;
+        int expResult = 35;
         int result = instance.getShedLength();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -143,26 +143,26 @@ public class CarportTest {
     @Test
     public void testGetDetails() {
         System.out.println("getDetails");
-        Carport instance = null;
-        String expResult = "";
+        Carport instance = carportInstance;
+        String expResult = "details";
         String result = instance.getDetails();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to //fail.
+        //fail("The test case is a prototype.");
     }
 
     /**
      * Test of toString method, of class Carport.
      */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Carport instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test TODO spørg Anders!
+//    public void testToString() {
+//        System.out.println("toString");
+//        Carport instance = carportInstance;
+//        String expResult = "Carport{" + "length="  + ", width="  + ", material=" +  ", shed=" +  ", Roofslope=" +  ", shedwidth=" +  ", shedlength=" +  ", details=" + '}';
+//        String result = instance.toString();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to //fail.
+//        //fail("The test case is a prototype.");
+//    }
     
 }
