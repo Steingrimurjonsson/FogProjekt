@@ -47,12 +47,11 @@
                         <br>
                          Last Name: <%= lastName%><br>
                         <br>
-                         Phone Number <%= phone%><br>
+                         Phone Number: <%= phone%><br>
                         <br>
                          Street: <%= street%><br>
                         <br>
-                         City: <%= city%>
-                         <br>
+                         City: <%= city%><br>
                         <br>
                          Zip Code: <%= zip%><br>
                         <br>
