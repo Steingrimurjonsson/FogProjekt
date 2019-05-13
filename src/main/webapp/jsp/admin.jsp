@@ -12,12 +12,18 @@
         <%
    
     User user = (User) request.getSession().getAttribute("user");
-   String role = "null";
-    role = user.getRole();
-    if (role != "admin")
+   //String role = "null";
+   // String role = user.getRole();
+    
+     request.getAttribute(user.getRole());
+     String role = user.getRole();
+    //role.length()==0 || userType.length()==0 ){
+    if (role.length()!=5)
     {
-         session.setAttribute("message", "You are not admin");
-         response.sendRedirect(response.encodeRedirectURL("/index.jsp"));
+        
+        response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
+       
     }
     
  
@@ -28,7 +34,7 @@
     </head>
     <body>
         <h1>LIST OVER USERS</h1>
-        
+        <%= role %>
         
          <h1>LIST OVER ORDERS</h1>
     </body>

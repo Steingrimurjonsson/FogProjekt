@@ -72,18 +72,20 @@
             <form name="logout" action="FrontController" method="post">
                 <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
+                      <%}%>
                   
-              
-           
-    </div>
-           <%}%>
-                       <% if(role == "admin"){%>
+                  
+                       
+                       <% if (role.length()==5) {%>
             <nav id="">
             <a href="jsp/admin.jsp"><%= role %> Page here  </a>
             <% }else {%>
             
                <%}%>
         </nav>
+           
+    </div>
+   
                
    
 </div>
