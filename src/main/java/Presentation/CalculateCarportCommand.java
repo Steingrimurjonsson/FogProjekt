@@ -38,18 +38,37 @@ public class CalculateCarportCommand extends Command
         String widthText = request.getParameter("width");
         int width = Integer.parseInt(widthText);
        
-        String roofMaterial = "Plasttrapezplader";
-        /*  String roofMaterialText = request.getParameter("Tag");
-        if(roofMaterialText == null){
+        
+        
+       
+        
+        
+        
+        int roofMatPrice = 0;
+        int roofSlope = 0;
+        String roofMaterial= "";
+        String roofText = request.getParameter("Taghaeldning");
+        
+        if(roofText == null){
+                roofMaterial = "Plasttrapezplader";
+                roofMatPrice = 500;
         }else{
-        roofMaterial = request.getParameter("Tag");
+                int roof = Integer.parseInt(roofText);
+                roofSlope = roof;
+                roofMaterial = request.getParameter("Tag");
+                roofMatPrice = 600;
         }
-        */
-        String shedLengthText = request.getParameter("shedLength");
+        
+ 
+        
+        
+        
         int shedLength = 0;
         int shedWidth = 0;
         boolean shed = false;
-        if(shedLengthText == null){
+
+        String shedLengthText = request.getParameter("shedLength");
+        if(shedLengthText == ""){
         shed = false;
         }else{
         shed = true;
@@ -58,13 +77,7 @@ public class CalculateCarportCommand extends Command
         shedWidth = width - 30;
         }
             
-        int roofSlope = 0;
-        String roofText = request.getParameter("Taghaeldning");
-        if(roofText == null){
-        }else{
-        int roof = Integer.parseInt(roofText);
-        roofSlope = roof;
-        }
+        
         
         //DEAFAULT ELEMENTS IN A CARPORT
         int post = 4;
@@ -137,13 +150,7 @@ public class CalculateCarportCommand extends Command
         }
           
           
-        //ROOF PRICE
-        int roofMatPrice = 0;
-        if(roofMaterial == "Plasttrapezplader"){
-        roofMatPrice = 500;
-        } else {
-            roofMatPrice = 600;
-        }
+        
           
         //TOTAL ELEMENTS (ADD IDS FROM MAT LIST)
         /* 

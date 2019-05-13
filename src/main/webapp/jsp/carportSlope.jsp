@@ -133,7 +133,7 @@
 <label title="Taghældning" for="Input_1868253726">
     Taghældning
 </label>
-<select class="form-control" id="Input_1868253726" name="Taghaeldning" title="Taghældning"><option value="15 grader">15 grader</option>
+<select class="form-control" id="Input_1868253726" name="Taghaeldning" title="Taghældning"><option value="15">15 grader</option>
 <option value="20">20 grader</option>
 <option selected="selected" value="25">25 grader</option>
 <option value="30">30 grader</option>

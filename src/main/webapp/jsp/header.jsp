@@ -53,7 +53,7 @@
         </nav>
         <nav id ="shop">
               <form name="cart" action="FrontController" method="post">
-                <button value="cart" name="command" type="submit"/>Cart</button>
+                <button style=" border:none;" value="cart" name="command" type="submit"/>Cart</button>
             </form>
         </nav>
              <nav id="Carport">
@@ -73,11 +73,9 @@
             <form name="logout" action="FrontController" method="post">
                 <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
-                      <%}%>
-                  
-                  
-                       
-                       <% if (role.length()==5) {%>
+                      <%} 
+
+            if (role.length()==5) {%>
             <nav id="">
             <a href="jsp/admin.jsp"><%= role %> Page here  </a>
             <% }else {%>
