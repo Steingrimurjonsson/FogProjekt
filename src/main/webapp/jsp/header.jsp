@@ -10,9 +10,11 @@
 <%
      User user = (User) request.getSession().getAttribute("user");
     String username = "NULL";
+    String role = "NULL";
     if (user != null)
     {
         username = user.getFirstName().toUpperCase();
+        role = user.getRole();
     }
 
 %>
@@ -58,6 +60,7 @@
             <a href="jsp/carport.jsp"> Carport </a>
       
     </div>
+                
     <div id ="rightBar">
             <% if(user == null){%>
             <nav id="user">
@@ -69,8 +72,19 @@
             <form name="logout" action="FrontController" method="post">
                 <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
             </form>
-        </nav>
-               <%}%>
+                  
+              
+           
     </div>
+           <%}%>
+                       <% if(role == "admin"){%>
+            <nav id="">
+            <a href="jsp/admin.jsp"><%= role %> Page here  </a>
+            <% }else {%>
+            
+               <%}%>
+        </nav>
+               
+   
 </div>
         </div>
