@@ -184,6 +184,7 @@ public class CalculateCarportCommand extends Command
         Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
         session.setAttribute("carport", carport);
         
+        
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
         
