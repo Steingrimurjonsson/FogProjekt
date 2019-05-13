@@ -66,6 +66,7 @@
             <nav id="user">
                  <a href="jsp/login.jsp">Login/Register</a>
             <% }else {%>
+           
             <nav id="user">
             <a href="jsp/customerpage.jsp"><%= username %>  </a>
               <nav id="logout">
