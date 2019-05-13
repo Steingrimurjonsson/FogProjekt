@@ -42,7 +42,7 @@ public class CalculateCarportCommand extends Command
         
        
         
-        
+        //ROOF CAL
         
         int roofMatPrice = 0;
         int roofSlope = 0;
@@ -83,6 +83,13 @@ public class CalculateCarportCommand extends Command
         //DEAFAULT ELEMENTS IN A CARPORT
         int post = 4;
         int skruer = 12;
+        
+        if(shed == true){
+            int doorHandle = 1;
+            int hinges = 2;
+            skruer = skruer + 50;
+            post = post + 4; 
+        }
         
         
         //DEAFAULT PRICES IN A CARPORT
