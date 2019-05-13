@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import Logic.Order;
 
 /**
  *
@@ -49,32 +50,37 @@ public class OrderMapper {
     }
       //This is not ready yet, it's just a draft of what orderlist COULD look like. Will edit once we decide on order structure
     
-     /* public static List<Order> allOrders() throws Exception
+      public static List<Order> allOrders() throws Exception
     {
-        List<Order> list = new ArrayList();
+        List<Order> orderList = new ArrayList();
         try
         {
             Connection con = Connector.connection();
-            String SQL = "SELECT * from `order`";
+            String SQL = "SELECT * from `Order`";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next())
             {
-                int  = rs.getInt("idOrder");
+                int idOrder = rs.getInt("idOrder");
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
-                int height = rs.getInt("height");
-                int material = rs.getInt("idMaterial")
+                String material = rs.getString("material");
                 boolean shed = rs.getBoolean("shed");
-                int shedWidth = rs.getInt("shedWidth")
-                int shedLength = rs.getInt("shedLength")
-                String details = rs.getString("details")
-                int roofslope = rs.getInt("slope")
-              
+                int roofslope = rs.getInt("slope");
+                int shedLength = rs.getInt("shedLength");
+                int shedWidth = rs.getInt("shedWidth");
+                String details = rs.getString("details");
 
-                Order o = new Carport(idOrder,idUser, length, width, height,material, shed, shedWidth, shedLength, details, roofslope)
-                list.add(o);
-            }*/ 
+                Order o = new Order(idOrder, idUser, length, width, material, shed, roofslope, shedLength, shedWidth, details);
+                orderList.add(o);
+             }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new Exception(ex.getMessage());
+        }
+        return orderList;
+    }
 }

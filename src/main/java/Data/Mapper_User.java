@@ -105,11 +105,11 @@ public class Mapper_User
 
     public static List<User> allUsers() throws Exception
     {
-        List<User> userList = new ArrayList();
+        List<User> list = new ArrayList();
         try
         {
             Connection con = Connector.connection();
-            String SQL = "SELECT * from `user`";
+            String SQL = "SELECT * from `User`";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
@@ -129,12 +129,12 @@ public class Mapper_User
                 
 
                 User user = new User(id, email, password, firstName, lastName, phone, street, city, zip, country, role);
-                userList.add(user);
+                list.add(user);
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
             throw new Exception(ex.getMessage());
         }
-        return userList;
+        return list;
     }
 }

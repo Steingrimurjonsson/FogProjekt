@@ -34,4 +34,8 @@ public class LogicFacade {
         return Mapper_User.allUsers();
         
     }
+    
+        public static List<Order> getAllOrders() throws Exception {
+        return OrderMapper.allOrders();
+    }
 }
