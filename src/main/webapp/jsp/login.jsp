@@ -13,8 +13,9 @@
         <title>Login & Registration Page</title>
     </head>
     <body>
-        <h1>Please login or create an account</h1>
+     
         <div id="loginStyle" align="center">
+               <h1>Please login or create an account</h1>
     <div id="loginStyle" style="margin-bottom: 20px; min-height: 230px">
             <h3>Login</h3>
                     <form name="login" action="FrontController" method="POST">

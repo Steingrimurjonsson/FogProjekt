@@ -4,7 +4,10 @@
     Author     : stein
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Logic.Order"%>
 <%@page import="Logic.User"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
@@ -61,33 +64,48 @@
                         <br>
                         <a href="jsp/editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
                         </div>
-                        <div class="customerOrders" style="float:right; padding-right: 50px ;">
-                            <table class="data">
-  <tr>
-    <th>Entry Header 1</th>
-    <th>Entry Header 2</th>
-    <th>Entry Header 3</th>
-    <th>Entry Header 4</th>
-  </tr>
-  <tr>
-    <td>Entry First Line 1</td>
-    <td>Entry First Line 2</td>
-    <td>Entry First Line 3</td>
-    <td>Entry First Line 4</td>
-  </tr>
-  <tr>
-    <td>Entry Line 1</td>
-    <td>Entry Line 2</td>
-    <td>Entry Line 3</td>
-    <td>Entry Line 4</td>
-  </tr>
-  <tr>
-    <td>Entry Last Line 1</td>
-    <td>Entry Last Line 2</td>
-    <td>Entry Last Line 3</td>
-    <td>Entry Last Line 4</td>
-  </tr>
-</table>
-                        </div>
+                                   <h1> LIST OF ORDERS: </h1>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> OrderID</th>
+                                <th> UserID</th>
+                                <th> Length</th>
+                                <th> Width</th>
+                                <th> Roof Material </th>
+                                <th> Shed </th>
+                                <th> Roofslope </th>
+                                <th> Shed Length </th>
+                                <th> Shed Width </th>
+                                
+                                
+                               
+                            </tr>
+                        </thead>
+
+                        <% List<Order> orderList = (List<Order>) request.getAttribute("orders");
+                            for (Order element : orderList) {%>
+
+                        <tbody>
+                            <tr>
+                                <th> <%= element.getOrderID()  %> </th>        
+                                <th> <%= element.getUserID() %> </th>  
+                                <th> <%= element.getLength()  %> </th> 
+                                <th> <%= element.getWidth()  %> </th> 
+                                <th> <%= element.getroofMat() %> </th>
+                                <th> <%= element.isShed() %> </th> 
+                                <th> <%= element.getRoofSlope()  %> </th> 
+                                <th> <%= element.getShedLength()  %> </th> 
+                                <th> <%= element.getShedWidth()  %> </th> 
+                                   
+                                   
+                                </th>
+                                <%}%>
+                            </tr>
+
+                           
+                        </tbody>
+                    </table>
     </body>
 </html>
