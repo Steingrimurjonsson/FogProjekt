@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <style>
+        <style>
             table {
                 font-family: arial, sans-serif;
                 border-collapse: collapse;
@@ -45,7 +45,7 @@
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             }
         %>
-        
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -62,31 +62,32 @@
                     <th>Role</th>
                 </tr>
             </thead>
-  <%List<User> list = (List<User>) request.getAttribute("list");
-                for(User element : list)
-                {%>
+            <%List<User> userList = (List<User>) request.getAttribute("list");
+      for (User element : userList)
+      {%>
 
             <tbody>
                 <tr>
-                    <th> <% out.print(element.getId());  %> </th>        
-                    <th> <% out.print(element.getEmail());  %> </th>  
-                    <th> <% out.print(element.getPassword());  %> </th> 
-                    <th> <% out.print(element.getFirstName());  %> </th> 
-                    <th> <% out.print(element.getLastName());  %> </th> 
-                    <th> <% out.print(element.getPhone());  %> </th> 
-                    <th> <% out.print(element.getStreet());  %> </th> 
-                    <th> <% out.print(element.getCity());  %> </th> 
-                    <th> <% out.print(element.getZip());  %> </th> 
-                    <th> <% out.print(element.getCountry());  %> </th> 
-                    <th> <% out.print(element.getRole());%> </th> 
 
-  
-                                <%}%>
-                            </tr>
-        
-    
+                    <th> <%= element.getId()%> </th>        
+                    <th> <%= element.getEmail()%> </th>  
+                    <th> <%= element.getPassword()%> </th> 
+                    <th> <%= element.getFirstName()%> </th> 
+                    <th> <%= element.getLastName()%> /th> 
+                    <th> <%= element.getPhone()%> </th> 
+                    <th> <%= element.getStreet()%> </th> 
+                    <th> <%= element.getCity()%> </th> 
+                    <th> <%= element.getZip()%> </th> 
+                    <th> <%= element.getCountry()%> </th> 
+                    <th> <%= element.getRole()%> </th> 
+
+
+                    <%}%>
+                </tr>
+
+
 
             </tbody>
         </table>
-        </body>
+    </body>
 </html>

@@ -105,7 +105,7 @@ public class Mapper_User
 
     public static List<User> allUsers() throws Exception
     {
-        List<User> list = new ArrayList();
+        List<User> userList = new ArrayList();
         try
         {
             Connection con = Connector.connection();
@@ -129,12 +129,12 @@ public class Mapper_User
                 
 
                 User user = new User(id, email, password, firstName, lastName, phone, street, city, zip, country, role);
-                list.add(user);
+                userList.add(user);
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
             throw new Exception(ex.getMessage());
         }
-        return list;
+        return userList;
     }
 }

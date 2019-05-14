@@ -82,8 +82,10 @@
                       <%} 
 
             if (role.length()==5) {%>
-            <nav id="">
-            <a href="jsp/admin.jsp"><%= role %> Page here  </a>
+
+            <form name="admin" action="FrontController" method="post">
+                <button value="admin" name="command" type="submit"/><%= role %> Page here </button>
+            </form>
             <% }else {%>
             
                <%}%>

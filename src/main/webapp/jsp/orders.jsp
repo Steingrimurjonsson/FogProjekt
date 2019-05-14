@@ -4,7 +4,6 @@
     Author     : stein
 --%>
 
-<%@page import="Logic.Invoice"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
 <%@page import="java.util.List"%>
@@ -37,12 +36,6 @@
         <title>Employee home page</title>
     </head>
     <body>
-        
-        <h1>Hello <%=request.getParameter( "email")%> </h1>
-              <% User u = (User) request.getSession().getAttribute("user"); %>
-              
-
-
                
                     <h1> All Orders: </h1>
 
@@ -69,15 +62,15 @@
 
                         <tbody>
                             <tr>
-                                <th> <% out.print(element.getOrderID());  %> </th>        
-                                <th> <% out.print(element.getUserID());  %> </th>  
-                                <th> <% out.print(element.getLength());  %> </th> 
-                                <th> <% out.print(element.getWidth());  %> </th> 
-                                <th> <% out.print(element.getMaterial());  %> </th> 
-                                <th> <% out.print(element.isShed());  %> </th> 
-                                <th> <% out.print(element.getRoofSlope());  %> </th> 
-                                <th> <% out.print(element.getShedLength());  %> </th> 
-                                <th> <% out.print(element.getShedWidth());  %> </th> 
+                                <th> <%= element.getOrderID()  %> </th>        
+                                <th> <%= element.getUserID() %> </th>  
+                                <th> <%= element.getLength()  %> </th> 
+                                <th> <%= element.getWidth()  %> </th> 
+                                <th> <%= element.getMaterial() %> /th> 
+                                <th> <%= element.isShed() %> </th> 
+                                <th> <%= element.getRoofSlope()  %> </th> 
+                                <th> <%= element.getShedLength()  %> </th> 
+                                <th> <%= element.getShedWidth()  %> </th> 
                                    
                                    
                                 </th>

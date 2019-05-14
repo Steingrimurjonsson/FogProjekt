@@ -18,6 +18,7 @@ abstract class Command {
         commands.put( "logout", new LogoutCommand() );
         commands.put( "calculate", new CalculateCarportCommand());
         commands.put( "editUser", new EditCommand());
+        commands.put( "admin", new AdminCommand() );
     }
 
     static Command from( HttpServletRequest request ) {
