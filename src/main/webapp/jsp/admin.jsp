@@ -84,11 +84,8 @@
             <h1>LIST OF USERS</h1>
         <%
             User user = (User) request.getSession().getAttribute("user");
-            //String role = "null";
-            // String role = user.getRole();
             String role = user.getRole();
-            //role.length()==0 || userType.length()==0 ){
-            if (role.length() != 5)
+            if (!"admin".equals(role))
             {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             }
