@@ -53,7 +53,7 @@
         </nav>
         <nav id ="shop">
               <form name="cart" action="FrontController" method="post">
-                <button style=" border:none; background: #333" value="cart" name="command" type="submit"/>Cart</button>
+                <button class="cartbutton" style=" border:none; background: #333; padding-top: 6px;" value="cart" name="command" type="submit"/>Cart</button>
             </form>
         </nav>
              <nav id="Carport">
