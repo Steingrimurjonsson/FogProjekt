@@ -28,42 +28,49 @@ public class CalculateCarportCommand extends Command
         try
         {
         HttpSession session = request.getSession();
+      
+
+        /*
+        DEAFULT PRICES
+        post            50  DKK
+        skrue           2   DKK
+        hinges          5   DKK
+        door            100 DKK
+        doorhandle      20  DKK
+        wooden planks   10  DKK
+        
+        SALES PRICE VS CUSTOMER PRICE 40% ? 
+        
+        
+        */
+        
+        //CARPORT LENGTH + WIDTH + HEIGHT
         int height = 220;
-        
-        
-        String details = "IDONTKNOW";
         String lengthText = request.getParameter("length");
         int length = Integer.parseInt(lengthText);
-        
         String widthText = request.getParameter("width");
         int width = Integer.parseInt(widthText);
-       
-        
-        
-       
-        
+
         //ROOF CAL
-        
         int roofMatPrice = 0;
         int roofSlope = 0;
         String roofMat= "";
         String roofText = request.getParameter("Taghaeldning");
-        //String roofMaterial = request.getParameter("Tag");
         
+        //IF THERE IS NO SLOPE THEN 
         if(roofText == null){
                 roofMat = "Plasttrapezplader";
                 roofMatPrice = 500;
-        }else{
+        }
+        else
+        {
                 int roof = Integer.parseInt(roofText);
                 roofSlope = roof;
                 roofMat = request.getParameter("Tag");
                 roofMatPrice = 600;
         }
         
- 
-        
-        
-        
+        //SHED CAL
         int shedLength = 0;
         int shedWidth = 0;
         boolean shed = false;
@@ -78,25 +85,29 @@ public class CalculateCarportCommand extends Command
         shedWidth = width - 30;
         }
             
-        /*DEAFULT PRICES
-        post            50 DKK
-        skrue           2 DKK
-        hinges          5 DKK
-        door            100 DKK
-        doorhandle      20 DKK
-        wooden planks   10 DKK
         
-        */
-        //DEAFAULT ELEMENTS IN A CARPORT
+        /*
+        DEAFAULT ELEMENTS IN A CARPORT
+        RULES:
+        wood planks for sides? 6?
+        wood planks for shed + a bit extra side?
+        wood side planks 
         
+        
+       */
         int post = 4;
         int skruer = 12;
+        int wood = 6;
+       
         
         if(shed == true){
             int doorHandle = 1;
             int hinges = 2;
             skruer = skruer + 50;
             post = post + 4; 
+            wood = wood + 2;
+            int woodSides = 20;
+           
         }
         
         
@@ -182,31 +193,11 @@ public class CalculateCarportCommand extends Command
         //TOTAL PRICE
         int totalPrice = lengthPrice + widthPrice + shedWidthPrice + shedLengthPrice;
         
-        
-        
-       //  request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
-       //  + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
-        
-        
+      
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
-        List<Carport> carports = new ArrayList<>();
-        carports.add(carport);
-        session.setAttribute("carports", carports);
-        
-        
-        
-       // Prints out the carport
-        request.setAttribute("message", carports);
-        
-        
-        
-        // request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
-        //   + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
-        
-        //List<Carport> carports = new ArrayList<Carport>();
-        //carports.add(carport);
+
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
         }
