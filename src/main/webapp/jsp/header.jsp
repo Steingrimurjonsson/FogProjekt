@@ -78,10 +78,10 @@
             </form>
                       <%} 
 
-            if (role.length()==5) {%>
+        if (role.equals("admin")) {%>
 
             <form name="admin" action="FrontController" method="post">
-                <button value="admin" name="command" type="submit"/><%= role %> Page here </button>
+                <button value="admin" name="command" type="submit"/>Admin Page</button>
             </form>
             <% }else {%>
             

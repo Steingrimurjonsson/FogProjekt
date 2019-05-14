@@ -87,14 +87,5 @@ public class Order
     public String getDetails()
     {
         return details;
-    }
-       String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
-        if(request.getParameter("userID")!=null)
-        {
-            return"orders";
-        }
-            return "orders";
-}
-    
+    }   
 }

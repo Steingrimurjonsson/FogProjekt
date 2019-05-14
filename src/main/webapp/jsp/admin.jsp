@@ -66,7 +66,7 @@
                                 <th> <%= element.getUserID() %> </th>  
                                 <th> <%= element.getLength()  %> </th> 
                                 <th> <%= element.getWidth()  %> </th> 
-                                <th> <%= element.getMaterial() %> /th> 
+                                <th> <%= element.getMaterial() %> </th>
                                 <th> <%= element.isShed() %> </th> 
                                 <th> <%= element.getRoofSlope()  %> </th> 
                                 <th> <%= element.getShedLength()  %> </th> 
@@ -121,7 +121,7 @@
                     <th> <%= element.getEmail()%> </th>  
                     <th> <%= element.getPassword()%> </th> 
                     <th> <%= element.getFirstName()%> </th> 
-                    <th> <%= element.getLastName()%> /th> 
+                    <th> <%= element.getLastName()%> </th> 
                     <th> <%= element.getPhone()%> </th> 
                     <th> <%= element.getStreet()%> </th> 
                     <th> <%= element.getCity()%> </th> 
