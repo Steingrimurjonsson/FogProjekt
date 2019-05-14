@@ -14,40 +14,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
          <jsp:include page='header.jsp'></jsp:include> 
+         <%  User user = (User) session.getAttribute("user");
+         %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%
-    //Cart cart = (Cart) session.getAttribute("cart");
-    //User user = (User) session.getAttribute("user");
-    //Carport carport = (Carport) session.getAttribute("carport");
-   // List<Carport> carports = (List<Carport>) request.getSession("carports");
-    //Carport carports = (Carport) request.getSession().getAttribute("carports");
-   // request.getAttribute(carport.getLength());
-    //request.getAttribute(carport.getWidth());
-    //request.getAttribute(carport.getMaterial());
-   // request.getAttribute(carport.isShed());
-   // request.getAttribute(carport.getRoofSlope());
-   // request.getAttribute(carport.getShedWidth());
-    //request.getAttribute(carport.getShedLength());
-    //request.getAttribute(carport.getDetails());
- 
-   /*
-    int length = carport.getLength();
-    int width = carport.getWidth();
-    String mat = carport.getMaterial();
-    boolean shed = carport.isShed();
-    int rSlope = carport.getRoofSlope();
-    int shedW = carport.getShedWidth();
-    int shedL = carport.getShedLength();
-    String details = carport.getDetails();
-    
-    String username = "";
-    if (user != null)
-    {
-        username = user.getFirstName().toUpperCase();
-    }
-  */
-%>
+
 </head>
 <body>
 <div class ="padding">
@@ -79,7 +51,16 @@
         </table>
                 </br>
                 <form>
-                    <button name="command" value="emptyCart">Empty Cart</button>
+                    <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Empty Cart</button>
+                </form>
+                  <form>
+                      <%       
+                          if (user != null) { %>
+                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
+                           <%  } else { %>
+                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
+                              <% } %>
+                    
                 </form>
     </div>
             <br>
