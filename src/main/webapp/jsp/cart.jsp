@@ -37,17 +37,17 @@
                 <th> Carport Shed</th>
                 <th> Carport Shed width</th>
                 <th> Carport Shed length</th> 
-                <th> Carport Details</th>
+             
             </tr>
             <tr>
                 <td>${carport.length}</td>
                 <td>${carport.width}</td>
-                <td>${carport.material}</td>
+                <td>${carport.roofMat}</td>
                 <td>${carport.roofSlope}</td>
                 <td>${carport.shed}</td>          
                 <td>${carport.shedLength}</td>
                 <td>${carport.shedWidth}</td>
-                <td>${carport.details}</td>
+                
             </tr>
         </table>
                 </br>

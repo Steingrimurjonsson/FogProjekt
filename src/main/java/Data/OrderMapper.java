@@ -26,18 +26,18 @@ public class OrderMapper {
         try
         {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO `Order` (idUser, length, width, material, shed, slope, shedLength, shedWidth, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `Order` (idUser, length, width, material, shed, slope, shedLength, shedWidth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
            
             ps.setInt(1, order.getUserID());
             ps.setInt(2, order.getLength());
             ps.setInt(3, order.getWidth());
-            ps.setInt(4, order.getMaterialID());
+            ps.setString(4, order.getroofMat());
             ps.setBoolean(5, order.isShed());
             ps.setInt(6, order.getRoofSlope());
             ps.setInt(7, order.getShedLength());
             ps.setInt(8, order.getShedWidth());
-            ps.setString(9, order.getDetails());
+        
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
@@ -94,14 +94,14 @@ public class OrderMapper {
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
-                int material = rs.getInt("idMaterial");
+                String material = rs.getString("roofMat");
                 boolean shed = rs.getBoolean("shed");
                 int roofslope = rs.getInt("slope");
                 int shedLength = rs.getInt("shedLength");
                 int shedWidth = rs.getInt("shedWidth");
-                String details = rs.getString("details");
+                
 
-                Order o = new Order(idOrder, idUser, length, width, material, shed, roofslope, shedLength, shedWidth, details);
+                Order o = new Order(idOrder, idUser, length, width, material, shed, roofslope, shedLength, shedWidth);
                 orderList.add(o);
              }
 

@@ -46,17 +46,17 @@ public class CalculateCarportCommand extends Command
         
         int roofMatPrice = 0;
         int roofSlope = 0;
-        String roofMaterial= "";
+        String roofMat= "";
         String roofText = request.getParameter("Taghaeldning");
         //String roofMaterial = request.getParameter("Tag");
         
         if(roofText == null){
-                roofMaterial = "Plasttrapezplader";
+                roofMat = "Plasttrapezplader";
                 roofMatPrice = 500;
         }else{
                 int roof = Integer.parseInt(roofText);
                 roofSlope = roof;
-                roofMaterial = request.getParameter("Tag");
+                roofMat = request.getParameter("Tag");
                 roofMatPrice = 600;
         }
         
@@ -189,7 +189,7 @@ public class CalculateCarportCommand extends Command
         
         
         //Carport Input
-        Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
+        Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
         List<Carport> carports = new ArrayList<>();
         carports.add(carport);

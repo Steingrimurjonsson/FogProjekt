@@ -16,38 +16,38 @@ public class Order
     private final int userID;
     private final int length;
     private final int width;
-    private final int materialID;
+    private final String roofMat;
     private final boolean shed;
     private final int roofSlope;
     private final int shedLength;
     private final int shedWidth;
-    private final String details;
    
-    public Order(int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
+      /*
+    public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
     {
         this.userID = userID;
         this.length = length;
         this.width = width;
-        this.materialID = materialID;
+        this.roofMat = roofMat;
         this.shed = shed;
         this.roofSlope = roofSlope;
         this.shedLength = shedLength;
         this.shedWidth = shedWidth;
-        this.details = details;
+  
     }
-    
-    public Order(int orderID, int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
+ */
+    public Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
     {
         this.orderID = orderID;
         this.userID = userID;
         this.length = length;
         this.width = width;
-        this.materialID = materialID;
+        this.roofMat = roofMat;
         this.shed = shed;
         this.roofSlope = roofSlope;
         this.shedLength = shedLength;
         this.shedWidth = shedWidth;
-        this.details = details;
+       
     }
 
 
@@ -72,9 +72,9 @@ public class Order
         return width;
     }
 
-    public int getMaterialID()
+    public String getroofMat()
     {
-        return materialID;
+        return roofMat;
     }
 
     public boolean isShed()
@@ -97,8 +97,5 @@ public class Order
         return shedLength;
     }
 
-    public String getDetails()
-    {
-        return details;
-    }
+   
 }
