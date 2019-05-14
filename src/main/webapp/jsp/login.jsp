@@ -14,53 +14,49 @@
     </head>
     <body>
         <h1>Please login or create an account</h1>
-        <div id="loginStyle">
+        <div id="loginStyle" align="center">
     <div id="loginStyle" style="margin-bottom: 20px; min-height: 230px">
             <h3>Login</h3>
                     <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="command" value="login">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
+                        <input type="hidden" name="command" value="login"><br>
+                        <input type="text" name="email" placeholder="Email" required><br>
+                        <input type="password" name="password" placeholder="Password" required><br><br>
+                         <input type="submit" value="Submit">
                     </form>
     </div>
     <div id="registerStyle" style="min-height: 230px">
                 <h3>Register</h3>
                     <form name="register" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="register">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
+                       
+                        <input type="text" name="email" placeholder="Email" required>
                         <br>
-                        Password:<br>
-                        <input type="password" name="password1" value="sesam">
+                       
+                        <input type="password" name="password1" placeholder="Password" required>
                         <br>
-                        Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
+                     
+                        <input type="password" name="password2" placeholder="Re-enter Password" required>
                         <br>
-                         First Name: <br>
-                        <input type="text" name="fname" value="Someone">
+                   
+                        <input type="text" name="fname" placeholder="First Name" required>
                         <br>
-                         Last Name: <br>
-                        <input type="text" name="lname" value="Someone">
+                    
+                        <input type="text" name="lname" placeholder="Last Name" required>
                         <br>
-                         Phone Number<br>
-                        <input type="text" name="phone" value="12345678">
+                      
+                        <input type="text" name="phone" placeholder="Phone Number" required>
                         <br>
-                         Street<br>
-                        <input type="text" name="street" value="Somewhere">
+                     
+                        <input type="text" name="street" placeholder="Street" required>
                         <br>
-                         City<br>
-                        <input type="text" name="city" value="SomeCity">
+                      
+                        <input type="text" name="city" placeholder="City" required>
                         <br>
-                         Zip Code<br>
-                        <input type="text" name="zip" value="3000">
+                     
+                        <input type="text" name="zip" placeholder="Zip Code" required>
                         <br>
-                         Country<br>
-                        <input type="text" name="country" value="SomeCountry">
+                   
+                        <input type="text" name="country"  placeholder="Country" required>
                         <br>
                         <input type="submit" value="Submit">
                     </form>
@@ -72,5 +68,7 @@
                out.println(error);
            }
         %>
+        
+
     </body>
 </html>
