@@ -57,12 +57,9 @@
             </form>
         </nav>
              <nav id="Carport">
-            <a href="jsp/carport.jsp"> Carport </a>
+            <a href="jsp/carport.jsp"> Custom Carports </a>
             
-               <nav id ="orders">
-              <form name="orders" action="FrontController" method="POST">
-                <button style="border:none; background: #333" value="orders" name="command" type="submit"/>Show Orders</button>
-            </form>
+               
         </nav>
       
     </div>

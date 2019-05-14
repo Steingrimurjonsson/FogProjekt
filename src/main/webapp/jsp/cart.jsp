@@ -18,8 +18,8 @@
 <%
     Cart cart = (Cart) request.getSession().getAttribute("cart");
     User user = (User) request.getSession().getAttribute("user");
-    Carport carport = (Carport) request.getSession().getAttribute("carport");
-   // Carport carports = (Carport) request.getSession().getAttribute("carports");
+    //Carport carport = (Carport) request.getSession().getAttribute("carport");
+    Carport carports = (Carport) request.getSession().getAttribute("carports");
    // request.getAttribute(carport.getLength());
     //request.getAttribute(carport.getWidth());
     //request.getAttribute(carport.getMaterial());
@@ -69,7 +69,7 @@
             </tr>
         
         </table>
-        <%= carport %>
+        <%= carports %>
       
                 </br>
                 <INPUT TYPE=submit name="slet" value="remove">

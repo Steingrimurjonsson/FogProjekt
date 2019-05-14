@@ -20,7 +20,7 @@
 	<h3><img style="float: right; margin-left: 10px;" alt="" src="/globalassets/service/quickbyg/quickurejs.gif" height="87" width="165" class="img-responsive">Quick-Byg tilbud - carport med fladt tag</h3>
 <p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.</p>
 <p>Tilbud og skitsetegning fremsendes med post hurtigst muligt.<br>Ved bestilling medfølger standardbyggevejledning.</p>
-<p><strong>Udfyld nedenstående omhyggeligt og klik på "Bestil tilbud"</strong><br>Felter markeret * SKAL udfyldes!</p>
+<p><strong>Fill the fields under and click on "Add to cart"</strong></p>
 </div></div>
         <div>
 

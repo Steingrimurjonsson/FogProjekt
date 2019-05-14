@@ -17,7 +17,7 @@
           <div id="index">
       <img src="img/foglogok.png" alt="fog" width="500" height="500">
       <br>
-  
+      <h1>Welcome to Fog <br>Here you can make custom carports</h1>
 </div>
     </body>
     <jsp:include page='jsp/footer.jsp'></jsp:include>

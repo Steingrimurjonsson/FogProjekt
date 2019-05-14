@@ -199,7 +199,7 @@ public class CalculateCarportCommand extends Command
         session.setAttribute("materials", materials);
         
        // Prints out the carport
-        request.setAttribute("message", carport);
+        request.setAttribute("message", carports);
         // request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
         //   + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
         
