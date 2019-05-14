@@ -4,6 +4,7 @@
     Author     : stein
 --%>
 
+<%@page import="java.util.List"%>
 <%@page import="Data.Carport"%>
 <%@page import="Logic.User"%>
 <%@page import="Data.Cart"%>
@@ -18,8 +19,9 @@
 <%
     Cart cart = (Cart) request.getSession().getAttribute("cart");
     User user = (User) request.getSession().getAttribute("user");
-    //Carport carport = (Carport) request.getSession().getAttribute("carport");
-    Carport carports = (Carport) request.getSession().getAttribute("carports");
+    Carport carport = (Carport) request.getSession().getAttribute("carport");
+    List<Carport> carports = (List<Carport>) request.getSession("carports");
+    //Carport carports = (Carport) request.getSession().getAttribute("carports");
    // request.getAttribute(carport.getLength());
     //request.getAttribute(carport.getWidth());
     //request.getAttribute(carport.getMaterial());

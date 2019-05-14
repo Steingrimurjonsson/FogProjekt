@@ -81,7 +81,7 @@
         if (role.equals("admin")) {%>
 
             <form name="admin" action="FrontController" method="post">
-                <button value="admin" name="command" type="submit"/>Admin Page</button>
+                <button style=" border:none; background: #333;" value="admin" name="command" type="submit"/>Admin Page</button>
             </form>
             <% }else {%>
             

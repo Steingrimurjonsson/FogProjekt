@@ -191,21 +191,24 @@ public class CalculateCarportCommand extends Command
         //Carport Input
         Carport carport = new Carport(length, width, roofMaterial, shed, shedWidth, shedLength, details, roofSlope);
         session.setAttribute("carport", carport);
-        List<Carport> carports = new ArrayList<Carport>();
+        List<Carport> carports = new ArrayList<>();
         carports.add(carport);
         session.setAttribute("carports", carports);
         
-        MaterialList materials = Calculator.calculateMaterials(carport);
-        session.setAttribute("materials", materials);
+        
         
        // Prints out the carport
         request.setAttribute("message", carports);
+        
+        
+        
         // request.setAttribute("message", "length=" + length + ", width=" + width + ", material=" + material + ", shed=" + shed + ", "
         //   + "Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + ", details=" + details);
         
         //List<Carport> carports = new ArrayList<Carport>();
         //carports.add(carport);
-
+        MaterialList materials = Calculator.calculateMaterials(carport);
+        session.setAttribute("materials", materials);
         }
         catch (Exception e){
         request.setAttribute("message", e.getMessage());
