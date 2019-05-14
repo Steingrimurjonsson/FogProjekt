@@ -38,4 +38,11 @@ public class LogicFacade {
         public static List<Order> getAllOrders() throws Exception {
         return OrderMapper.allOrders();
     }
+        
+        public static Order createOrder(int orderID, int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details) throws Exception
+        {
+            Order order = new Order(orderID, userID, length, width, materialID, shed, roofSlope, shedLength, shedWidth, details);
+            OrderMapper.createOrder(order);
+            return order;
+        }
 }

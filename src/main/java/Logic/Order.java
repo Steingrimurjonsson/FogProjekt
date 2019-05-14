@@ -5,9 +5,6 @@
  */
 package Logic;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author NoellZane
@@ -18,20 +15,20 @@ public class Order
     private final int userID;
     private final int length;
     private final int width;
-    private final String material;
+    private final int materialID;
     private final boolean shed;
     private final int roofSlope;
     private final int shedLength;
     private final int shedWidth;
     private final String details;
 
-    public Order(int orderID, int userID, int length, int width, String material, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
+    public Order(int orderID, int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
     {
         this.orderID = orderID;
         this.userID = userID;
         this.length = length;
         this.width = width;
-        this.material = material;
+        this.materialID = materialID;
         this.shed = shed;
         this.roofSlope = roofSlope;
         this.shedLength = shedLength;
@@ -59,9 +56,9 @@ public class Order
         return width;
     }
 
-    public String getMaterial()
+    public int getMaterialID()
     {
-        return material;
+        return materialID;
     }
 
     public boolean isShed()
@@ -87,5 +84,5 @@ public class Order
     public String getDetails()
     {
         return details;
-    }   
+    }
 }

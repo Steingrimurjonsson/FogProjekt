@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
  * @author stein
  */
 
-public class BuyOrderCommand extends Command
+public class CreateOrderCommand extends Command
 {
 
     @Override
@@ -27,7 +27,7 @@ public class BuyOrderCommand extends Command
         if(session.getAttribute("user") == null){
             return "login";
         }else {
-        
+            
         }
          
     
