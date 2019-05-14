@@ -11,6 +11,7 @@ package Logic;
  */
 public class Order
 {
+    
     private final int orderID;
     private final int userID;
     private final int length;
@@ -21,7 +22,20 @@ public class Order
     private final int shedLength;
     private final int shedWidth;
     private final String details;
-
+   
+    public Order(int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
+    {
+        this.userID = userID;
+        this.length = length;
+        this.width = width;
+        this.materialID = materialID;
+        this.shed = shed;
+        this.roofSlope = roofSlope;
+        this.shedLength = shedLength;
+        this.shedWidth = shedWidth;
+        this.details = details;
+    }
+    
     public Order(int orderID, int userID, int length, int width, int materialID, boolean shed, int roofSlope, int shedLength, int shedWidth, String details)
     {
         this.orderID = orderID;
@@ -35,6 +49,8 @@ public class Order
         this.shedWidth = shedWidth;
         this.details = details;
     }
+
+
 
     public int getOrderID()
     {

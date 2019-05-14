@@ -6,7 +6,6 @@
 package Data;
 
 import Logic.Invoice;
-import Logic.LoginSampleException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Logic.Order;
-import Logic.User;
 import java.sql.Statement;
 
 /**
@@ -28,18 +26,18 @@ public class OrderMapper {
         try
         {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO `Order` (idOrder, idUser, length, width, material, shed, slope, shedLength, shedWidth, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `Order` (idUser, length, width, material, shed, slope, shedLength, shedWidth, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, order.getOrderID());
-            ps.setInt(2, order.getUserID());
-            ps.setInt(3, order.getLength());
-            ps.setInt(4, order.getWidth());
-            ps.setInt(5, order.getMaterialID());
-            ps.setBoolean(6, order.isShed());
-            ps.setInt(7, order.getRoofSlope());
-            ps.setInt(8, order.getShedLength());
-            ps.setInt(9, order.getShedWidth());
-            ps.setString(10, order.getDetails());
+           
+            ps.setInt(1, order.getUserID());
+            ps.setInt(2, order.getLength());
+            ps.setInt(3, order.getWidth());
+            ps.setInt(4, order.getMaterialID());
+            ps.setBoolean(5, order.isShed());
+            ps.setInt(6, order.getRoofSlope());
+            ps.setInt(7, order.getShedLength());
+            ps.setInt(8, order.getShedWidth());
+            ps.setString(9, order.getDetails());
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
