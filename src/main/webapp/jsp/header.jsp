@@ -32,7 +32,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type = "text/javascript" src = "js/jsfile.js" ></script>
-        
+        <link rel="shortcut icon" href="img/faviconFog.ico"/>
         <title>Fog</title>
         
         
