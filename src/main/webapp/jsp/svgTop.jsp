@@ -4,15 +4,7 @@
     Author     : artin
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
+<div class="svgTop">
         
         <svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
     zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
@@ -47,5 +39,4 @@
     <line y2="410.0" fill="none" x1="420.0" x2="371.0" stroke="#ff0000" y1="410.0"/>
     <text x="373.0" y="422.0"><tspan xml:space="preserve">62 cm </tspan></text>
 </svg>
-    </body>
-</html>
+</div>
