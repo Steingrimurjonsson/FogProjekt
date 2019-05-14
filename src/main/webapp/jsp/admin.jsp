@@ -47,12 +47,12 @@
                                 <th> UserID</th>
                                 <th> Length</th>
                                 <th> Width</th>
-                                <th> Material </th>
+                                <th> Roof Material </th>
                                 <th> Shed </th>
                                 <th> Roofslope </th>
                                 <th> Shed Length </th>
                                 <th> Shed Width </th>
-                                <th> Details </th>
+                                
                                 
                                
                             </tr>
@@ -67,7 +67,7 @@
                                 <th> <%= element.getUserID() %> </th>  
                                 <th> <%= element.getLength()  %> </th> 
                                 <th> <%= element.getWidth()  %> </th> 
-                                <th> <%= element.getMaterial() %> </th>
+                                <th> <%= element.getroofMat() %> </th>
                                 <th> <%= element.isShed() %> </th> 
                                 <th> <%= element.getRoofSlope()  %> </th> 
                                 <th> <%= element.getShedLength()  %> </th> 
