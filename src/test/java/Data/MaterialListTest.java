@@ -52,8 +52,7 @@ public class MaterialListTest {
         int count = 12;
         MaterialList instance = matList;
         instance.addToList(material, count);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -66,8 +65,7 @@ public class MaterialListTest {
         Carport expResult = carport;
         Carport result = instance.getCarport();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -78,13 +76,13 @@ public class MaterialListTest {
         System.out.println("getMaterials");
         Material material = new Material(420, "mats", 9001);
         Map<Material, Integer> mats = new HashMap();
-        MaterialList instance = matList;
         mats.put(material, 0);
-        Map<Material, Integer> expResult = mats<"mats","0">;
+        MaterialList instance = matList;
+        matList.addToList(material, 0);
+        Map<Material, Integer> expResult = mats;
         Map<Material, Integer> result = instance.getMaterials();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
 }
