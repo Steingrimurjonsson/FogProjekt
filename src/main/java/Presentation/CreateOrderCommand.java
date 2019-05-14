@@ -5,6 +5,10 @@
  */
 package Presentation;
 
+import Data.Carport;
+import Logic.LogicFacade;
+import Logic.Order;
+import Logic.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,6 +32,20 @@ public class CreateOrderCommand extends Command
             return "login";
         }else {
             
+           // session.getAttribute("carport");
+          User user = (User) request.getSession().getAttribute("user");
+          Carport carport = (Carport) session.getAttribute("carport");
+         int userID = user.getId();
+         int length = carport.getLength();
+         int width = carport.getWidth();
+         String roofMat = carport.getroofMat();
+         boolean shed = carport.isShed();
+         int roofSlope = carport.getRoofSlope();
+         int shedLength = carport.getShedLength();
+         int shedWidth = carport.getShedLength();
+      
+        Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
+            
         }
          
     
@@ -36,7 +54,7 @@ public class CreateOrderCommand extends Command
         catch (Exception e){
         request.setAttribute("message", e.getMessage());
         }
-        return "cart";
+        return "jsp/customerpage.jsp";
     }
         
 

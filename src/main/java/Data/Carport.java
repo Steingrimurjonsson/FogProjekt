@@ -38,7 +38,7 @@ public class Carport {
         return width;
     }
 
-    public String getMaterial() {
+    public String getroofMat() {
         return roofMat;
     }
 

@@ -12,33 +12,19 @@ package Logic;
 public class Order
 {
     
-    private final int orderID;
-    private final int userID;
-    private final int length;
-    private final int width;
-    private final String roofMat;
-    private final boolean shed;
-    private final int roofSlope;
-    private final int shedLength;
-    private final int shedWidth;
-   
-      /*
+    private int orderID;
+    private int userID;
+    private int length;
+    private int width;
+    private String roofMat;
+    private boolean shed;
+    private int roofSlope;
+    private int shedLength;
+    private int shedWidth;
+      
     public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
     {
-        this.userID = userID;
-        this.length = length;
-        this.width = width;
-        this.roofMat = roofMat;
-        this.shed = shed;
-        this.roofSlope = roofSlope;
-        this.shedLength = shedLength;
-        this.shedWidth = shedWidth;
-  
-    }
- */
-    public Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
-    {
-        this.orderID = orderID;
+     
         this.userID = userID;
         this.length = length;
         this.width = width;
@@ -50,51 +36,88 @@ public class Order
        
     }
 
+    public Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
+        this.orderID = orderID;
+        this.userID = userID;
+        this.length = length;
+        this.width = width;
+        this.roofMat = roofMat;
+        this.shed = shed;
+        this.roofSlope = roofSlope;
+        this.shedLength = shedLength;
+        this.shedWidth = shedWidth;
+    }
 
-
-    public int getOrderID()
-    {
+    public int getOrderID() {
         return orderID;
     }
 
-    public int getUserID()
-    {
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public int getUserID() {
         return userID;
     }
 
-    public int getLength()
-    {
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public int getLength() {
         return length;
     }
 
-    public int getWidth()
-    {
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getWidth() {
         return width;
     }
 
-    public String getroofMat()
-    {
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public String getroofMat() {
         return roofMat;
     }
 
-    public boolean isShed()
-    {
+    public void setroofMat(String roofMat) {
+        this.roofMat = roofMat;
+    }
+
+    public boolean isShed() {
         return shed;
     }
 
-    public int getRoofSlope()
-    {
+    public void setShed(boolean shed) {
+        this.shed = shed;
+    }
+
+    public int getRoofSlope() {
         return roofSlope;
     }
 
-    public int getShedWidth()
-    {
+    public void setRoofSlope(int roofSlope) {
+        this.roofSlope = roofSlope;
+    }
+
+    public int getShedLength() {
+        return shedLength;
+    }
+
+    public void setShedLength(int shedLength) {
+        this.shedLength = shedLength;
+    }
+
+    public int getShedWidth() {
         return shedWidth;
     }
 
-    public int getShedLength()
-    {
-        return shedLength;
+    public void setShedWidth(int shedWidth) {
+        this.shedWidth = shedWidth;
     }
 
    

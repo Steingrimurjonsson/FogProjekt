@@ -27,6 +27,8 @@
     String city = user.getCity();
     String zip = user.getZip();
     String country = user.getCountry();
+    
+    
 
 %>
 

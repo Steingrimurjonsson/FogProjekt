@@ -24,7 +24,7 @@ public class CarportMapper {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, carport.getLength());
             ps.setInt(2, carport.getWidth());
-            ps.setString(3, carport.getMaterial());
+            ps.setString(3, carport.getroofMat());
             ps.setBoolean(4, false);
             ps.setInt(5, carport.getShedWidth());
             ps.setInt(6, carport.getShedLength());
@@ -41,7 +41,7 @@ public class CarportMapper {
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, carport.getLength());
             ps.setInt(2, carport.getWidth());
-            ps.setString(3, carport.getMaterial());
+            ps.setString(3, carport.getroofMat());
             ps.setInt(7, carport.getRoofSlope());
             ps.setBoolean(4, false);
             ps.setInt(5, carport.getShedWidth());

@@ -39,9 +39,9 @@ public class LogicFacade {
         return OrderMapper.allOrders();
     }
         
-        public static Order createOrder(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth, String details) throws Exception
+        public static Order createOrder(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) throws Exception
         {
-            Order order = new Order(orderID, userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
+            Order order = new Order(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
             OrderMapper.createOrder(order);
             return order;
         }
