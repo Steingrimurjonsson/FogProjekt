@@ -52,23 +52,23 @@
         </table>
                 </br>
             
-                  
+                    
+                <form>
                       <%       
                           if (carport != null) { %>
-                             <form>
                              <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Empty Cart</button>
-                               </form>
+                               <form>
                       <%       
                           if (user != null) { %>
-                          <form>
-                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;"  name="command" value="buyOrder">Confirm Purchase</button>
-                     
+                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
                            <%  } else { %>
-                           <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" >Confirm Purchase</button>
-                              <% } %>   
-                          </form>
-                              <br><br><br>
-                              
+                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
+                              <% } %>
+                    
+                </form>
+                              <br>
+                              <br>
+                              <br>
 <div class="svgSide" style="float: left; border:1px #111 solid ; ">
          <svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
              zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
