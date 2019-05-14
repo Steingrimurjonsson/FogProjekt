@@ -51,11 +51,8 @@
         <nav id="home">
             <a href=".">Home</a>
         </nav>
-        <nav id ="shop">
-              <form name="cart" action="FrontController" method="post">
-                <button class="cartbutton" style=" border:none; background: #333; padding-top: 6px;" value="cart" name="command" type="submit"/>Cart</button>
-            </form>
-        </nav>
+     <nav id="shop"><a class="cartbutton" href="jsp/cart.jsp">Cart</a> </nav>
+           
              <nav id="Carport">
             <a href="jsp/carport.jsp"> Custom Carports </a>
             
