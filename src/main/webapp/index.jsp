@@ -13,6 +13,7 @@
         <title>Fog</title>
     </head>
     <body>
+        <br><br>  <br><br>
           <div id="index">
       <img src="img/foglogok.png" alt="fog" width="500" height="500">
       <br>
