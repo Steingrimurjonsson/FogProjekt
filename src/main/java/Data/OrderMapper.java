@@ -111,4 +111,39 @@ public class OrderMapper {
         }
         return orderList;
     }
+      public static List<Order> allOrdersByUserID(int idUser) throws Exception
+    {
+        List<Order> orderByUserIDList;
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from `Order` WHERE idUser=(?);";
+            PreparedStatement ps = con.prepareStatement(SQL);
+             ps.setInt(1, idUser);
+            ResultSet rs = ps.executeQuery();
+            orderByUserIDList = new ArrayList<>();
+            
+            while (rs.next())
+            {
+                int idOrder = rs.getInt("idOrder");
+                idUser = rs.getInt("idUser");
+                int length = rs.getInt("length");
+                int width = rs.getInt("width");
+                String roofMat = rs.getString("roofMat");
+                boolean shed = rs.getBoolean("shed");
+                int roofslope = rs.getInt("slope");
+                int shedLength = rs.getInt("shedLength");
+                int shedWidth = rs.getInt("shedWidth");
+                
+
+                Order o = new Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
+                orderByUserIDList.add(o);
+             }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new Exception(ex.getMessage());
+        }
+        return orderByUserIDList;
+    }
 }

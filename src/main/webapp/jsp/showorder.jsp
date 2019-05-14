@@ -1,22 +1,23 @@
 <%-- 
-    Document   : admin
-    Created on : Apr 24, 2019, 2:10:44 PM
-    Author     : stein
+    Document   : usershoworder
+    Created on : 15-05-2019, 00:15:20
+    Author     : NoellZane
 --%>
 
-<%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
 <%@page import="java.util.List"%>
 <%@page import="Logic.Order"%>
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <jsp:include page='header.jsp'></jsp:include> 
+         <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <style>
+        <title>Order History</title>
+    </head>
+    <body>        
+        <h1>Order History</h1>
+           <style>
                 table {
                     font-family: arial, sans-serif;
                     border-collapse: collapse;
@@ -33,13 +34,7 @@
                     background-color: #dddddd;
                 }
             </style>        
-        <title>Employee home page</title>
-    </head>
-    <body>
-               
-                    <h1> LIST OF ORDERS: </h1>
-
-                    <table class="table table-striped">
+            <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th> OrderID</th>
@@ -57,8 +52,11 @@
                             </tr>
                         </thead>
 
-                        <% List<Order> orderList = (List<Order>) request.getAttribute("orders");
-                            for (Order element : orderList) {%>
+                        <%  
+                              
+                        List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
+                        
+                            for (Order element : orderByUserIDList) {%>
 
                         <tbody>
                             <tr>
@@ -80,62 +78,11 @@
                            
                         </tbody>
                     </table>
-                     <body>
-            <h1>LIST OF USERS</h1>
-        <%
-            User user = (User) request.getSession().getAttribute("user");
-            String role = user.getRole();
-            if (!"admin".equals(role))
-            {
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
-            }
-        %>
+</table>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>UserID</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone</th>
-                    <th>Street</th>
-                    <th>City</th>
-                    <th>Zip</th>
-                    <th>Country</th>                 
-                    <th>Role</th>
-                </tr>
-            </thead>
-            <%List<User> list = (List<User>) request.getAttribute("userList");
-      for (User element : list)
-      {%>
-
-            <tbody>
-                <tr>
-
-                    <th> <%= element.getId()%> </th>        
-                    <th> <%= element.getEmail()%> </th>  
-                    <th> <%= element.getPassword()%> </th> 
-                    <th> <%= element.getFirstName()%> </th> 
-                    <th> <%= element.getLastName()%> </th> 
-                    <th> <%= element.getPhone()%> </th> 
-                    <th> <%= element.getStreet()%> </th> 
-                    <th> <%= element.getCity()%> </th> 
-                    <th> <%= element.getZip()%> </th> 
-                    <th> <%= element.getCountry()%> </th> 
-                    <th> <%= element.getRole()%> </th> 
-
-
-                    <%}%>
-                </tr>
-
-
-
-            </tbody>
-        </table>
-        
+                            
+                            
+                            
+                            </div>
     </body>
 </html>
-
-  

@@ -4,7 +4,11 @@
     Author     : stein
 --%>
 
+<%@page import="Logic.Order"%>
+<%@page import="java.util.List"%>
 <%@page import="Logic.User"%>
+<%@page import="Logic.Order"%>
+<%@page import="Logic.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
@@ -61,33 +65,9 @@
                         <br>
                         <a href="jsp/editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
                         </div>
-                        <div class="customerOrders" style="float:right; padding-right: 50px ;">
-                            <table class="data">
-  <tr>
-    <th>Entry Header 1</th>
-    <th>Entry Header 2</th>
-    <th>Entry Header 3</th>
-    <th>Entry Header 4</th>
-  </tr>
-  <tr>
-    <td>Entry First Line 1</td>
-    <td>Entry First Line 2</td>
-    <td>Entry First Line 3</td>
-    <td>Entry First Line 4</td>
-  </tr>
-  <tr>
-    <td>Entry Line 1</td>
-    <td>Entry Line 2</td>
-    <td>Entry Line 3</td>
-    <td>Entry Line 4</td>
-  </tr>
-  <tr>
-    <td>Entry Last Line 1</td>
-    <td>Entry Last Line 2</td>
-    <td>Entry Last Line 3</td>
-    <td>Entry Last Line 4</td>
-  </tr>
-</table>
-                        </div>
+                        
+                           <form name="showOrder" action="FrontController" method="POST">
+                           <button type="submit" name="command" value="showOrder">Show Order</button>
+                           </form>
     </body>
 </html>
