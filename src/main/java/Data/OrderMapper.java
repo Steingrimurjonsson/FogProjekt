@@ -26,7 +26,7 @@ public class OrderMapper {
         try
         {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO `Order` (idUser, length, width, material, shed, slope, shedLength, shedWidth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `Order` (idUser, length, width, roofMat, shed, slope, shedLength, shedWidth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
            
             ps.setInt(1, order.getUserID());
@@ -94,14 +94,14 @@ public class OrderMapper {
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
-                String material = rs.getString("roofMat");
+                String roofMat = rs.getString("roofMat");
                 boolean shed = rs.getBoolean("shed");
                 int roofslope = rs.getInt("slope");
                 int shedLength = rs.getInt("shedLength");
                 int shedWidth = rs.getInt("shedWidth");
                 
 
-                Order o = new Order(idOrder, idUser, length, width, material, shed, roofslope, shedLength, shedWidth);
+                Order o = new Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
                 orderList.add(o);
              }
 

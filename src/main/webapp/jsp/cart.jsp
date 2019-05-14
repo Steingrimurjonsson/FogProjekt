@@ -60,9 +60,9 @@
                                <form>
                       <%       
                           if (user != null) { %>
-                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
+                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Confirm Purchase</button>
                            <%  } else { %>
-                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="buyOrder">Confirm Purchase</button>
+                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Confirm Purchase</button>
                               <% } %>
                     
                 </form>
