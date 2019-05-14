@@ -17,10 +17,10 @@
          <jsp:include page='header.jsp'></jsp:include> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%
-    Cart cart = (Cart) request.getSession().getAttribute("cart");
-    User user = (User) request.getSession().getAttribute("user");
-    Carport carport = (Carport) request.getSession().getAttribute("carport");
-    List<Carport> carports = (List<Carport>) request.getSession("carports");
+    //Cart cart = (Cart) session.getAttribute("cart");
+    //User user = (User) session.getAttribute("user");
+    //Carport carport = (Carport) session.getAttribute("carport");
+   // List<Carport> carports = (List<Carport>) request.getSession("carports");
     //Carport carports = (Carport) request.getSession().getAttribute("carports");
    // request.getAttribute(carport.getLength());
     //request.getAttribute(carport.getWidth());
@@ -40,41 +40,55 @@
     int shedW = carport.getShedWidth();
     int shedL = carport.getShedLength();
     String details = carport.getDetails();
-     */
+    
     String username = "";
     if (user != null)
     {
         username = user.getFirstName().toUpperCase();
     }
- 
+  */
 %>
 </head>
 <body>
 <div class ="padding">
     <div>
-        <h4> Your cart <%= username%></h4>
+        <h4> Your cart ${user.firstName}</h4>
   
       <br>
    
         <br/>
         <table class ="table table - striped">
             <tr> 
-                <th> Carport length </th>
-                <th> Carport width</th>
-                <th> Carport material</th>
-                <th> Carport shed</th>
-                <th> Carport roof slope</th>
-                <th> Carport shed</th>
-                <th> Carport details</th>
-                <th> Carport shed width</th>
-                <th> Carport shed length</th> 
+                <th> Carport Length </th>
+                <th> Carport Width</th>
+                <th> Carport Roof material</th>
+                <th> Carport Roof slope</th>
+                <th> Carport Shed</th>
+                <th> Carport Shed width</th>
+                <th> Carport Shed length</th> 
+                <th> Carport Details</th>
             </tr>
-        
+            <tr>
+                <td>${carport.length}</td>
+                <td>${carport.width}</td>
+                <td>${carport.material}</td>
+                <td>${carport.roofSlope}</td>
+                <td>${carport.shed}</td>          
+                <td>${carport.shedLength}</td>
+                <td>${carport.shedWidth}</td>
+                <td>${carport.details}</td>
+                
+
+            </tr>
         </table>
-        <%= carports %>
-      
+        
+   
                 </br>
-                <INPUT TYPE=submit name="slet" value="remove">
+              
+                <form>
+                    <button name="command" value="emptyCart">Empty Cart</button>
+                </form>
+                
     </div>
 
 

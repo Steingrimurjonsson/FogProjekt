@@ -213,7 +213,7 @@ public class CalculateCarportCommand extends Command
         catch (Exception e){
         request.setAttribute("message", e.getMessage());
         }
-        return "calculatedCarport";
+        return "cart";
     }
         
 
