@@ -99,8 +99,9 @@
                                 <th> <%= element.getRoofSlope()  %> </th> 
                                 <th> <%= element.getShedLength()  %> </th> 
                                 <th> <%= element.getShedWidth()  %> </th> 
-                                  <th> <a href="jsp/showorder.jsp?orderID=<%=element.getOrderID()%>">See Order Details</a> </th>
+
                                 </th>
+                                
                                 <%}%>
                             </tr>
 
