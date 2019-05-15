@@ -49,12 +49,12 @@
 </nav>
     <div id="leftBar">
         <nav id="home">
-            <a href=".">Home</a>
+            <a href=".">Forside</a>
         </nav>
-     <nav id="shop"><a class="cartbutton" href="jsp/cart.jsp">Cart</a> </nav>
+     <nav id="shop"><a class="cartbutton" href="jsp/cart.jsp">Kurv</a> </nav>
            
              <nav id="Carport">
-            <a href="jsp/carport.jsp"> Custom Carports </a>
+            <a href="jsp/carport.jsp"> Carporte på Mål </a>
             
                
         </nav>
@@ -64,24 +64,24 @@
     <div id ="rightBar">
             <% if(user == null){%>
             <nav id="user">
-                 <a href="jsp/login.jsp">Login/Register</a>
+                 <a href="jsp/login.jsp">Login/Registrering</a>
             <% }else {%>
            
             <nav id="user">
                   <form name="customerpage" action="FrontController" method="post">
-                <button style=" border:none; background: #333;" value="customerpage" name="command" type="submit"/><%= username %>'s Customer Page</button>
+                <button style=" border:none; background: #333;" value="customerpage" name="command" type="submit"/><%= username %>'s Kundeside</button>
             </form>
            
               <nav id="logout">
             <form name="logout" action="FrontController" method="post">
-                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
+                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Logout</button>
             </form>
                       <%} 
 
         if (role.equals("admin")) {%>
 
             <form name="admin" action="FrontController" method="post">
-                <button style=" border:none; background: #333;" value="admin" name="command" type="submit"/>Admin Page</button>
+                <button style=" border:none; background: #333;" value="admin" name="command" type="submit"/>Admin Side</button>
             </form>
             <% }else {%>
             
