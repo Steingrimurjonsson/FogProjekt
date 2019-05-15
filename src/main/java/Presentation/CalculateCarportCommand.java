@@ -54,9 +54,32 @@ public class CalculateCarportCommand extends Command
         int woodSidePrice = 15;   
         int woodRoofPrice = 20;
         
-        int roofStonePrice = 100;
-        int roofPlastPrice = 75;
+        int roofStonePrice = 15;
+        int roofPlastPrice = 50;
+        
+        
 
+        //DEAFULT AMOUNTS
+        //IF SHED
+        //int doorHinge = 2; 
+        //int door = 1;
+        //int doorHandle = 1;
+        //int woodSide = 15;  
+        //woodRoof = woodRoof + 2;
+        //roofScrew = roofScrew + 2;
+        //screw = screw + 50;
+        //post = post + 2;
+        
+        
+        int roofScrew = 8;
+        int screw = 12;
+        
+        int post = 4;
+        int woodSide = 0;
+        int woodRoof = 4;
+        
+        int roofStone = 0;
+        int roofPlast = 0;
         
         
         
@@ -76,14 +99,14 @@ public class CalculateCarportCommand extends Command
         //IF THERE IS NO SLOPE THEN 
         if(roofText == null){
                 roofMat = "Plasttrapezplader";
-                roofMatPrice = 500;
+                roofPlast = 5;
         }
         else
         {
                 int roof = Integer.parseInt(roofText);
                 roofSlope = roof;
                 roofMat = request.getParameter("Tag");
-                roofMatPrice = 600;
+                roofStone = 30;
         }
         
         //SHED CAL
@@ -109,99 +132,163 @@ public class CalculateCarportCommand extends Command
         wood planks for shed + a bit extra side?
         wood side planks 
         
-        
+     
        */
-        
-        
-        //WOOD
-        int post = 4;
-        int woodRoof = 4;
-        
-        //SCREWS
-        int roofScrews = 12;
-        int screws = 12;
-        
-        //SHED CALC
-        if(shed == true){
-            int doorHandle = 1;
-            int hinges = 2;
-            int woodSides = 20;
-            screws = screws + 50;
-            roofScrews = roofScrews + 10;
-            post = post + 4; 
-            woodRoof = woodRoof + 2;
-        }
-        
-        
+     
         
         //DEAFAULT PRICES IN A CARPORT
         int lengthPrice = 0;
         int widthPrice = 0;
-        int shedWidthPrice = 0;
-        int shedLengthPrice = 0;
+  
         
         //CARPORT LENGHT
         if(length > 1 && length < 250){
-             lengthPrice = 500;
+            woodRoof = woodRoof;
+            roofScrew = roofScrew;
+            screw = screw;
+            post = post;
+            roofStone = roofStone;
+            roofPlast = roofPlast;
             
         } else if (length > 250 && length < 500) {
             
-             lengthPrice = 1000;
+            woodRoof = woodRoof + 1;
+            roofScrew = roofScrew + 1;
+            screw = screw + 2;
+            post = post;
+            roofStone = roofStone + 3;
+            roofPlast = roofPlast + 1;
             
         } else if (length > 500 && length < 1000) {
             
-             lengthPrice = 1500;
+            woodRoof = woodRoof + 2;
+            roofScrew = roofScrew + 2;
+            screw = screw + 5;
+            post = post;
+            roofStone = roofStone + 6;
+            roofPlast = roofPlast + 2;
             
         }
         
         //CARPORT WIDTH
         if(width > 1 && width < 250){
             
-             widthPrice = 500;
+            woodRoof = woodRoof;
+            roofScrew = roofScrew;
+            screw = screw;
+            post = post;
+            roofStone = roofStone;
+            roofPlast = roofPlast;
             
         } else if (width > 250 && width < 500) {
             
-             widthPrice = 1000;
+            woodRoof = woodRoof + 1;
+            roofScrew = roofScrew + 1;
+            screw = screw + 2;
+            post = post;
+            roofStone = roofStone + 3;
+            roofPlast = roofPlast + 1;
             
         } else if (width > 500 && width < 1000) {
             
-             widthPrice = 1500;
+            woodRoof = woodRoof + 2;
+            roofScrew = roofScrew + 2;
+            screw = screw + 5;
+            post = post;
+            roofStone = roofStone + 6;
+            roofPlast = roofPlast + 2;
             
         }
         
-         //CARPORT SHED WIDTH
-         if(shedWidth > 1 && shedWidth < 250){
-             
-             shedWidthPrice = 500;
-            
-        } else if (shedWidth > 250 && shedWidth < 500) {
-            
-             shedWidthPrice = 1000;
-            
-        } else if (shedWidth > 500 && shedWidth < 1000) {
-            
-             shedWidthPrice = 1500;
-            
-        }
+   
         
-         //CARPORT SHED LENGHT
-          if(shedLength > 1 && shedLength < 250){
-              
-             shedLengthPrice = 500;
-            
-        } else if (shedLength > 250 && shedLength < 500) {
-            
-             shedWidthPrice = 1000;
-            
-        } else if (shedLength > 500 && shedLength < 1000) {
-            
-             shedLengthPrice = 1500;
-             screws = 1;
+        
+    //SHED CALC
+        int shedPrice = 0;
+        //MAYBE MAKE THE VALUES FOR SHED AND CARPORT DIVED 
+        if(shed == true){
+            int doorHinge = 2; 
+            int door = 1;
+            int doorHandle = 1;
+
+
+                                    //CARPORT SHED WIDTH
+                        if(shedWidth > 1 && shedWidth < 250){
+
+                            woodSide = woodSide+10;
+                            roofStone = roofStone + 2;
+                            roofPlast = roofPlast + 1;
+
+                       } else if (shedWidth > 250 && shedWidth < 500) {
+
+                            woodSide = woodSide+12;
+                            roofStone = roofStone + 3;
+                            roofPlast = roofPlast + 2;
+                       } else if (shedWidth > 500 && shedWidth < 1000) {
+
+                            woodSide = woodSide+15;
+                            roofStone = roofStone + 4;
+                            roofPlast = roofPlast + 3;
+                       }
+
+                        //CARPORT SHED LENGHT
+                         if(shedLength > 1 && shedLength < 250){
+
+                            woodSide = woodSide+10;
+                            roofStone = roofStone + 2;
+                            roofPlast = roofPlast + 1;
+                       } else if (shedLength > 250 && shedLength < 500) {
+
+                            woodSide = woodSide+12;
+                            roofStone = roofStone + 3;
+                            roofPlast = roofPlast + 2;
+                       } else if (shedLength > 500 && shedLength < 1000) {
+
+                            woodSide = woodSide+15;
+                            roofStone = roofStone + 4;
+                            roofPlast = roofPlast + 3;
+                       }
+
+            int woodRoofShed = woodRoof + 2;
+            int roofScrewShed = roofScrew + 2;
+            int screwShed = screw + 50;
+            int postShed = post + 4;
+
+            int doorHingeFPrice = doorHingePrice * doorHinge; 
+            int doorFPrice = doorPrice *door;
+            int doorHandleFPrice = doorHandlePrice *doorHandle;
+
+            int roofScrewFPriceShed = roofScrewPrice *roofScrewShed;
+            int screwFPriceShed = screwPrice *screwShed;
+
+            int postFPriceShed = postPrice *post;
+            int woodSideFPriceShed = woodSidePrice *woodSide;   
+            int woodRoofFPriceShed = woodRoofPrice *woodRoofShed;
+
+            int roofStoneFPriceShed = roofStonePrice;
+            int roofPlastFPriceShed = roofPlastPrice;
+
+            //SHED PRICE
+            shedPrice = doorHingeFPrice + doorFPrice + doorHandleFPrice + roofScrewFPriceShed + screwFPriceShed + postFPriceShed + woodSideFPriceShed + woodRoofFPriceShed + roofStoneFPriceShed + roofPlastFPriceShed;
+
         }
           
-          
+            int roofScrewFPrice = roofScrewPrice *roofScrew;
+            int screwFPrice = screwPrice *screw;
+
+            int postFPrice = postPrice *post;
+            int woodRoofFPrice = woodRoofPrice *woodRoof;
+
+            int roofStoneFPrice = roofStonePrice;
+            int roofPlastFPrice = roofPlastPrice;
         
-          
+            int carportPrice = roofScrewFPrice + screwFPrice + postFPrice + woodRoofFPrice + roofStoneFPrice + roofPlastFPrice;
+
+        //TOTAL PRICE
+        int totalPrice = carportPrice + shedPrice;
+        
+        
+        
         //TOTAL ELEMENTS (ADD IDS FROM MAT LIST)
         /* 
         skruer ()
@@ -213,9 +300,8 @@ public class CalculateCarportCommand extends Command
         */
         
           
-        //TOTAL PRICE
-        int totalPrice = lengthPrice + widthPrice + shedWidthPrice + shedLengthPrice;
         
+       
       
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
