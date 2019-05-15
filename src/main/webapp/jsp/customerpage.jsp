@@ -66,7 +66,7 @@
                         </div>
                                    <h1> LIST OF ORDERS: </h1>
 
-                    <table class="table table-striped">
+                                   <table class="table table-striped" style="float: left ;width: 50%; right: 100%;">
                         <thead>
                             <tr>
                                 <th> OrderID</th>
@@ -78,14 +78,15 @@
                                 <th> Roofslope </th>
                                 <th> Shed Length </th>
                                 <th> Shed Width </th>
-                                
-                                
-                               
+                     
                             </tr>
                         </thead>
 
-                        <% List<Order> orderList = (List<Order>) request.getAttribute("orders");
-                            for (Order element : orderList) {%>
+                           <%  
+                              
+                        List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
+                        
+                            for (Order element : orderByUserIDList) {%>
 
                         <tbody>
                             <tr>
@@ -107,5 +108,6 @@
                            
                         </tbody>
                     </table>
+                         
     </body>
 </html>

@@ -68,7 +68,10 @@
             <% }else {%>
            
             <nav id="user">
-            <a href="jsp/customerpage.jsp"><%= username %>  </a>
+                  <form name="customerpage" action="FrontController" method="post">
+                <button style=" border:none; background: #333;" value="customerpage" name="command" type="submit"/><%= username %>'s Customer Page</button>
+            </form>
+           
               <nav id="logout">
             <form name="logout" action="FrontController" method="post">
                 <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log out</button>
