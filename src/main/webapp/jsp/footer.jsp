@@ -9,7 +9,7 @@
     
    <div id="footer">
        
-    <a id ="footerLink" href ="https://github.com/Steingrimurjonsson/FogProjekt" target="_blank">Project site</a>   
+    <a id ="footerLink" href ="https://github.com/Steingrimurjonsson/FogProjekt" target="_blank">Projektside</a>   
     
    </div>
  

@@ -16,7 +16,6 @@
         username = user.getFirstName().toUpperCase();
         role = user.getRole();
     }
-
 %>
 
 
@@ -64,7 +63,7 @@
     <div id ="rightBar">
             <% if(user == null){%>
             <nav id="user">
-                 <a href="jsp/login.jsp">Login/Registrering</a>
+                 <a href="jsp/login.jsp">Log ind & Registrering</a>
             <% }else {%>
            
             <nav id="user">
@@ -74,7 +73,7 @@
            
               <nav id="logout">
             <form name="logout" action="FrontController" method="post">
-                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Logout</button>
+                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log Ud</button>
             </form>
                       <%} 
 

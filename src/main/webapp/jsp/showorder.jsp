@@ -14,7 +14,7 @@
     <head>
          <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ordreinformation</title>
+        <title>Ordre Specifictioner</title>
 
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
@@ -22,7 +22,7 @@
          %>
     </head>
     <body>        
-        <h1>OrdreDetails</h1>
+        <h1>Ordre Specifikationer</h1>
            <style>
                 table {
                     font-family: arial, sans-serif;
