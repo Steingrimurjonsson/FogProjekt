@@ -35,12 +35,12 @@
     <head>
       <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Customer Info</title>
+        <title>Redigér Kundeinformation</title>
     </head>
     <body> 
         
         <div class="customerInfo" style='padding: 50px'>              
-        <h1>Welcome <%= firstName%> <%= lastName%> here you can edit your information and password</h1> <br>
+        <h1>Velkommen <%= firstName%> <%= lastName%> her kan du redigere information and password</h1> <br>
             
                         <form name="editUser" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="editUser">
@@ -54,28 +54,28 @@
                         Confirm Password: <br>
                         <input type="password" name="password2" value="<%= password%>">
                         <br>
-                         First Name: <br>
+                         Fornavn: <br>
                         <input type="text" name="fname" value="<%= firstName%>">
                         <br>
-                         Last Name: <br>
+                         Efternavn: <br>
                         <input type="text" name="lname" value="<%= lastName%>">
                         <br>
-                         Phone Number: <br>
+                         Telefonnummer: <br>
                         <input type="text" name="phone" value="<%= phone%>">
                         <br>
-                         Street:<br>
+                         Adresse:<br>
                         <input type="text" name="street" value="<%= street%>">
                         <br>
-                         City:<br>
+                         By:<br>
                         <input type="text" name="city" value="<%= city%>">
                         <br>
-                         Zip Code: <br>
+                         Postnummer: <br>
                         <input type="text" name="zip" value="<%= zip%>">
                         <br>
-                         Country: <br>
+                         Land: <br>
                         <input type="text" name="country" value="<%= country%>">
                         <br>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Redigér">
                     </form>
                         
                         
