@@ -127,9 +127,9 @@ public class InvoiceTest  {
     public void testExecute() throws Exception {
         System.out.println("execute");
         HttpServletRequest request = mock(HttpServletRequest.class);
-        HttpServletResponse response = null;
+        HttpServletResponse response = mock(HttpServletResponse.class);
         Invoice instance = invoice;
-        String expResult = "";
+        String expResult = "order";
         String result = instance.execute(request, response);
         assertEquals(expResult, result);
 
