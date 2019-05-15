@@ -282,7 +282,7 @@ public class CalculateCarportCommand extends Command
             int carportPrice = roofScrewFPrice + screwFPrice + postFPrice + woodRoofFPrice + roofStoneFPrice + roofPlastFPrice;
 
         //TOTAL PRICE
-        int totalPrice = carportPrice + shedPrice;
+        double totalPrice = (carportPrice + shedPrice)*1.4;
         
         session.setAttribute("tPrice", totalPrice);
 

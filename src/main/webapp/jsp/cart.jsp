@@ -18,9 +18,9 @@
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
             Carport carport = (Carport) session.getAttribute("carport");
-            int tPrice = 0;
+            double tPrice = 0;
          if(carport != null){
-         tPrice =(int) session.getAttribute("tPrice");
+         tPrice =(double) session.getAttribute("tPrice");
         }
          %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
