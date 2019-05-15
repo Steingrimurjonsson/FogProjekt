@@ -37,14 +37,14 @@
                           if (carport != null) { %>
         <table class ="table table - striped">
             <tr> 
-                <th> Carport Length </th>
-                <th> Carport Width</th>
-                <th> Carport Roof material</th>
-                <th> Carport Roof slope</th>
-                <th> Carport Shed</th>
-                <th> Carport Shed width</th>
-                <th> Carport Shed length</th> 
-                <th> Total Price</th> 
+               <th> Carport Længde </th>
+                <th> Carport Bredde</th>
+                <th> Carport Tagmateriale</th>
+                <th> Carport Taghældning</th>
+                <th> Carport Skur</th>
+                <th> Carport Skur Længde</th> 
+                <th> Carport Skur Bredde</th>
+                <th> Samlet Pris</th> 
              
             </tr>
             <tr>
