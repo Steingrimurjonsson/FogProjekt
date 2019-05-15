@@ -11,7 +11,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-     User user = (User) session.getAttribute("user");
+    User user = (User) session.getAttribute("user");
     request.getAttribute(user.getFirstName());
     request.getAttribute(user.getLastName());
     request.getAttribute(user.getCity());
@@ -21,7 +21,7 @@
     request.getAttribute(user.getZip());
     request.getAttribute(user.getPassword());
     request.getAttribute(user.getEmail());
-    
+
     String firstName = user.getFirstName();
     String lastName = user.getLastName();
     String userEmail = user.getEmail();
@@ -30,83 +30,83 @@
     String city = user.getCity();
     String zip = user.getZip();
     String country = user.getCountry();
-    
-    
+
 
 %>
 
 <!DOCTYPE html>
 <html>
     <head>
-      <jsp:include page='header.jsp'></jsp:include> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Info</title>
-    </head>
-    <body> 
-        
-        <div class="customerInfo" style='padding: 50px'>              
-        <h1>Welcome <%= firstName%> <%= lastName%> here is your information and orders</h1> <br>
-                        Email: <%= userEmail%><br>
-                        <br>
-                         First Name: <%= firstName%><br>
-                        <br>
-                         Last Name: <%= lastName%><br>
-                        <br>
-                         Phone Number: <%= phone%><br>
-                        <br>
-                         Street: <%= street%><br>
-                        <br>
-                         City: <%= city%><br>
-                        <br>
-                         Zip Code: <%= zip%><br>
-                        <br>
-                         Country: <%= country%><br>
-                        <br>
-                        <a href="jsp/editcustomerinfo.jsp">EDIT YOUR INFO HERE</a>
-                        </div>
-                                   <h1> LIST OF ORDERS: </h1>
+        <jsp:include page='header.jsp'></jsp:include> 
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Kundeinformation</title>
+        </head>
+        <body> 
 
-                                   <table class="table table-striped" style="float: left ;width: 50%; right: 100%;">
-                        <thead>
-                            <tr>
-                                <th> OrderID</th>
-                                <th> UserID</th>
-                                <th> Length</th>
-                                <th> Width</th>
-                                <th> Roof Material </th>
-                                <th> Shed </th>
-                                <th> Roofslope </th>
-                                <th> Shed Length </th>
-                                <th> Shed Width </th>
-                                <th> Order Details </th>
-                            </tr>
-                        </thead>
+            <div class="customerInfo" style='padding: 50px'>              
+                <h1>Velkommen <%= firstName%> <%= lastName%> her er din information og ordrehistorik</h1> <br>
+            Email: <%= userEmail%><br>
+            <br>
+            Fornavn: <%= firstName%><br>
+            <br>
+            Efternavn: <%= lastName%><br>
+            <br>
+            Telefonnummer: <%= phone%><br>
+            <br>
+            Adresse: <%= street%><br>
+            <br>
+            By: <%= city%><br>
+            <br>
+            Postnummer: <%= zip%><br>
+            <br>
+            Land: <%= country%><br>
+            <br>
+            <a href="jsp/editcustomerinfo.jsp">Redigér din information her</a>
+        </div>
+        <h1> LIST OF ORDERS: </h1>
 
-                           <%  
-                              
-                        List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
-                        
-                            for (Order element : orderByUserIDList) {%>
+        <table class="table table-striped" style="float: left ;width: 50%; right: 100%;">
+            <thead>
+                <tr>
+                    <th> Ordre ID</th>
+                    <th> Bruger ID</th>
+                    <  <th> Carport Længde </th>
+                    <th> Carport Bredde</th>
+                    <th> Carport Tagmateriale</th>
+                    <th> Carport Taghældning</th>
+                    <th> Carport Skur</th>
+                    <th> Carport Skur Længde</th> 
+                    <th> Carport Skur Bredde</th>
+                    <th> Detaljeret Ordreinformation </th>
+                </tr>
+            </thead>
 
-                        <tbody>
-                            <tr>
-                                <th> <%= element.getOrderID()  %></th>        
-                                <th> <%= element.getUserID() %> </th>  
-                                <th> <%= element.getLength()  %> </th> 
-                                <th> <%= element.getWidth()  %> </th> 
-                                <th> <%= element.getroofMat() %> </th>
-                                <th> <%= element.isShed() %> </th> 
-                                <th> <%= element.getRoofSlope()  %> </th> 
-                                <th> <%= element.getShedLength()  %> </th> 
-                                <th> <%= element.getShedWidth()  %> </th> 
-                                 <th>   <form><input type="hidden" name="id" method="POST" value="<%= element.getOrderID()%>"/><button name="command" value="showOrder">See Order</button></form> </th>    
-                                
-                                <%}%>
-                            </tr>
+            <%
 
-                           
-                        </tbody>
-                    </table>
-                         
+                List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
+
+                               for (Order element : orderByUserIDList)
+                               {%>
+
+            <tbody>
+                <tr>
+                    <th> <%= element.getOrderID()%></th>        
+                    <th> <%= element.getUserID()%> </th>  
+                    <th> <%= element.getLength()%> </th> 
+                    <th> <%= element.getWidth()%> </th> 
+                    <th> <%= element.getroofMat()%> </th>
+                    <th> <%= element.isShed()%> </th> 
+                    <th> <%= element.getRoofSlope()%> </th> 
+                    <th> <%= element.getShedLength()%> </th> 
+                    <th> <%= element.getShedWidth()%> </th> 
+                    <th>   <form><input type="hidden" name="id" method="POST" value="<%= element.getOrderID()%>"/><button name="command" value="showOrder">See Order</button></form> </th>    
+
+                    <%}%>
+                </tr>
+
+
+            </tbody>
+        </table>
+
     </body>
 </html>
