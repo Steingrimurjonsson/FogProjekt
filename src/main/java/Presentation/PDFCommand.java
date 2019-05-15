@@ -59,7 +59,8 @@ public class PDFCommand extends Command{
                 cont.endText();
             }
 
-            doc.save("src/main/webapp/pdf/CarportManual.pdf");
+            doc.save("GitHub/FogProjekt/src/main/webapp/pdf/CarportManual.pdf");
+            System.out.println("PDF created");
         }
     }
 
@@ -67,4 +68,6 @@ public class PDFCommand extends Command{
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 }

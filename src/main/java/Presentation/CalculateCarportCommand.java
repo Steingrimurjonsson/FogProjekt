@@ -43,6 +43,22 @@ public class CalculateCarportCommand extends Command
         
         
         */
+        int doorHingePrice = 5; 
+        int doorPrice = 100;
+        int doorHandlePrice = 20;
+        
+        int roofScrewPrice = 2;
+        int screwPrice = 2;
+        
+        int postPrice = 50;
+        int woodSidePrice = 15;   
+        int woodRoofPrice = 20;
+        
+        int roofStonePrice = 100;
+        int roofPlastPrice = 75;
+
+        
+        
         
         //CARPORT LENGTH + WIDTH + HEIGHT
         int height = 220;
@@ -95,20 +111,27 @@ public class CalculateCarportCommand extends Command
         
         
        */
-        int post = 4;
-        int skruer = 12;
-        int wood = 6;
-       
         
+        
+        //WOOD
+        int post = 4;
+        int woodRoof = 4;
+        
+        //SCREWS
+        int roofScrews = 12;
+        int screws = 12;
+        
+        //SHED CALC
         if(shed == true){
             int doorHandle = 1;
             int hinges = 2;
-            skruer = skruer + 50;
-            post = post + 4; 
-            wood = wood + 2;
             int woodSides = 20;
-           
+            screws = screws + 50;
+            roofScrews = roofScrews + 10;
+            post = post + 4; 
+            woodRoof = woodRoof + 2;
         }
+        
         
         
         //DEAFAULT PRICES IN A CARPORT
@@ -173,7 +196,7 @@ public class CalculateCarportCommand extends Command
         } else if (shedLength > 500 && shedLength < 1000) {
             
              shedLengthPrice = 1500;
-             skruer = 1;
+             screws = 1;
         }
           
           
