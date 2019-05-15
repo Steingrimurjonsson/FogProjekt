@@ -199,10 +199,7 @@ public class CalculateCarportCommand extends Command
             roofPlast = roofPlast + 2;
             
         }
-        
-   
-        
-        
+
     //SHED CALC
         int shedPrice = 0;
         //MAYBE MAKE THE VALUES FOR SHED AND CARPORT DIVED 
@@ -287,22 +284,7 @@ public class CalculateCarportCommand extends Command
         //TOTAL PRICE
         int totalPrice = carportPrice + shedPrice;
         
-        
-        
-        //TOTAL ELEMENTS (ADD IDS FROM MAT LIST)
-        /* 
-        skruer ()
-        post
-        wood (check how much based on their pdf)
-        tag
-        IF SHED door
-        
-        */
-        
-          
-        
-       
-      
+
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
