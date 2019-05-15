@@ -37,14 +37,14 @@
                           if (carport != null) { %>
         <table class ="table table - striped">
             <tr> 
-                <th> Carport Length </th>
-                <th> Carport Width</th>
-                <th> Carport Roof material</th>
-                <th> Carport Roof slope</th>
-                <th> Carport Shed</th>
-                <th> Carport Shed width</th>
-                <th> Carport Shed length</th> 
-                <th> Total Price</th> 
+               <th> Carport Længde </th>
+                <th> Carport Bredde</th>
+                <th> Carport Tagmateriale</th>
+                <th> Carport Taghældning</th>
+                <th> Carport Skur</th>
+                <th> Carport Skur Længde</th> 
+                <th> Carport Skur Bredde</th>
+                <th> Samlet Pris</th> 
              
             </tr>
             <tr>
@@ -68,9 +68,9 @@
                                <form>
                       <%       
                           if (user != null) { %>
-                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
+                            <button onclick="javascript:alert('Vi sender dig en e-mail med ordre specifikationerne. Du kan også se dem på din kundeside');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                            <%  } else { %>
-                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
+                          <button onclick="javascript:alert('Vær venlig at lave en bruger eller log ind for at lave en ordre');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                               <% } %>
                     
                 </form>
