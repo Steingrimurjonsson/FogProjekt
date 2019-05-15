@@ -47,7 +47,7 @@ public class CreateOrderCommand extends Command
         Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
             
         }
-         session.removeAttribute("carport");
+         session.removeAttribute("carport"+"tPrice");
         }
         catch (Exception e){
         request.setAttribute("message", e.getMessage());

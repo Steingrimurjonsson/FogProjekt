@@ -284,7 +284,7 @@ public class CalculateCarportCommand extends Command
         //TOTAL PRICE
         int totalPrice = carportPrice + shedPrice;
         
-        request.setAttribute("message", "Total price=" + totalPrice);
+        session.setAttribute("tPrice", totalPrice);
 
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
