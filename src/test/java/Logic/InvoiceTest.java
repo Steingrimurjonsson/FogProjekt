@@ -14,6 +14,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.Mockito.*;
+
+
 
 /**
  *
@@ -116,10 +122,8 @@ public class InvoiceTest  {
         instance.setPrice(price);
     }
 
-    /**
-     * Test of execute method, of class Invoice.
-     */
-//    @Test TODO SPØRG ANDERS. BRUG MOCKITO
+    
+  // @Test TODO SPØRG ANDERS. BRUG MOCKITO
 //    public void testExecute() throws Exception {
 //        System.out.println("execute");
 //        HttpServletRequest request = mockHttpServletRequest.class;
@@ -128,7 +132,7 @@ public class InvoiceTest  {
 //        String expResult = "";
 //        String result = instance.execute(request, response);
 //        assertEquals(expResult, result);
-//
-//    }
+
+   // }
     
 }
