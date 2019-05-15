@@ -63,7 +63,7 @@
     <div id ="rightBar">
             <% if(user == null){%>
             <nav id="user">
-                 <a href="jsp/login.jsp">Login/Registrering</a>
+                 <a href="jsp/login.jsp">Log ind & Registrering</a>
             <% }else {%>
            
             <nav id="user">

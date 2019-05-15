@@ -17,7 +17,7 @@
         <div id="loginStyle" align="center">
                <h1>Log ind eller lav en bruger</h1>
     <div id="loginStyle" style="margin-bottom: 20px; min-height: 230px">
-            <h3>Log Ind</h3>
+            <h3>Log ind</h3>
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="login"><br>
                         <input type="text" name="email" placeholder="E-mail" required><br>
