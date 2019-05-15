@@ -17,7 +17,7 @@
           <div id="index">
       <img src="img/foglogok.png" alt="fog" width="500" height="500">
       <br>
-      <h1>Velkommen til Fog <br>Her kan du bestille carporte på mål</h1>
+      <h1>Velkommen til Fog <br>Her kan du bestille carporte på dine egne mål</h1>
 </div>
     </body>
     <jsp:include page='jsp/footer.jsp'></jsp:include>
