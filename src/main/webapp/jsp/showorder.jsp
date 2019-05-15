@@ -14,7 +14,7 @@
     <head>
          <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Order Details</title>
+        <title>Ordreinformation</title>
 
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
@@ -22,7 +22,7 @@
          %>
     </head>
     <body>        
-        <h1>Order Details</h1>
+        <h1>OrdreDetails</h1>
            <style>
                 table {
                     font-family: arial, sans-serif;
@@ -42,13 +42,13 @@
             </style>        
      <table class ="table table - striped">
             <tr> 
-                <th> Carport Length </th>
-                <th> Carport Width</th>
-                <th> Carport Roof material</th>
-                <th> Carport Roof slope</th>
-                <th> Carport Shed</th>
-                <th> Carport Shed length</th> 
-                <th> Carport Shed width</th>
+                <th> Carport Længde </th>
+                <th> Carport Bredde</th>
+                <th> Carport Tagmateriale</th>
+                <th> Carport Taghældning</th>
+                <th> Carport Skur</th>
+                <th> Carport Skur Længde</th> 
+                <th> Carport Skur Bredde</th>
              
             </tr>
             <tr>
