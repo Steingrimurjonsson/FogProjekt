@@ -16,7 +16,6 @@
         username = user.getFirstName().toUpperCase();
         role = user.getRole();
     }
-
 %>
 
 

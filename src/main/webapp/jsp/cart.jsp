@@ -64,13 +64,13 @@
                     
                 <form>
                      
-                             <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Empty Cart</button>
+                             <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Tøm Kurv</button>
                                <form>
                       <%       
                           if (user != null) { %>
-                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Confirm Purchase</button>
+                            <button onclick="javascript:alert('We send you an email with the order details. You can also see your order in your customer page');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                            <%  } else { %>
-                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Confirm Purchase</button>
+                          <button onclick="javascript:alert('Please login or make an account to make an order');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                               <% } %>
                     
                 </form>
