@@ -90,7 +90,7 @@
 
                         <tbody>
                             <tr>
-                                <th> <%= element.getOrderID()  %> </th>        
+                                <th> <%= element.getOrderID()  %><form><button name="command" value="showorder">See Order</button></form> </th>        
                                 <th> <%= element.getUserID() %> </th>  
                                 <th> <%= element.getLength()  %> </th> 
                                 <th> <%= element.getWidth()  %> </th> 
