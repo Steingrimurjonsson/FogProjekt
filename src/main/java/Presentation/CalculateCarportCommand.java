@@ -105,8 +105,15 @@ public class CalculateCarportCommand extends Command
         {
                 int roof = Integer.parseInt(roofText);
                 roofSlope = roof;
+                if(roofSlope > 1 && roofSlope < 25){
+                    roofStone = 30;
+                } else if(roofSlope > 26 && roofSlope < 35){
+                    roofStone = 40;
+                } else if(roofSlope > 36 && roofSlope < 45){
+                    roofStone = 50;
+                }
                 roofMat = request.getParameter("Tag");
-                roofStone = 30;
+                
         }
         
         //SHED CAL
@@ -202,11 +209,14 @@ public class CalculateCarportCommand extends Command
 
     //SHED CALC
         int shedPrice = 0;
+        int doorHinge = 0; 
+        int door = 0;
+        int doorHandle = 0;
         //MAYBE MAKE THE VALUES FOR SHED AND CARPORT DIVED 
         if(shed == true){
-            int doorHinge = 2; 
-            int door = 1;
-            int doorHandle = 1;
+            doorHinge = 2; 
+            door = 1;
+            doorHandle = 1;
 
 
                                     //CARPORT SHED WIDTH
@@ -282,10 +292,14 @@ public class CalculateCarportCommand extends Command
             int carportPrice = roofScrewFPrice + screwFPrice + postFPrice + woodRoofFPrice + roofStoneFPrice + roofPlastFPrice;
 
         //TOTAL PRICE
-        double totalPrice = (carportPrice + shedPrice)*1.4;
+        double totalPrice = Math.round((carportPrice + shedPrice)*1.4);
         
         session.setAttribute("tPrice", totalPrice);
-
+        
+    
+        //MaterialList matList = new MaterialList(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        
+        
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
