@@ -19,6 +19,7 @@ public class ShowOrderCommand extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+
       //  int idUser = ((User) request.getSession().getAttribute("user")).getId();
          int idOrder = Integer.parseInt(request.getParameter("id"));
          request.setAttribute("id", idOrder);
@@ -26,7 +27,8 @@ public class ShowOrderCommand extends Command
          request.setAttribute("order", LogicFacade.specificOrder(idOrder));
  
 
-        return "showorder";
+
+        return "showOrder";
 
     }
 }

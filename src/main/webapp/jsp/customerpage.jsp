@@ -99,8 +99,7 @@
                                 <th> <%= element.getRoofSlope()  %> </th> 
                                 <th> <%= element.getShedLength()  %> </th> 
                                 <th> <%= element.getShedWidth()  %> </th> 
-                                <th>   <form><input type="hidden" name="id" value="<%= element.getOrderID()  %>"/><button name="command" value="showOrder">See Order</button></form> </th> 
-                                   
+
                                 </th>
                                 
                                 <%}%>

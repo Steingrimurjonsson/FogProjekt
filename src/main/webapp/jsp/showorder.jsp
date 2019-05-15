@@ -15,6 +15,7 @@
          <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Order Details</title>
+
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
         {
@@ -70,5 +71,6 @@
                           
         </table>
                             </div>
+
     </body>
 </html>
