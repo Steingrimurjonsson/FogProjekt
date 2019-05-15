@@ -10,7 +10,7 @@
     <head>
       <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Carport Flat</title>
+        <title>Carport med Fladt Tag</title>
     </head>
     <body>
         <div>
@@ -18,9 +18,9 @@
  
 <div class="xhtml-string">
 	<h3><img style="float: right; margin-left: 10px;" alt="" src="/globalassets/service/quickbyg/quickurejs.gif" height="87" width="165" class="img-responsive">Quick-Byg tilbud - carport med fladt tag</h3>
-<p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.</p>
-<p>Tilbud og skitsetegning fremsendes med post hurtigst muligt.<br>Ved bestilling medfølger standardbyggevejledning.</p>
-<p><strong>Fill the fields under and click on "Add to cart"</strong></p>
+<p>Carport med fladt tag kommer med plastiktag.</p>
+<p>Ved bestilling medfølger standardbyggevejledning.</p>
+<p><strong>Udfyld alle felter og klik "Udregn pris & tilføj til kurv"</strong></p>
 </div></div>
         <div>
 
@@ -30,7 +30,7 @@
             <div class="form-group">
             <div class="col-md-12 col-xs-12">
             <span>
-            Ønsket carport mål:
+            Ønskede carport mål:
             </span>
             </div>
             </div>
@@ -39,7 +39,7 @@
             
 
 <label title="width" for="Input_1001409807">
-    Carport width
+    Carport Bredde
 </label>
 <form action ="FrontController" method = "POST">
 <select class="form-control" id="Input_1001409807" name="width" title="width">
@@ -72,7 +72,7 @@
             
 
 <label title="length" for="Input_1001409807">
-    Carport length
+    Carport Længde
 </label>
 <select class="form-control" id="Input_1001409807" name="length" title="length"><option selected="selected" value="">Vælg længde</option>
 <option value="240">240 cm</option>
@@ -173,7 +173,7 @@
 <option value="690">690 cm</option>
 </select>
 
-              <button name="command" value="calculate"> Add to cart</button>
+              <button name="command" value="calculate">Udregn pris & tilføj til kurv</button>
   </form>      </div>
     </div>
 </div>

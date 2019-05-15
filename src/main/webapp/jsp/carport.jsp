@@ -51,7 +51,7 @@ Klik her for at lave en carport med fladt tag <a href="jsp/carportFlat.jsp"><br>
   </div>
   <div class="column" style="background-color:#bbb;">
        <p style="padding-left: 20px; font-size: 20px">
-Click here for a carport with sloped roof <a href="jsp/carportSlope.jsp"><br>
+Klik her for at lave en carport med rejst tag<a href="jsp/carportSlope.jsp"><br>
 <img alt="slope" src="./img/slope.gif" width="200" height="200">
 </a>
 </p>

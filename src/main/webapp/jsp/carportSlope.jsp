@@ -14,10 +14,10 @@
     </head>
     <body>
 <div class="xhtml-string">
-	<h3><img style="float: right; margin-left: 10px;" alt="" src="/globalassets/service/quickbyg/quickmrejs.gif" height="87" width="165" class="img-responsive">Quick-Byg tilbud - carport med rejsning</h3>
-<p><span>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram.</span></p>
-<p>Tilbud og skitsetegning fremsendes med post hurtigst muligt.<br>Standardbyggevejledning medfølger ved bestilling.</p>
-<p><strong>Udfyld nedenstående omhyggeligt og klik på "Bestil tilbud"</strong><br>Felter markeret * SKAL udfyldes!</p>
+	<h3><img style="float: right; margin-left: 10px;" alt="" src="/globalassets/service/quickbyg/quickmrejs.gif" height="87" width="165" class="img-responsive">Quick-Byg tilbud - carport med rejst tag</h3>
+<p><span>Forskellige tagmaterialer kan vælges til carporte med rejst tag</span></p>
+<p>Standardbyggevejledning medfølger ved bestilling.</p>
+<p><strong>Udfyld alle felter og klik "Udregn pris & tilføj til kurv"</strong><br></p>
 </div>
         
         
@@ -30,7 +30,7 @@
             <div class="form-group">
             <div class="col-md-12 col-xs-12">
             <span>
-            Ønsket carport mål:
+            Ønskede carport mål:
             </span>
             </div>
             </div>
@@ -215,7 +215,7 @@
 <option value="660">660 cm</option>
 <option value="690">690 cm</option>
 </select>
-  <button name="command" value="calculate">Add to cart</button>
+  <button name="command" value="calculate">Udregn pris & tilføj til kurv/button>
   </form>
             </form>        </div>
     </div>
