@@ -6,9 +6,6 @@
 package Presentation;
 
 import Logic.LogicFacade;
-import Logic.Order;
-import Logic.User;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,13 +19,12 @@ public class ShowOrderCommand extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
-        int idUser = ((User) request.getSession().getAttribute("user")).getId();
-        int orderId = request.setAttribute("orderID");
-        
-        request.setAttribute("orders", orderByUserIDList);
-
-        List<Order> orderByUserIDList = LogicFacade.getAllOrdersByUserID(idUser);
-        request.setAttribute("orders", orderByUserIDList);
+      //  int idUser = ((User) request.getSession().getAttribute("user")).getId();
+         int idOrder = Integer.parseInt(request.getParameter("id"));
+         request.setAttribute("id", idOrder);
+         LogicFacade.specificOrder(idOrder);
+         request.setAttribute("order", LogicFacade.specificOrder(idOrder));
+ 
 
         return "showorder";
 
