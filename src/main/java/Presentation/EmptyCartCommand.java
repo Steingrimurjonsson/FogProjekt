@@ -24,11 +24,9 @@ public class EmptyCartCommand extends Command
         try
         {
         HttpSession session = request.getSession();
-  
-        
-        
-        session.removeAttribute("carport");
-       
+
+       session.removeAttribute("carport");
+       session.removeAttribute("tPrice");
         }
         catch (Exception e){
         request.setAttribute("message", e.getMessage());

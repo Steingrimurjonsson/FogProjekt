@@ -18,16 +18,23 @@
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
             Carport carport = (Carport) session.getAttribute("carport");
+            int tPrice = 0;
+         if(carport != null){
+         tPrice =(int) session.getAttribute("tPrice");
+        }
          %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
 <body>
+
 <div class ="padding">
     <div>
-        <h4> Your cart ${user.firstName}</h4>
+        <h4> Din kurv ${user.firstName}</h4>
       <br>
         <br/>
+        <%       
+                          if (carport != null) { %>
         <table class ="table table - striped">
             <tr> 
                 <th> Carport Length </th>
@@ -37,6 +44,7 @@
                 <th> Carport Shed</th>
                 <th> Carport Shed width</th>
                 <th> Carport Shed length</th> 
+                <th> Total Price</th> 
              
             </tr>
             <tr>
@@ -47,6 +55,7 @@
                 <td>${carport.shed}</td>          
                 <td>${carport.shedLength}</td>
                 <td>${carport.shedWidth}</td>
+                <td><%= tPrice %></td>
                 
             </tr>
         </table>
@@ -54,8 +63,7 @@
             
                     
                 <form>
-                      <%       
-                          if (carport != null) { %>
+                     
                              <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Empty Cart</button>
                                <form>
                       <%       
@@ -139,7 +147,7 @@
                 
             </div>
                              <%  } else { %>
-                             <h1>Make your own carport here  <a href="jsp/carport.jsp">Custom Carports</a></h1>
+                             <h1>Din kurv er tom lav en carport her  <a href="jsp/carport.jsp">Carport på mål</a></h1>
                            
                               <% } %>
                 </form>
