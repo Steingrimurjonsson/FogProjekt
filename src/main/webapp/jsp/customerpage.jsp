@@ -78,7 +78,7 @@
                                 <th> Roofslope </th>
                                 <th> Shed Length </th>
                                 <th> Shed Width </th>
-                     
+                                <th> Order Details </th>
                             </tr>
                         </thead>
 
@@ -90,7 +90,7 @@
 
                         <tbody>
                             <tr>
-                                <th> <%= element.getOrderID()  %><form><button name="command" value="showorder">See Order</button></form> </th>        
+                                <th> <%= element.getOrderID()  %></th>        
                                 <th> <%= element.getUserID() %> </th>  
                                 <th> <%= element.getLength()  %> </th> 
                                 <th> <%= element.getWidth()  %> </th> 
@@ -99,8 +99,7 @@
                                 <th> <%= element.getRoofSlope()  %> </th> 
                                 <th> <%= element.getShedLength()  %> </th> 
                                 <th> <%= element.getShedWidth()  %> </th> 
-                                   
-                                   
+                                  <th> <a href="showorder.jsp?orderID=<%=element.getOrderID()%>">See Order Details</a> </th>
                                 </th>
                                 <%}%>
                             </tr>

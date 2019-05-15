@@ -4,6 +4,7 @@
     Author     : NoellZane
 --%>
 
+<%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
 <%@page import="java.util.List"%>
 <%@page import="Logic.Order"%>
@@ -13,7 +14,12 @@
     <head>
          <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Order History</title>
+        <title>Order Details</title>
+         <%  User user = (User) session.getAttribute("user");
+            Order orderText= (Order) request.getAttribute("orderID");
+            order = Integer.parseInt(orderText);	
+           LogicFacade.specificOrder(order);
+         %>
     </head>
     <body>        
         <h1>Order History</h1>
@@ -34,55 +40,28 @@
                     background-color: #dddddd;
                 }
             </style>        
-            <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th> OrderID</th>
-                                <th> UserID</th>
-                                <th> Length</th>
-                                <th> Width</th>
-                                <th> Roof Material </th>
-                                <th> Shed </th>
-                                <th> Roofslope </th>
-                                <th> Shed Length </th>
-                                <th> Shed Width </th>
-                                
-                                
-                               
-                            </tr>
-                        </thead>
-
-                        <%  
-                              
-                        List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
-                        
-                            for (Order element : orderByUserIDList) {%>
-
-                        <tbody>
-                            <tr>
-                                <th> <%= element.getOrderID()  %> </th>        
-                                <th> <%= element.getUserID() %> </th>  
-                                <th> <%= element.getLength()  %> </th> 
-                                <th> <%= element.getWidth()  %> </th> 
-                                <th> <%= element.getroofMat() %> </th>
-                                <th> <%= element.isShed() %> </th> 
-                                <th> <%= element.getRoofSlope()  %> </th> 
-                                <th> <%= element.getShedLength()  %> </th> 
-                                <th> <%= element.getShedWidth()  %> </th> 
-                                   
-                                   
-                                </th>
-                                <%}%>
-                            </tr>
-
-                           
-                        </tbody>
-                    </table>
-</table>
-
-                            
-                            
-                            
+     <table class ="table table - striped">
+            <tr> 
+                <th> Carport Length </th>
+                <th> Carport Width</th>
+                <th> Carport Roof material</th>
+                <th> Carport Roof slope</th>
+                <th> Carport Shed</th>
+                <th> Carport Shed width</th>
+                <th> Carport Shed length</th> 
+             
+            </tr>
+            <tr>
+                <td>${order.length}</td>
+                <td>${order.width}</td>
+                <td>${order.roofMat}</td>
+                <td>${order.roofSlope}</td>
+                <td>${order.shed}</td>          
+                <td>${order.shedLength}</td>
+                <td>${order.shedWidth}</td>
+                
+            </tr>
+        </table>
                             </div>
     </body>
 </html>

@@ -23,6 +23,9 @@ public class ShowOrderCommand extends Command
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         int idUser = ((User) request.getSession().getAttribute("user")).getId();
+        int orderId = request.setAttribute("orderID");
+        
+        request.setAttribute("orders", orderByUserIDList);
 
         List<Order> orderByUserIDList = LogicFacade.getAllOrdersByUserID(idUser);
         request.setAttribute("orders", orderByUserIDList);
