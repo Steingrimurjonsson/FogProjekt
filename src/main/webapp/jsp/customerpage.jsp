@@ -77,7 +77,7 @@
                     <th> Carport Skur</th>
                     <th> Carport Skur Længde</th> 
                     <th> Carport Skur Bredde</th>
-                    <th> Ordrer Specifikationer </th>
+                    <th> Ordre Specifikationer </th>
                 </tr>
             </thead>
 
