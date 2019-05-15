@@ -11,17 +11,21 @@ import javax.servlet.http.HttpSession;
  The purpose of LoginCommand is to...
 
  @author kasper
- */
+ */ 
 public class LoginCommand extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException, Exception {
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
         User user = LogicFacade.login( email, password );
         HttpSession session = request.getSession();
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
+        //            int idUser = ((User) request.getSession().getAttribute("user")).getId();
+
+    //    List<Order> orderByUserList =  LogicFacade.getAllOrdersByUserID(idUser);
+      //    session.setAttribute("ordersByUser", orderByUserList);
         return "../index";
     }
 

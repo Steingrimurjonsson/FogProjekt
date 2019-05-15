@@ -7,7 +7,7 @@
 <%@page import="java.util.List"%>
 <%@page import="Logic.Order"%>
 <%@page import="Logic.User"%>
-
+<%@page import="Logic.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
