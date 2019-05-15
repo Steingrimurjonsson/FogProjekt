@@ -13,7 +13,7 @@
         <title>Carport Slope</title>
     </head>
     <body>
-<div class="xhtml-string">
+<div class="xhtml-string" style="margin-left: 15px;">
 	<h3><img style="float: right; margin-left: 10px;" alt="" src="/globalassets/service/quickbyg/quickmrejs.gif" height="87" width="165" class="img-responsive">Quick-Byg tilbud - carport med rejst tag</h3>
 <p><span>Forskellige tagmaterialer kan vælges til carporte med rejst tag</span></p>
 <p>Standardbyggevejledning medfølger ved bestilling.</p>
