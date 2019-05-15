@@ -70,14 +70,14 @@
                 <tr>
                     <th> Ordre ID</th>
                     <th> Bruger ID</th>
-                    <  <th> Carport Længde </th>
+                    <th> Carport Længde </th>
                     <th> Carport Bredde</th>
                     <th> Carport Tagmateriale</th>
                     <th> Carport Taghældning</th>
                     <th> Carport Skur</th>
                     <th> Carport Skur Længde</th> 
                     <th> Carport Skur Bredde</th>
-                    <th> Detaljeret Ordreinformation </th>
+                    <th> Ordrer Specifikationer </th>
                 </tr>
             </thead>
 
@@ -85,8 +85,8 @@
 
                 List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
 
-                               for (Order element : orderByUserIDList)
-                               {%>
+                for (Order element : orderByUserIDList)
+                {%>
 
             <tbody>
                 <tr>

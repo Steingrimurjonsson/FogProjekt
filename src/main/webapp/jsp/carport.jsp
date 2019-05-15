@@ -35,7 +35,7 @@
         </style>
     </head>
     <body>
-        <h1>Choose carport type</h1>
+        <h1>Vælg carport type</h1>
         
     
 
@@ -44,7 +44,7 @@
 <div class="row">
   <div class="column" style="background-color:#aaa;">
        <p style="padding-left: 30px; font-size: 20px">
-Click here for a carport with flat roof <a href="jsp/carportFlat.jsp"><br>
+Klik her for at lave en carport med fladt tag <a href="jsp/carportFlat.jsp"><br>
 <img alt="flat" src="./img/flat.gif" width="200" height="200">
 </a>
 </p>
