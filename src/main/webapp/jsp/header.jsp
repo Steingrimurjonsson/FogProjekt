@@ -73,7 +73,7 @@
            
               <nav id="logout">
             <form name="logout" action="FrontController" method="post">
-                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Logout</button>
+                <button value="logout" name="command" class ="button" id="logoutbutton" type="submit"/>Log Ud</button>
             </form>
                       <%} 
 
