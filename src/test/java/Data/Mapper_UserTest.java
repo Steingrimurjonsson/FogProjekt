@@ -22,8 +22,8 @@ import static org.junit.Assert.*;
 public class Mapper_UserTest {
 
   private static Connection testConnection;
-    private static String USER = "testinguser";
-    private static String USERPW = "try1try2tryAgain";
+    private static String USER = "Local instance MySQL Router";
+    private static String USERPW = "60459794i";
     private static String DBNAME = "useradminTest";
     private static String HOST = "167.99.209.146";
 

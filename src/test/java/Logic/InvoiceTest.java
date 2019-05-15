@@ -123,16 +123,16 @@ public class InvoiceTest  {
     }
 
     
-  // @Test TODO SPØRG ANDERS. BRUG MOCKITO
-//    public void testExecute() throws Exception {
-//        System.out.println("execute");
-//        HttpServletRequest request = mockHttpServletRequest.class;
-//        HttpServletResponse response = null;
-//        Invoice instance = invoice;
-//        String expResult = "";
-//        String result = instance.execute(request, response);
-//        assertEquals(expResult, result);
+   @Test
+    public void testExecute() throws Exception {
+        System.out.println("execute");
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        HttpServletResponse response = null;
+        Invoice instance = invoice;
+        String expResult = "";
+        String result = instance.execute(request, response);
+        assertEquals(expResult, result);
 
-   // }
+    }
     
 }
