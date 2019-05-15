@@ -135,7 +135,7 @@
 
             </tbody>
         </table>
-        
+                <form><button name="command" value="createPDF" >Create PDF</button></form>
     </body>
 </html>
 

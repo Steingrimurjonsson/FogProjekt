@@ -19,7 +19,8 @@ abstract class Command {
         commands.put( "editUser", new EditCommand());
         commands.put( "admin", new AdminCommand() );
         commands.put( "emptyCart", new EmptyCartCommand() );
-            commands.put( "createOrder", new CreateOrderCommand() );
+        commands.put( "createOrder", new CreateOrderCommand() );
+        commands.put( "createPDF", new PDFCommand() );
     }
 
     static Command from( HttpServletRequest request ) {
