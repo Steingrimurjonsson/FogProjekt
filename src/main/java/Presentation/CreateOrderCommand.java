@@ -7,6 +7,7 @@ package Presentation;
 
 import Data.Carport;
 import Data.OrderDetails;
+import Logic.Invoice;
 import Logic.LogicFacade;
 import Logic.Order;
 import Logic.OrderException;
@@ -62,6 +63,12 @@ public class CreateOrderCommand extends Command
 
         OrderDetails orderDetails = LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
+        Invoice invoice = (Invoice) session.getAttribute("invoice");
+        double totalPrice = invoice.getTotalPrice(); 
+        Invoice invoice = LogicFacade.createInvoice(idOrder, totalPrice);
+
+        
+        
         }
        session.removeAttribute("carport");
        session.removeAttribute("tPrice");

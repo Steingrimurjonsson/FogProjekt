@@ -10,6 +10,7 @@ import Data.MaterialList;
 import Data.Cart;
 import Data.OrderDetails;
 import Logic.Calculator;
+import Logic.Invoice;
 import Logic.OrderException;
 import java.util.ArrayList;
 import java.util.List;
@@ -292,8 +293,8 @@ public class CalculateCarportCommand extends Command
         OrderDetails orderD = new OrderDetails(idOrder ,doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
         session.setAttribute("orderDetails", orderD);
         
-        //Invoice invoice = new OrderDetails(idOrder ,doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
-        //session.setAttribute("orderDetails", orderD);
+        Invoice invoice = new Invoice(idOrder ,totalPrice);
+        session.setAttribute("invoice", invoice);
         
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
