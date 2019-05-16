@@ -61,13 +61,13 @@ public class CreateOrderCommand extends Command
         int roofStone = orderD.getRoofStone(); 
         int roofPlast = orderD.getRoofPlast(); 
 
-        OrderDetails orderDetails = LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
         Invoice invoiceD = (Invoice) session.getAttribute("invoice");
         
         double totalPrice = invoiceD.getPrice(); 
         
-        Invoice invoice = LogicFacade.createInvoice(idOrder, totalPrice);
+        LogicFacade.createInvoice(idOrder, totalPrice);
 
         
         
