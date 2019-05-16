@@ -1,7 +1,7 @@
 package Presentation;
 
 import Logic.LogicFacade;
-import Logic.LoginSampleException;
+import Logic.CustomerException;
 import Logic.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class LoginCommand extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException, Exception {
+    String execute( HttpServletRequest request, HttpServletResponse response ) throws CustomerException, Exception {
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
         User user = LogicFacade.login( email, password );

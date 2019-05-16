@@ -1,7 +1,7 @@
 package Presentation;
 
 import Logic.LogicFacade;
-import Logic.LoginSampleException;
+import Logic.CustomerException;
 import Logic.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class EditCommand extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+        String execute( HttpServletRequest request, HttpServletResponse response ) throws CustomerException {
         
         String email = request.getParameter( "email" );
         String password1 = request.getParameter( "password1" );

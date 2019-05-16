@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import Logic.Order;
+import Logic.OrderException;
 import java.sql.Statement;
 
 /**
@@ -22,7 +23,7 @@ import java.sql.Statement;
 public class OrderMapper
 {
 
-    public static void createOrder(Order order) throws Exception
+    public static void createOrder(Order order) throws OrderException
     {
         try
         {
@@ -45,11 +46,11 @@ public class OrderMapper
             int id = ids.getInt(1);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new Exception(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
     }
 
-    public static List<Invoice> getInvoice(int idUser) throws Exception
+    public static List<Invoice> getInvoice(int idUser) throws OrderException
     {
         List<Invoice> list;
         try
@@ -73,13 +74,13 @@ public class OrderMapper
 
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new Exception(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
 
     }
     //This is not ready yet, it's just a draft of what orderlist COULD look like. Will edit once we decide on order structure
 
-    public static List<Order> allOrders() throws Exception
+    public static List<Order> allOrders() throws OrderException
     {
         List<Order> orderList = new ArrayList();
         try
@@ -107,12 +108,12 @@ public class OrderMapper
 
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new Exception(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
         return orderList;
     }
 
-    public static List<Order> allOrdersByUserID(int idUser) throws Exception
+    public static List<Order> allOrdersByUserID(int idUser) throws OrderException
     {
         List<Order> orderByUserIDList;
         try
@@ -142,12 +143,12 @@ public class OrderMapper
 
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new Exception(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
         return orderByUserIDList;
     }
 
-    public static Order specificOrder(int idOrder) throws Exception
+    public static Order specificOrder(int idOrder) throws OrderException
     {
         try
         {
@@ -174,7 +175,7 @@ public class OrderMapper
 
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new Exception(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
        return null;
     }

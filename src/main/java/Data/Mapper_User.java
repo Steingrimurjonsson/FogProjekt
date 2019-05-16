@@ -1,6 +1,6 @@
 package Data;
 
-import Logic.LoginSampleException;
+import Logic.CustomerException;
 import Logic.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import java.util.List;
 public class Mapper_User
 {
 
-    public static void createUser(User user) throws LoginSampleException
+    public static void createUser(User user) throws CustomerException
     {
         try
         {
@@ -37,11 +37,11 @@ public class Mapper_User
             user.setId(id);
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new LoginSampleException(ex.getMessage());
+            throw new CustomerException(ex.getMessage());
         }
     }
 
-    public static void editUser(User user) throws LoginSampleException
+    public static void editUser(User user) throws CustomerException
     {
         try
         {
@@ -64,11 +64,11 @@ public class Mapper_User
 
         } catch (SQLException | ClassNotFoundException ex)
         {
-            throw new LoginSampleException(ex.getMessage());
+            throw new CustomerException(ex.getMessage());
         }
     }
 
-    public static User login(String email, String password) throws LoginSampleException
+    public static User login(String email, String password) throws CustomerException
     {
         try
         {
@@ -95,11 +95,11 @@ public class Mapper_User
                 return user;
             } else
             {
-                throw new LoginSampleException("Could not validate user");
+                throw new CustomerException("Could not validate user");
             }
         } catch (ClassNotFoundException | SQLException ex)
         {
-            throw new LoginSampleException(ex.getMessage());
+            throw new CustomerException(ex.getMessage());
         }
     }
 

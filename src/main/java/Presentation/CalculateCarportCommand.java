@@ -9,6 +9,7 @@ import Data.Carport;
 import Data.MaterialList;
 import Data.Cart;
 import Logic.Calculator;
+import Logic.OrderException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +24,7 @@ public class CalculateCarportCommand extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
+    String execute(HttpServletRequest request, HttpServletResponse response) throws OrderException
     {
         try
         {
