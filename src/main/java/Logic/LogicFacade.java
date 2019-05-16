@@ -1,6 +1,6 @@
 package Logic;
 
-import Data.Mapper_User;
+import Data.UserMapper;
 import Data.OrderDetails;
 import Data.OrderMapper;
 import java.util.List;
@@ -10,13 +10,13 @@ public class LogicFacade
 
     public static User login(String email, String password) throws CustomerException
     {
-        return Mapper_User.login(email, password);
+        return UserMapper.login(email, password);
     }
 
     public static User createUser(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException
     {
         User user = new User(email, password, firstName, lastName, phone, street, city, zip, country, "customer");
-        Mapper_User.createUser(user);
+        UserMapper.createUser(user);
         return user;
     }
 
@@ -29,13 +29,13 @@ public class LogicFacade
     public static User editUser(int userID, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException
     {
         User user = new User(userID, email, password, firstName, lastName, phone, street, city, zip, country, phone);
-        Mapper_User.editUser(user);
+        UserMapper.editUser(user);
         return user;
     }
 
     public static List<User> allUsers() throws Exception
     {
-        return Mapper_User.allUsers();
+        return UserMapper.allUsers();
 
     }
 
