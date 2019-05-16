@@ -190,8 +190,8 @@ public class OrderMapper
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
  
             ps.setInt(1,od.getDoorHinge());
-            ps.setInt(2,od.getDoorHandle());
-            ps.setInt(3,od.getDoor());
+            ps.setInt(2,od.getDoor());
+            ps.setInt(3,od.getDoorHandle());
             ps.setInt(4,od.getRoofScrew());
             ps.setInt(5,od.getScrew());
             ps.setInt(6,od.getPost());

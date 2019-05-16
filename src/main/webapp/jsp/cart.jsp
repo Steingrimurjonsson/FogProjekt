@@ -4,6 +4,7 @@
     Author     : stein
 --%>
 
+<%@page import="Data.OrderDetails"%>
 <%@page import="java.util.List"%>
 <%@page import="Data.Carport"%>
 <%@page import="Logic.User"%>
@@ -17,10 +18,13 @@
         
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
-            Carport carport = (Carport) session.getAttribute("carport");
+             Carport carport = (Carport) session.getAttribute("carport");
+             OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
             double tPrice = 0;
+             
          if(carport != null){
          tPrice =(double) session.getAttribute("tPrice");
+         orderD =(OrderDetails) session.getAttribute("orderDetails");
         }
          %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,6 +35,7 @@
 <div class ="padding">
     <div>
         <h4> Din kurv ${user.firstName}</h4>
+        <h4> result ${orderD}</h4>
       <br>
         <br/>
         <%       

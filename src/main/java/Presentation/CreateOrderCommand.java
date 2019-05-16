@@ -63,7 +63,10 @@ public class CreateOrderCommand extends Command
         OrderDetails orderD = LogicFacade.createOrderDetail(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
         }
-         session.removeAttribute("carport"+"tPrice"+"orderDetails");
+       session.removeAttribute("carport");
+       session.removeAttribute("tPrice");
+       session.removeAttribute("orderDetails");
+       
         }
         catch (OrderException e){
         request.setAttribute("message", e.getMessage());
