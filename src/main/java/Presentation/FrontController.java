@@ -41,10 +41,10 @@ public class FrontController extends HttpServlet {
             request.getRequestDispatcher( "/jsp/"+ view + ".jsp" ).forward( request, response );
         } catch ( Exception ex ) {
             PrintWriter out = response.getWriter();
-            out.println("<p>"+ex.getMessage()+"</p>");
-            out.print("<pre>");
+            //out.println("<p>"+ex.getMessage()+"</p>");
+           // out.print("<pre>");
             ex.printStackTrace(out);
-            out.println("</pre>");
+            //out.println("</pre>");
             // request.setAttribute( "error", ex.getMessage() );
             // request.getRequestDispatcher( "index.jsp" ).forward( request, response );
         }

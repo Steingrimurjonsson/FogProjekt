@@ -20,7 +20,7 @@
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
             OrderDetails orderD =  LogicFacade.specificOrderDetails(idOrder);
-        {
+        
          %>
     </head>
     <body>        
@@ -61,18 +61,10 @@
                 <td><%=order.isShed()%></td>
                 <td><%=order.getShedLength()%></td>
                 <td><%=order.getShedWidth()%></td>
-              
-                
-               
-                
-                
-                
             </tr>
-                           
-                                <%}%>
-                          
+              
         </table>
-                                    <table class ="table table - striped">
+        <table class ="table table - striped">
             <tr> 
                 <th> Træ pæl </th>
                 <th> Træ beklædning </th>
@@ -97,11 +89,7 @@
                 <td><%=orderD.getDoor()%></td>
                 <td><%=orderD.getDoorHandle()%></td>
                 <td><%=orderD.getDoorHinge()%></td>
-   
             </tr>
-                           
-                                <%}%>
-                          
         </table>
                                <br>
                               <br>

@@ -224,13 +224,13 @@ public class OrderMapper
             if(rs.next())
             {
                 int doorHinge = rs.getInt("doorHinge");
-                int door = rs.getInt("dor");
+                int door = rs.getInt("door");
                 int doorHandle = rs.getInt("doorHandle");
                 int roofScrew = rs.getInt("roofScrew");
                 int screw = rs.getInt("screw");
                 int post = rs.getInt("post");
                 int woodSide = rs.getInt("woodSide");
-                int woodRoof = rs.getInt("woodRof");
+                int woodRoof = rs.getInt("woodRoof");
                 int roofStone = rs.getInt("roofStone");
                 int roofPlast = rs.getInt("roofPlast");
                

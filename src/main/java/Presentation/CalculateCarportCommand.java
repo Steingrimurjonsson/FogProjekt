@@ -31,7 +31,6 @@ public class CalculateCarportCommand extends Command
         {
         HttpSession session = request.getSession();
       
-
         /*
         DEAFULT PRICES
         post            50  DKK
@@ -42,9 +41,8 @@ public class CalculateCarportCommand extends Command
         wooden planks   10  DKK
         
         SALES PRICE VS CUSTOMER PRICE 40% ? 
-        
-        
         */
+        
         int doorHingePrice = 5; 
         int doorPrice = 100;
         int doorHandlePrice = 20;
@@ -82,9 +80,7 @@ public class CalculateCarportCommand extends Command
         
         int roofStone = 0;
         int roofPlast = 0;
-        
-        
-        
+
         //CARPORT LENGTH + WIDTH + HEIGHT
         int height = 220;
         String lengthText = request.getParameter("length");
@@ -132,23 +128,18 @@ public class CalculateCarportCommand extends Command
         shedLength = shedLength1 - 30;
         shedWidth = width - 30;
         }
-            
-        
+
         /*
         DEAFAULT ELEMENTS IN A CARPORT
         RULES:
         wood planks for sides? 6?
         wood planks for shed + a bit extra side?
         wood side planks 
-        
-     
        */
      
-        
         //DEAFAULT PRICES IN A CARPORT
         int lengthPrice = 0;
         int widthPrice = 0;
-  
         
         //CARPORT LENGHT
         if(length > 1 && length < 250){
@@ -295,27 +286,15 @@ public class CalculateCarportCommand extends Command
 
         //TOTAL PRICE
         double totalPrice = Math.round((carportPrice + shedPrice)*1.4);
-        
         session.setAttribute("tPrice", totalPrice);
-            
-            /*doorHinge = doorHinge;
-            door = door;
-            doorHandle = doorHandle;
-            post = post;
-            woodSide = woodSide;
-            woodRoof = woodRoof;
-            
-            roofScrew = roofScrew;
-            screw = screw;
-            
-            roofStone = roofStone;
-            roofPlast = roofPlast;
-    */
-        //MaterialList matList = new MaterialList(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
-        
+
         int idOrder = 0;
         OrderDetails orderD = new OrderDetails(idOrder ,doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
         session.setAttribute("orderDetails", orderD);
+        
+        //Invoice invoice = new OrderDetails(idOrder ,doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        //session.setAttribute("orderDetails", orderD);
+        
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
@@ -328,6 +307,4 @@ public class CalculateCarportCommand extends Command
         }
         return "cart";
     }
-        
-
 }
