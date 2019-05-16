@@ -24,7 +24,9 @@ public class ShowOrderCommand extends Command
          int idOrder = Integer.parseInt(request.getParameter("id"));
          request.setAttribute("id", idOrder);
          LogicFacade.specificOrder(idOrder);
+         LogicFacade.specificInvoiceDetails(idOrder);
          request.setAttribute("order", LogicFacade.specificOrder(idOrder));
+         request.setAttribute("invoice", LogicFacade.specificInvoiceDetails(idOrder));
  
 
 
