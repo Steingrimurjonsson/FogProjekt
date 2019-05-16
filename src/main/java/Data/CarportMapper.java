@@ -5,7 +5,7 @@
  */
 package Data;
 
-import Logic.LoginSampleException;
+import Logic.OrderException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import java.sql.Statement;
  */
 public class CarportMapper {
 
-    public static void makeCarportFlat(Carport carport) throws LoginSampleException {
+    public static void makeCarportFlat(Carport carport) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO 'CarportMain'(length, width, material, shed, shedwidth, shedlength) VALUES ?,?,?,?,?,?";
@@ -30,11 +30,11 @@ public class CarportMapper {
             ps.setInt(6, carport.getShedLength());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LoginSampleException(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
     }
 
-    public static void makeCarportRoof(Carport carport) throws LoginSampleException {
+    public static void makeCarportRoof(Carport carport) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO 'CarportMain'(length, width, material, roofslope, shed, shedwidth, shedlength) VALUES ?,?,?,?,?,?,?";
@@ -48,7 +48,7 @@ public class CarportMapper {
             ps.setInt(6, carport.getShedLength());
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new LoginSampleException(ex.getMessage());
+            throw new OrderException(ex.getMessage());
         }
     }
 }

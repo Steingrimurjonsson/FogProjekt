@@ -5,7 +5,7 @@
  */
 package Presentation;
 
-import Logic.LoginSampleException;
+import Logic.CustomerException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

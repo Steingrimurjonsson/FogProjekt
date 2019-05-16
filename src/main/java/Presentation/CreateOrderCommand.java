@@ -8,6 +8,7 @@ package Presentation;
 import Data.Carport;
 import Logic.LogicFacade;
 import Logic.Order;
+import Logic.OrderException;
 import Logic.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +23,7 @@ public class CreateOrderCommand extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
+    String execute(HttpServletRequest request, HttpServletResponse response) throws OrderException
     {
         try
         {
@@ -49,7 +50,7 @@ public class CreateOrderCommand extends Command
         }
          session.removeAttribute("carport"+"tPrice");
         }
-        catch (Exception e){
+        catch (OrderException e){
         request.setAttribute("message", e.getMessage());
         }
         
