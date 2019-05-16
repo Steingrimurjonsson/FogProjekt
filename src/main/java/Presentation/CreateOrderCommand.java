@@ -45,7 +45,8 @@ public class CreateOrderCommand extends Command
          int shedWidth = carport.getShedLength();
       
         Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
-            
+        //OrderDetail orderD = LogicFacade.createOrderDetail(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+
         }
          session.removeAttribute("carport"+"tPrice");
         }
