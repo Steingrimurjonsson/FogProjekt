@@ -10,7 +10,8 @@ package Data;
  * @author stein
  */
 public class OrderDetails {
-    
+     private int idOrder;
+
     private int doorHinge;
     private int door;
     private int doorHandle;
@@ -22,7 +23,8 @@ public class OrderDetails {
     private int roofStone;
     private int roofPlast;
 
-    public OrderDetails(int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) {
+    public OrderDetails(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) {
+        this.idOrder = idOrder;
         this.doorHinge = doorHinge;
         this.door = door;
         this.doorHandle = doorHandle;
@@ -33,6 +35,14 @@ public class OrderDetails {
         this.woodRoof = woodRoof;
         this.roofStone = roofStone;
         this.roofPlast = roofPlast;
+    }
+
+    public int getIdOrder() {
+        return idOrder;
+    }
+
+    public void setIdOrder(int idOrder) {
+        this.idOrder = idOrder;
     }
 
     public int getDoorHinge() {

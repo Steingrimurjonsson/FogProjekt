@@ -70,6 +70,39 @@
                                 <%}%>
                           
         </table>
+                                    <table class ="table table - striped">
+            <tr> 
+                <th> Træ pæl </th>
+                <th> Træ beklædning </th>
+                <th> Træ til tag </th>
+                <th> Plastik tag </th>
+                <th> Sten tag </th>
+                <th> Skruer </th>
+                <th> Skruer til tag </th> 
+                <th> Dør </th>
+                <th> Dørhåndtag </th>
+                <th> Dørhengsler </th>
+             
+            </tr>
+            <tr>
+                <td><%=order.getLength()%></td>
+                <td><%=order.getWidth()%></td>
+                <td><%=order.getroofMat()%></td>
+                <td><%=order.getRoofSlope()%></td>
+                <td><%=order.isShed()%></td>
+                <td><%=order.getShedLength()%></td>
+                <td><%=order.getShedWidth()%></td>
+              
+                
+               
+                
+                
+                
+            </tr>
+                           
+                                <%}%>
+                          
+        </table>
                             </div>
 
     </body>

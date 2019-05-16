@@ -19,12 +19,12 @@
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
              Carport carport = (Carport) session.getAttribute("carport");
-             OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
+             //OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
             double tPrice = 0;
-             
+           //int orderDDoor = 0;
          if(carport != null){
          tPrice =(double) session.getAttribute("tPrice");
-         orderD =(OrderDetails) session.getAttribute("orderDetails");
+        // orderDDoor = orderD.getDoor();
         }
          %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,7 +35,7 @@
 <div class ="padding">
     <div>
         <h4> Din kurv ${user.firstName}</h4>
-        <h4> result ${orderD}</h4>
+        <h4> result </h4>
       <br>
         <br/>
         <%       

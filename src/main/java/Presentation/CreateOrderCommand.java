@@ -45,22 +45,22 @@ public class CreateOrderCommand extends Command
          int roofSlope = carport.getRoofSlope();
          int shedLength = carport.getShedLength();
          int shedWidth = carport.getShedLength();
+         Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
          
-         
-        OrderDetails orderDetail = (OrderDetails) session.getAttribute("orderDetails");
-        int doorHinge = orderDetail.getDoorHinge(); 
-        int door = orderDetail.getDoor(); 
-        int doorHandle = orderDetail.getDoorHandle(); 
-        int roofScrew = orderDetail.getRoofScrew(); 
-        int screw = orderDetail.getScrew(); 
-        int post = orderDetail.getPost(); 
-        int woodSide = orderDetail.getWoodSide(); 
-        int woodRoof = orderDetail.getWoodRoof(); 
-        int roofStone = orderDetail.getRoofStone(); 
-        int roofPlast = orderDetail.getRoofPlast(); 
+        OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
+        int idOrder = order.getOrderID();
+        int doorHinge = orderD.getDoorHinge(); 
+        int door = orderD.getDoor(); 
+        int doorHandle = orderD.getDoorHandle(); 
+        int roofScrew = orderD.getRoofScrew(); 
+        int screw = orderD.getScrew(); 
+        int post = orderD.getPost(); 
+        int woodSide = orderD.getWoodSide(); 
+        int woodRoof = orderD.getWoodRoof(); 
+        int roofStone = orderD.getRoofStone(); 
+        int roofPlast = orderD.getRoofPlast(); 
 
-        Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
-        OrderDetails orderD = LogicFacade.createOrderDetail(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        OrderDetails orderDetails = LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
         }
        session.removeAttribute("carport");
@@ -69,7 +69,9 @@ public class CreateOrderCommand extends Command
        
         }
         catch (OrderException e){
+            System.out.println(e.getMessage());
         request.setAttribute("message", e.getMessage());
+        
         }
         
         return "cart";

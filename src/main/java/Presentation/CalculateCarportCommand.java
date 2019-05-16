@@ -297,11 +297,24 @@ public class CalculateCarportCommand extends Command
         double totalPrice = Math.round((carportPrice + shedPrice)*1.4);
         
         session.setAttribute("tPrice", totalPrice);
-        
-    
+            
+            /*doorHinge = doorHinge;
+            door = door;
+            doorHandle = doorHandle;
+            post = post;
+            woodSide = woodSide;
+            woodRoof = woodRoof;
+            
+            roofScrew = roofScrew;
+            screw = screw;
+            
+            roofStone = roofStone;
+            roofPlast = roofPlast;
+    */
         //MaterialList matList = new MaterialList(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
         
-        OrderDetails orderD = new OrderDetails(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        int idOrder = 0;
+        OrderDetails orderD = new OrderDetails(idOrder ,doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
         session.setAttribute("orderDetails", orderD);
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
