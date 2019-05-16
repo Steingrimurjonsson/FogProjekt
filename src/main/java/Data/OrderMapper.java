@@ -210,4 +210,39 @@ public class OrderMapper
             throw new OrderException(ex.getMessage());
         }
     }
+    
+     public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
+    {
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from `OrderDetails` WHERE idOrder=(?);";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, idOrder);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next())
+            {
+                int doorHinge = rs.getInt("doorHinge");
+                int door = rs.getInt("dor");
+                int doorHandle = rs.getInt("doorHandle");
+                int roofScrew = rs.getInt("roofScrew");
+                int screw = rs.getInt("screw");
+                int post = rs.getInt("post");
+                int woodSide = rs.getInt("woodSide");
+                int woodRoof = rs.getInt("woodRof");
+                int roofStone = rs.getInt("roofStone");
+                int roofPlast = rs.getInt("roofPlast");
+               
+
+                OrderDetails od = new OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+                return od;
+            }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+       return null;
+    }
 }

@@ -66,4 +66,9 @@ public class LogicFacade
         OrderMapper.createOrderDetail(orderD);
         return orderD;    
     }
+    
+    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
+    {
+        return OrderMapper.specificOrderDetails(idOrder);
+    }
 }
