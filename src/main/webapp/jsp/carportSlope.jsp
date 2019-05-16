@@ -215,7 +215,7 @@
 <option value="660">660 cm</option>
 <option value="690">690 cm</option>
 </select>
-  <button name="command" value="calculate">Udregn pris & tilføj til kurv/button>
+  <button name="command" value="calculate">Udregn pris & tilføj til kurv</button>
   </form>
             </form>        </div>
     </div>
