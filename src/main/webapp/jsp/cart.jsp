@@ -146,11 +146,7 @@
 </div>
             
             
-            <div class="matList">
-                
-                
-                
-            </div>
+         
                              <%  } else { %>
                              <h1>Din kurv er tom lav en carport her  <a href="jsp/carport.jsp">Carport på mål</a></h1>
                            
