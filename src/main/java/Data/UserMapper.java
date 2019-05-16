@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mapper_User
+public class UserMapper
 {
 
     public static void createUser(User user) throws CustomerException
