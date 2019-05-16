@@ -77,4 +77,8 @@ public class LogicFacade
         OrderMapper.createInvoice(invoice);
         return invoice; 
     }
+    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
+    {
+        return OrderMapper.specificInvoiceDetails(idOrder);
+    }
 }

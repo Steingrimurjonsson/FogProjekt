@@ -4,6 +4,7 @@
     Author     : NoellZane
 --%>
 
+<%@page import="Logic.Invoice"%>
 <%@page import="Data.OrderDetails"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
@@ -20,7 +21,7 @@
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
             OrderDetails orderD =  LogicFacade.specificOrderDetails(idOrder);
-        
+            Invoice invoice = LogicFacade.specificInvoiceDetails(idOrder);
          %>
     </head>
     <body>        
@@ -51,6 +52,7 @@
                 <th> Carport Skur</th>
                 <th> Carport Skur Længde</th> 
                 <th> Carport Skur Bredde</th>
+                <th> Samlet Pris</th>
              
             </tr>
             <tr>
@@ -61,6 +63,7 @@
                 <td><%=order.isShed()%></td>
                 <td><%=order.getShedLength()%></td>
                 <td><%=order.getShedWidth()%></td>
+                <td><%=invoice.getPrice()%></td>
             </tr>
               
         </table>

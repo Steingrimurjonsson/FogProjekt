@@ -270,4 +270,26 @@ public class OrderMapper
          return invoice;
        
     }
+        public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
+    {
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from `Invoice` WHERE idOrder=(?);";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, idOrder);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next())
+            {
+                double totalPrice = rs.getDouble("totalPrice");
+                Invoice inv = new Invoice(idOrder, totalPrice);
+                return inv;
+            }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+        return null;
+    }
 }
