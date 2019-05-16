@@ -12,6 +12,14 @@ double price;
         this.price = price;
     }
 
+    public Invoice(int idOrder, double price)
+    {
+        this.idOrder = idOrder;
+        this.price = price;
+    }
+    
+    
+
     public int getIdInvoice()
     {
         return idInvoice;
