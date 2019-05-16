@@ -4,6 +4,7 @@
     Author     : NoellZane
 --%>
 
+<%@page import="Data.OrderDetails"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
 <%@page import="java.util.List"%>
@@ -18,6 +19,7 @@
 
          <% int idOrder =(int) request.getAttribute("id");
             Order order=  LogicFacade.specificOrder(idOrder);
+            OrderDetails orderD =  LogicFacade.specificOrderDetails(idOrder);
         {
          %>
     </head>
