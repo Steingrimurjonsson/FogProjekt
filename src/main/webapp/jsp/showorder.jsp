@@ -97,12 +97,7 @@
                 <td><%=orderD.getDoor()%></td>
                 <td><%=orderD.getDoorHandle()%></td>
                 <td><%=orderD.getDoorHinge()%></td>
-              
-                
-               
-                
-                
-                
+   
             </tr>
                            
                                 <%}%>
