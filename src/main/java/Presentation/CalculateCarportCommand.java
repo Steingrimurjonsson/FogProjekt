@@ -8,6 +8,7 @@ package Presentation;
 import Data.Carport;
 import Data.MaterialList;
 import Data.Cart;
+import Data.OrderDetails;
 import Logic.Calculator;
 import Logic.OrderException;
 import java.util.ArrayList;
@@ -300,8 +301,8 @@ public class CalculateCarportCommand extends Command
     
         //MaterialList matList = new MaterialList(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
         
-        //OrderDetail orderD = orderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
-
+        OrderDetails orderD = new OrderDetails(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        session.setAttribute("orderDetails", orderD);
         //Carport Input
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);

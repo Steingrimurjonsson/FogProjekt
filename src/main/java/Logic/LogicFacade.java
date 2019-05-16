@@ -1,6 +1,7 @@
 package Logic;
 
 import Data.Mapper_User;
+import Data.OrderDetails;
 import Data.OrderMapper;
 import java.util.List;
 
@@ -58,5 +59,11 @@ public class LogicFacade
     public static Order specificOrder(int idOrder) throws OrderException
     {
         return OrderMapper.specificOrder(idOrder);
+    }
+
+    public static OrderDetails createOrderDetail(int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) {
+        OrderDetails orderD = new OrderDetails(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        OrderMapper.createOrderDetail(orderD);
+        return orderD;    
     }
 }

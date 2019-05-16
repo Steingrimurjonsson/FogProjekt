@@ -6,6 +6,7 @@
 package Presentation;
 
 import Data.Carport;
+import Data.OrderDetails;
 import Logic.LogicFacade;
 import Logic.Order;
 import Logic.OrderException;
@@ -44,12 +45,25 @@ public class CreateOrderCommand extends Command
          int roofSlope = carport.getRoofSlope();
          int shedLength = carport.getShedLength();
          int shedWidth = carport.getShedLength();
-      
+         
+         
+        OrderDetails orderDetail = (OrderDetails) session.getAttribute("orderDetails");
+        int doorHinge = orderDetail.getDoorHinge(); 
+        int door = orderDetail.getDoor(); 
+        int doorHandle = orderDetail.getDoorHandle(); 
+        int roofScrew = orderDetail.getRoofScrew(); 
+        int screw = orderDetail.getScrew(); 
+        int post = orderDetail.getPost(); 
+        int woodSide = orderDetail.getWoodSide(); 
+        int woodRoof = orderDetail.getWoodRoof(); 
+        int roofStone = orderDetail.getRoofStone(); 
+        int roofPlast = orderDetail.getRoofPlast(); 
+
         Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
-        //OrderDetail orderD = LogicFacade.createOrderDetail(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        OrderDetails orderD = LogicFacade.createOrderDetail(doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
         }
-         session.removeAttribute("carport"+"tPrice");
+         session.removeAttribute("carport"+"tPrice"+"orderDetails");
         }
         catch (OrderException e){
         request.setAttribute("message", e.getMessage());
