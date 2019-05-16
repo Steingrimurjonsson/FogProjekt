@@ -4,18 +4,18 @@ public class Invoice
 {
 private int idInvoice;
 private int idOrder;
-double price;
+private double totalPrice;
 
-    public Invoice(int idInvoice, int idOrder, double price) {
+    public Invoice(int idInvoice, int idOrder, double totalPrice) {
         this.idInvoice = idInvoice;
         this.idOrder = idOrder;
-        this.price = price;
+        this.totalPrice = totalPrice;
     }
 
-    public Invoice(int idOrder, double price)
+    public Invoice(int idOrder, double totalPrice)
     {
         this.idOrder = idOrder;
-        this.price = price;
+        this.totalPrice = totalPrice;
     }
     
     
@@ -42,12 +42,12 @@ double price;
 
     public double getPrice()
     {
-        return price;
+        return totalPrice;
     }
 
     public void setPrice(double price)
     {
-        this.price = price;
+        this.totalPrice = totalPrice;
     }
 
   

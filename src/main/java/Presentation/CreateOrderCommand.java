@@ -63,8 +63,10 @@ public class CreateOrderCommand extends Command
 
         OrderDetails orderDetails = LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
-        Invoice invoice = (Invoice) session.getAttribute("invoice");
-        double totalPrice = invoice.getTotalPrice(); 
+        Invoice invoiceD = (Invoice) session.getAttribute("invoice");
+        
+        double totalPrice = invoiceD.getPrice(); 
+        
         Invoice invoice = LogicFacade.createInvoice(idOrder, totalPrice);
 
         

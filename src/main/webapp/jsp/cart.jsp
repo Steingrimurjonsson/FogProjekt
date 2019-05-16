@@ -35,7 +35,6 @@
 <div class ="padding">
     <div>
         <h4> Din kurv ${user.firstName}</h4>
-        <h4> result </h4>
       <br>
         <br/>
         <%       
