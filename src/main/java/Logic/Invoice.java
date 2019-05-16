@@ -1,52 +1,46 @@
 package Logic;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 public class Invoice 
 {
 private int idInvoice;
-private int idUser;
+private int idOrder;
 double price;
 
-    public Invoice(int idInvoice, int idUser, double price) {
+    public Invoice(int idInvoice, int idOrder, double price) {
         this.idInvoice = idInvoice;
-        this.idUser = idUser;
+        this.idOrder = idOrder;
         this.price = price;
     }
 
-    public int getIdInvoice() {
+    public int getIdInvoice()
+    {
         return idInvoice;
     }
 
-    public void setIdInvoice(int idInvoice) {
+    public void setIdInvoice(int idInvoice)
+    {
         this.idInvoice = idInvoice;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getIdOrder()
+    {
+        return idOrder;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setIdOrder(int idOrder)
+    {
+        this.idOrder = idOrder;
     }
 
-    public double getPrice() {
+    public double getPrice()
+    {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price)
+    {
         this.price = price;
     }
 
-
-
-    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
-        if(request.getParameter("userID")!=null)
-        {
-            return"order";
-        }
-            return "order";
-}
+  
 }

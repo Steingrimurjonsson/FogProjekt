@@ -48,7 +48,7 @@ public class OrderMapper
         } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException(ex.getMessage());
-    
+
         }
         return order;
     }
@@ -161,7 +161,7 @@ public class OrderMapper
             ps.setInt(1, idOrder);
             ResultSet rs = ps.executeQuery();
 
-            if(rs.next())
+            if (rs.next())
             {
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
@@ -180,38 +180,39 @@ public class OrderMapper
         {
             throw new OrderException(ex.getMessage());
         }
-       return null;
+        return null;
     }
-    
-    public static void createOrderDetail(OrderDetails od) throws OrderException
+
+    public static OrderDetails createOrderDetail(OrderDetails od) throws OrderException
     {
-       
+
         try
         {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `OrderDetails` (idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1,od.getIdOrder());
-            ps.setInt(2,od.getDoorHinge());
-            ps.setInt(3,od.getDoor());
-            ps.setInt(4,od.getDoorHandle());
-            ps.setInt(5,od.getRoofScrew());
-            ps.setInt(6,od.getScrew());
-            ps.setInt(7,od.getPost());
-            ps.setInt(8,od.getWoodSide());
-            ps.setInt(9,od.getWoodRoof());
-            ps.setInt(10,od.getRoofStone());
-            ps.setInt(11,od.getRoofPlast());
-            
+            ps.setInt(1, od.getIdOrder());
+            ps.setInt(2, od.getDoorHinge());
+            ps.setInt(3, od.getDoor());
+            ps.setInt(4, od.getDoorHandle());
+            ps.setInt(5, od.getRoofScrew());
+            ps.setInt(6, od.getScrew());
+            ps.setInt(7, od.getPost());
+            ps.setInt(8, od.getWoodSide());
+            ps.setInt(9, od.getWoodRoof());
+            ps.setInt(10, od.getRoofStone());
+            ps.setInt(11, od.getRoofPlast());
+
             ps.executeUpdate();
-           
+
         } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException(ex.getMessage());
         }
+        return od;
     }
-    
-     public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
+
+    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
     {
         try
         {
@@ -221,7 +222,7 @@ public class OrderMapper
             ps.setInt(1, idOrder);
             ResultSet rs = ps.executeQuery();
 
-            if(rs.next())
+            if (rs.next())
             {
                 int doorHinge = rs.getInt("doorHinge");
                 int door = rs.getInt("door");
@@ -233,7 +234,6 @@ public class OrderMapper
                 int woodRoof = rs.getInt("woodRoof");
                 int roofStone = rs.getInt("roofStone");
                 int roofPlast = rs.getInt("roofPlast");
-               
 
                 OrderDetails od = new OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
                 return od;
@@ -243,6 +243,31 @@ public class OrderMapper
         {
             throw new OrderException(ex.getMessage());
         }
-       return null;
+        return null;
+    }
+
+    public static Invoice createInvoice(Invoice invoice) throws OrderException
+    {
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO `Invoice` (idOrder, totalPrice) VALUES (?, ?)";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setInt(1, invoice.getIdOrder());
+            ps.setDouble(2, invoice.getPrice());
+            ps.executeUpdate();
+            ResultSet ids = ps.getGeneratedKeys();
+            ids.next();
+            int id = ids.getInt(1);
+            invoice.setIdInvoice(id);
+            
+        } catch (SQLException | ClassNotFoundException ex)
+        {
+            throw new OrderException(ex.getMessage());
+
+        }
+         return invoice;
+       
     }
 }
