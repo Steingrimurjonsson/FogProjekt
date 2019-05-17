@@ -14,6 +14,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Admin</title>
         <jsp:include page='header.jsp'></jsp:include> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <style>

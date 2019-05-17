@@ -10,7 +10,7 @@
        <head>
       <jsp:include page='header.jsp'></jsp:include> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Carport Slope</title>
+        <title>Carport med rejst tag</title>
     </head>
     <body>
 <div class="xhtml-string" style="margin-left: 15px;">

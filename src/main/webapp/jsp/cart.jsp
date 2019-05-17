@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <title>Kurv</title>
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
              Carport carport = (Carport) session.getAttribute("carport");
