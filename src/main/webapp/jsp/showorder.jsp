@@ -109,6 +109,10 @@
              <text x="455.0" y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
          </svg>
 </div>
+<% 
+if(order.isShed() == true){
+ %>
+                              
 <div class="svgShed" style="float: left; border:1px #111 solid ; ">
 <svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
     zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +127,7 @@
     <text x="42.0" y="441.0"><tspan xml:space="preserve"><%=order.getShedLength()%> cm </tspan></text>
 </svg>
 </div>
-            
+<% } %>            
 <div class="svgTop" style="float: left; border:1px #111 solid ; ">
         
         <svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"

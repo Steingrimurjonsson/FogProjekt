@@ -19,16 +19,24 @@
          <jsp:include page='header.jsp'></jsp:include> 
          <%  User user = (User) session.getAttribute("user");
              Carport carport = (Carport) session.getAttribute("carport");
-             //OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
-            double tPrice = 0;
-           //int orderDDoor = 0;
-         if(carport != null){
-         tPrice =(double) session.getAttribute("tPrice");
-        // orderDDoor = orderD.getDoor();
-        }
+             double tPrice = 0;
+            if(carport != null){
+            tPrice =(double) session.getAttribute("tPrice");
+             }
          %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <script>
+            var url = window.location;
+            var query_string = url.search;
+            var search_params = new URLSearchParams(query_string); 
+            var orderMsg = search_params.get('command');
+            if(orderMsg === "createOrder"){
+            var thanks = "Mange tak for din order!";
+            document.write("<br><br><h1>" + thanks + "</h1>");
+            }   
+         
+            
+        </script>
 </head>
 <body>
 
@@ -80,6 +88,7 @@
                 </form>
 
                              <%  } else { %>
+                            
                              <h1>Din kurv er tom lav en carport her  <a href="jsp/carport.jsp">Carport på mål</a></h1>
                            
                               <% } %>
