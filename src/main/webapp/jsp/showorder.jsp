@@ -67,6 +67,7 @@
             </tr>
               
         </table>
+               <h1>Materialeliste</h1>
         <table class ="table table - striped">
             <tr> 
                 <th> Træ pæl </th>
@@ -119,7 +120,7 @@
     <text x="455.0" y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
     <rect fill="#330033" x="0" width="150" height="220" y="178.0" stroke="#003333"/>
     <line y2="420.0" fill="none" x1="3.0" x2="148.0" stroke="#000000" y1="420.0"/>
-    <text x="42.0" y="441.0"><tspan xml:space="preserve">150 cm  </tspan></text>
+    <text x="42.0" y="441.0"><tspan xml:space="preserve"><%=order.getShedLength()%> cm </tspan></text>
 </svg>
 </div>
             
@@ -152,9 +153,9 @@
     <line y2="360.0" fill="none" x1="430.0" x2="430.0" stroke="#ff3333" y1="116.0"/>
     <text x="432.0" y="229.0"><tspan xml:space="preserve">240 cm </tspan></text>
     <line y2="393.0" fill="none" x1="502.0" x2="503.0" stroke="#ff3333" y1="83.0"/>
-    <text x="509.0" y="220.0"><tspan xml:space="preserve">310 cm </tspan></text>
+    <text x="509.0" y="220.0"><tspan xml:space="preserve"><%=order.getWidth()%> cm </tspan></text>
     <line y2="457.0" fill="none" x1="416.0" x2="1.0" stroke="#ff0033" y1="457.0"/>
-    <text x="159.0" y="486.0"><tspan xml:space="preserve">420 cm </tspan></text>
+    <text x="159.0" y="486.0"><tspan xml:space="preserve"><%=order.getLength()%> cm </tspan></text>
     <line y2="410.0" fill="none" x1="420.0" x2="371.0" stroke="#ff0000" y1="410.0"/>
     <text x="373.0" y="422.0"><tspan xml:space="preserve">62 cm </tspan></text>
 </svg>
