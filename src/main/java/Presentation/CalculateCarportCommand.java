@@ -31,7 +31,14 @@ public class CalculateCarportCommand extends Command
         try
         {
         HttpSession session = request.getSession();
-      
+        String lengthText = request.getParameter("length");
+        String shedLengthTextC = request.getParameter("shedLength");
+        int shedLengthC = Integer.parseInt(shedLengthTextC);
+        int length = Integer.parseInt(lengthText);
+
+       if(length < shedLengthC){
+            response.sendRedirect(request.getHeader("Referer")  + "?error=true");
+        }else {
         /*
         DEAFULT PRICES
         post            50  DKK
@@ -84,8 +91,7 @@ public class CalculateCarportCommand extends Command
 
         //CARPORT LENGTH + WIDTH + HEIGHT
         int height = 220;
-        String lengthText = request.getParameter("length");
-        int length = Integer.parseInt(lengthText);
+
         String widthText = request.getParameter("width");
         int width = Integer.parseInt(widthText);
 
@@ -303,9 +309,12 @@ public class CalculateCarportCommand extends Command
         MaterialList materials = Calculator.calculateMaterials(carport);
         session.setAttribute("materials", materials);
         }
+        }
         catch (Exception e){
         request.setAttribute("message", e.getMessage());
         }
+       
         return "cart";
+         
     }
 }
