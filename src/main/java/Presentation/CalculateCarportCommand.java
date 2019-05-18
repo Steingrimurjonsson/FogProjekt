@@ -7,13 +7,10 @@ package Presentation;
 
 import Data.Carport;
 import Data.MaterialList;
-import Data.Cart;
 import Data.OrderDetails;
 import Logic.Calculator;
 import Logic.Invoice;
 import Logic.OrderException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -124,17 +121,17 @@ public class CalculateCarportCommand extends Command
         }
         
         //SHED CAL
-        int shedLength = 0;
-        int shedWidth = 0;
+        int shedLength= 0;
+        int shedWidth= 0;
         boolean shed = false;
 
         String shedLengthText = request.getParameter("shedLength");
-        if(shedLengthText == ""){
+        if(shedLengthText.equals("0")){
         shed = false;
         }else{
         shed = true;
-        int shedLength1 = Integer.parseInt(shedLengthText);
-        shedLength = shedLength1 - 30;
+        shedLength = Integer.parseInt(shedLengthText);
+        shedLength = shedLength - 30;
         shedWidth = width - 30;
         }
 

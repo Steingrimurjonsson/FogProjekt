@@ -141,7 +141,7 @@
     Redskabsrum længde
 </label>
                     <select class="form-control" name="shedLength" title="Redskabsrum længde" >
-<option selected="selected" value="">Ønsker ikke redskabsrum</option>
+<option selected="selected" value="0">Ønsker ikke redskabsrum</option>
 <option value="150">150 cm</option>
 <option value="180">180 cm</option>
 <option value="210">210 cm</option>
