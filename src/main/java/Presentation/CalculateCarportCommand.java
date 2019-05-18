@@ -149,13 +149,7 @@ public class CalculateCarportCommand extends Command
         
         //CARPORT LENGHT
         if(length > 1 && length < 250){
-            woodRoof = woodRoof;
-            roofScrew = roofScrew;
-            screw = screw;
-            post = post;
-            roofStone = roofStone;
-            roofPlast = roofPlast;
-            
+
         } else if (length > 250 && length < 500) {
             
             woodRoof = woodRoof + 1;
@@ -170,7 +164,7 @@ public class CalculateCarportCommand extends Command
             woodRoof = woodRoof + 2;
             roofScrew = roofScrew + 2;
             screw = screw + 5;
-            post = post;
+            post = post + 2;
             roofStone = roofStone + 6;
             roofPlast = roofPlast + 2;
             
@@ -178,20 +172,12 @@ public class CalculateCarportCommand extends Command
         
         //CARPORT WIDTH
         if(width > 1 && width < 250){
-            
-            woodRoof = woodRoof;
-            roofScrew = roofScrew;
-            screw = screw;
-            post = post;
-            roofStone = roofStone;
-            roofPlast = roofPlast;
-            
+
         } else if (width > 250 && width < 500) {
             
             woodRoof = woodRoof + 1;
             roofScrew = roofScrew + 1;
             screw = screw + 2;
-            post = post;
             roofStone = roofStone + 3;
             roofPlast = roofPlast + 1;
             
@@ -200,10 +186,8 @@ public class CalculateCarportCommand extends Command
             woodRoof = woodRoof + 2;
             roofScrew = roofScrew + 2;
             screw = screw + 5;
-            post = post;
             roofStone = roofStone + 6;
             roofPlast = roofPlast + 2;
-            
         }
 
     //SHED CALC
@@ -258,8 +242,9 @@ public class CalculateCarportCommand extends Command
             int woodRoofShed = woodRoof + 2;
             int roofScrewShed = roofScrew + 2;
             int screwShed = screw + 50;
-            int postShed = post + 4;
-
+            int postShed = post + 2;
+            post = postShed;
+            
             int doorHingeFPrice = doorHingePrice * doorHinge; 
             int doorFPrice = doorPrice *door;
             int doorHandleFPrice = doorHandlePrice *doorHandle;
@@ -267,7 +252,7 @@ public class CalculateCarportCommand extends Command
             int roofScrewFPriceShed = roofScrewPrice *roofScrewShed;
             int screwFPriceShed = screwPrice *screwShed;
 
-            int postFPriceShed = postPrice *post;
+            int postFPriceShed = postPrice *postShed;
             int woodSideFPriceShed = woodSidePrice *woodSide;   
             int woodRoofFPriceShed = woodRoofPrice *woodRoofShed;
 
@@ -287,7 +272,7 @@ public class CalculateCarportCommand extends Command
             shedPrice = doorHingeFPrice + doorFPrice + doorHandleFPrice + roofScrewFPriceShed + screwFPriceShed + postFPriceShed + woodSideFPriceShed + woodRoofFPriceShed + roofStoneFPriceShed + roofPlastFPriceShed;
 
         }
-          
+            
             int roofScrewFPrice = roofScrewPrice *roofScrew;
             int screwFPrice = screwPrice *screw;
 
