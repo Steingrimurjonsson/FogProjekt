@@ -82,20 +82,8 @@ public class CreateOrderCommand extends Command
         request.setAttribute("message", e.getMessage());
         
         }
-        HttpSession session = request.getSession();
-        User user = (User) request.getSession().getAttribute("user");
-          Carport carport = (Carport) session.getAttribute("carport");
-         int userID = user.getId();
-         int length = carport.getLength();
-         int width = carport.getWidth();
-         String roofMat = carport.getroofMat();
-         boolean shed = carport.isShed();
-         int roofSlope = carport.getRoofSlope();
-         int shedLength = carport.getShedLength();
-         int shedWidth = carport.getShedWidth();
-        Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
-        int idOrder = order.getOrderID();
-        return "cart?id=" + idOrder;
+        
+        return "cart";
     }
         
 

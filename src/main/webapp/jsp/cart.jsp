@@ -74,15 +74,16 @@
                 </br>
             
                     
-                <form>
+                <form id="empty" action="FrontController">
                      
-                             <button onclick="return confirm('Are you sure ?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Tøm Kurv</button>
-                               <form>
+                             <button form="empty" onclick="return confirm('Er du sikker?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Tøm Kurv</button>
                       <%       
                           if (user != null) { %>
-                            <button onclick="javascript:alert('Vi sender dig en e-mail med ordre specifikationerne. Du kan også se dem på din kundeside');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
+                           </form><form id="succ" action="FrontController">
+                            <button form="succ" onclick="javascript:alert('Vi sender dig en e-mail med ordre specifikationerne. Du kan også se dem på din kundeside');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                            <%  } else { %>
-                          <button onclick="javascript:alert('Vær venlig at lave en bruger eller log ind for at lave en ordre');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
+                           </form> <form id="errorCart" action="FrontController">
+                          <button form="errorCart" onclick="javascript:alert('Vær venlig at lave en bruger eller log ind for at lave en ordre');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                               <% } %>
                     
                 </form>
@@ -92,7 +93,7 @@
                              <h1>Din kurv er tom lav en carport her  <a href="jsp/carport.jsp">Carport på mål</a></h1>
                            
                               <% } %>
-                </form>
+                
               
     </div>
             <br>
