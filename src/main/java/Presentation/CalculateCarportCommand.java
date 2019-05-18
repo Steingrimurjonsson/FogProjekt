@@ -274,6 +274,15 @@ public class CalculateCarportCommand extends Command
             int roofStoneFPriceShed = roofStonePrice;
             int roofPlastFPriceShed = roofPlastPrice;
 
+            if("Plasttrapezplader".equals(roofMat)){
+           
+            roofStoneFPriceShed = 0;
+            }else{
+           
+            roofPlastFPriceShed = 0;
+            }
+            
+            
             //SHED PRICE
             shedPrice = doorHingeFPrice + doorFPrice + doorHandleFPrice + roofScrewFPriceShed + screwFPriceShed + postFPriceShed + woodSideFPriceShed + woodRoofFPriceShed + roofStoneFPriceShed + roofPlastFPriceShed;
 
@@ -288,8 +297,20 @@ public class CalculateCarportCommand extends Command
             int roofStoneFPrice = roofStonePrice;
             int roofPlastFPrice = roofPlastPrice;
         
+            if("Plasttrapezplader".equals(roofMat)){
+            roofStone = roofStone - roofStone;
+            roofStoneFPrice = 0;
+            }else{
+            roofPlast = roofPlast - roofPlast;
+            roofPlastFPrice = 0;
+            } 
+            
+           
             int carportPrice = roofScrewFPrice + screwFPrice + postFPrice + woodRoofFPrice + roofStoneFPrice + roofPlastFPrice;
 
+            
+            
+            
         //TOTAL PRICE
         double totalPrice = Math.round((carportPrice + shedPrice)*1.4);
         session.setAttribute("tPrice", totalPrice);

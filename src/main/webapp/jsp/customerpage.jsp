@@ -95,8 +95,8 @@
                     <th> <%= element.getLength()%> </th> 
                     <th> <%= element.getWidth()%> </th> 
                     <th> <%= element.getroofMat()%> </th>
-                    <th> <%= element.isShed()%> </th> 
                     <th> <%= element.getRoofSlope()%> </th> 
+                    <th> <%= element.isShed()%> </th> 
                     <th> <%= element.getShedLength()%> </th> 
                     <th> <%= element.getShedWidth()%> </th> 
                     <th>   <form><input type="hidden" name="id" method="POST" value="<%= element.getOrderID()%>"/><button name="command" value="showOrder">Se Ordre</button></form> </th>    
