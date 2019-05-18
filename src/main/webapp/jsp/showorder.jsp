@@ -34,33 +34,32 @@
            
            double black = ((order.getLength()/100)*33)-25;
            double yellow = blue*3;
-/*
+           
+           int roofSlope = order.getRoofSlope();
            if(roofSlope == 45){
            roofSlope = 15;
            }
            if(roofSlope == 40){
            roofSlope = 20;
            }
-           if(roofSlope == 45){
-           roofSlope = 15;
+           if(roofSlope == 35){
+           roofSlope = 25;
            }
-           if(roofSlope == 45){
-           roofSlope = 15;
+           if(roofSlope == 30){
+           roofSlope = 30;
            }
-           if(roofSlope == 45){
-           roofSlope = 15;
+           if(roofSlope == 25){
+           roofSlope = 35;
+           } 
+           if(roofSlope == 20){
+           roofSlope = 40;
+           } 
+           if(roofSlope == 15){
+           roofSlope = 45;
            }
            
-           15
-           20
-           25
-           30
-           35
-           40
-           45
-  */         
-           //int roofSlope = order.getRoofSlope();
-            int roofSlope = 45;
+        
+            
 
          %>
     </head>
@@ -147,15 +146,29 @@ if(order.isShed() == true){
  %>
                               
 <div class="svgShed" style="float: left; border:1px #111 solid ; ">
-<svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
-    zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-    version="1.0">
-    <rect fill="none" x="0" width="420" y="167" height="10" stroke="#000000"/>
-    <rect fill="none" x="100.0" width="25.0" y="178.0" height="220" stroke="#000000"/>
-    <rect fill="none" x="300" width="25.0" height="220" y="178.0" stroke="#000000"/>
-    <line y2="400" fill="none" x1="441.0" x2="442.0" y1="180" stroke="#ff0000"/>
-    <text x="455.0" y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
-    <rect fill="#330033" x="0" width="150" height="220" y="178.0" stroke="#003333"/>
+  <svg contentScriptType="text/ecmascript" width="<%=frameLength%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
+             zoomAndPan="magnify" contentStyleType="text/css" height="<%=frameHeight%>" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+             version="1.0">
+           <line y2="177.0" fill="none" x1="<%=length%>" x2="0" stroke="#000000" y1="177.0"/>
+           
+           <line y2="177.0" fill="none" x1="<%=length/2%>" x2="<%=length%>" stroke="#000000" y1="<%=roofSlope%>"/>
+           <line y2="<%=roofSlope%>" fill="none" x1="0" x2="<%=length/2%>" stroke="#000000" y1="177.0"/>
+             <% if(post > 4){ %>    
+             <rect fill="none" x="<%=blue%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
+             <rect fill="none" x="<%=green%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
+             <rect fill="none" x="<%=red%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
+             <%
+             }else {%>
+             <rect fill="none" x="<%=black%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
+             <rect fill="none" x="<%=yellow%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
+                <%}%>
+             <line y2="400" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="180"/>
+             <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
+             
+             <line y2="410.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="410.0"/>
+             <text x="<%=length/2%>" y="440"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
+       
+    <rect fill="#330033" x="0" width="150" height="<%=height%>" y="178.0" stroke="#003333"/>
     <line y2="420.0" fill="none" x1="3.0" x2="148.0" stroke="#000000" y1="420.0"/>
     <text x="42.0" y="441.0"><tspan xml:space="preserve"><%=order.getShedLength()%> cm </tspan></text>
 </svg>
@@ -180,7 +193,7 @@ if(order.isShed() == true){
              <rect fill="none" x="<%=yellow%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
                 <%}%>
              <line y2="400" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="180"/>
-             <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
+             <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve"><%=height%> cm </tspan></text>
              
              <line y2="410.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="410.0"/>
              <text x="<%=length/2%>" y="440"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
