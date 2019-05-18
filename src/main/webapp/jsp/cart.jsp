@@ -39,7 +39,7 @@
         </script>
 </head>
 <body>
-
+<%= carport%>
 <div class ="padding">
     <div>
         <h4> Din kurv ${user.firstName}</h4>

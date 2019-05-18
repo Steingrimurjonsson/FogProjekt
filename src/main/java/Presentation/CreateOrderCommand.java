@@ -45,7 +45,7 @@ public class CreateOrderCommand extends Command
          boolean shed = carport.isShed();
          int roofSlope = carport.getRoofSlope();
          int shedLength = carport.getShedLength();
-         int shedWidth = carport.getShedLength();
+         int shedWidth = carport.getShedWidth();
          Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
          
         OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");

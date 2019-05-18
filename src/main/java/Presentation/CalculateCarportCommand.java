@@ -31,6 +31,7 @@ public class CalculateCarportCommand extends Command
         try
         {
         HttpSession session = request.getSession();
+        
         String lengthText = request.getParameter("length");
         String shedLengthTextC = request.getParameter("shedLength");
         int shedLengthC = Integer.parseInt(shedLengthTextC);
@@ -39,6 +40,7 @@ public class CalculateCarportCommand extends Command
        if(length < shedLengthC){
             response.sendRedirect(request.getHeader("Referer")  + "?error=true");
         }else {
+           
         /*
         DEAFULT PRICES
         post            50  DKK

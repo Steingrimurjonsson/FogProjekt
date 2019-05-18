@@ -142,25 +142,25 @@
 </label>
                     <select class="form-control" name="shedLength" title="Redskabsrum længde" >
 <option selected="selected" value="">Ønsker ikke redskabsrum</option>
-<option value="150" min="">150 cm</option>
-<option value="180" min="">180 cm</option>
-<option value="210" min="">210 cm</option>
-<option value="240" min="">240 cm</option>
-<option value="270" min="">270 cm</option>
-<option value="300" min="">300 cm</option>
-<option value="330" min="">330 cm</option>
-<option value="360" min="">360 cm</option>
-<option value="390" min="">390 cm</option>
-<option value="420" min="">420 cm</option>
-<option value="450" min="">450 cm</option>
-<option value="480" min="">480 cm</option>
-<option value="510" min="">510 cm</option>
-<option value="540" min="">540 cm</option>
-<option value="570" min="">570 cm</option>
-<option value="600" min="">600 cm</option>
-<option value="630" min="">630 cm</option>
-<option value="660" min="">660 cm</option>
-<option value="690" min="">690 cm</option>
+<option value="150">150 cm</option>
+<option value="180">180 cm</option>
+<option value="210">210 cm</option>
+<option value="240">240 cm</option>
+<option value="270">270 cm</option>
+<option value="300">300 cm</option>
+<option value="330">330 cm</option>
+<option value="360">360 cm</option>
+<option value="390">390 cm</option>
+<option value="420">420 cm</option>
+<option value="450">450 cm</option>
+<option value="480">480 cm</option>
+<option value="510">510 cm</option>
+<option value="540">540 cm</option>
+<option value="570">570 cm</option>
+<option value="600">600 cm</option>
+<option value="630">630 cm</option>
+<option value="660">660 cm</option>
+<option value="690">690 cm</option>
 </select>
 
               <button  name="command" value="calculate">Udregn pris & tilføj til kurv</button>
