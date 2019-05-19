@@ -18,29 +18,17 @@
         <jsp:include page='header.jsp'></jsp:include> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <style>
-                table {
-                    font-family: arial, sans-serif;
-                    border-collapse: collapse;
-                    width: 100%;
-                }
 
-                td, th {
-                    border: 1px solid #dddddd;
-                    text-align: left;
-                    padding: 8px;
-                }
-
-                tr:nth-child(even) {
-                    background-color: #dddddd;
-                }
             </style>        
             <title>Employee home page</title>
         </head>
         <body>
 
-            <h1 style="padding-top: 10px; padding-left: 500px; float: right; width: 75%"> LIST OF ORDERS: </h1>
-
-            <table class="table table-striped" style="padding: 50px; float: right ;width: 45%;">
+            
+            <h1 style="float: left ;padding-top: 25px">LIST OF USERS</h1>
+            <h1 style=" float: left; padding-top: 25px;padding-left: 800px"> LIST OF ORDERS: </h1>
+            <br><br><br><br><br>
+            <table class="table table-striped" style=" padding-top: 25;float: right ;width: 48%;">
                       
                 <thead>
                     <tr>
@@ -82,7 +70,7 @@
             </tbody>
         </table>
   
-                <h1 style="padding-top: 10px; float: left ;width: 50%;">LIST OF USERS</h1><br><br><br>
+                
         <%
             User user = (User) request.getSession().getAttribute("user");
             String role = user.getRole();
@@ -92,7 +80,7 @@
             }
         %>
 
-        <table class="table table-striped" style="padding: 50px; float: left ;width: 40%;">
+        <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
             <thead>
                 <tr>
                     <th>UserID</th>
