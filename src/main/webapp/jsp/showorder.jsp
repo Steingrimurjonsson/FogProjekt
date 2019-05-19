@@ -26,15 +26,17 @@
            int height = 220; 
            int width = order.getWidth();
            int shedWidth = order.getShedWidth();
-           int frameHeight = height + 380; 
+           int shedLength =order.getShedLength();
+            
+           int frameHeight = height *4; 
            int post = orderD.getPost();
            int frameLength = order.getLength() + 50; 
            int length = order.getLength();
-           double blue = ((order.getLength()/100)*33)-25;
+           double blue = ((order.getLength()/100)*33)-20;
            double green = blue*2;
            double red = blue*3;
            
-           double black = ((order.getLength()/100)*33)-25;
+           double black = ((order.getLength()/100)*33)-20;
            double yellow = blue*3;
            
            int roofSlope = order.getRoofSlope();
@@ -60,8 +62,7 @@
            roofSlope = 45;
            }
            
-        
-            
+     
 
          %>
     </head>
@@ -140,202 +141,176 @@
                               <br>
                               <br>
 
-
-    
-    <% if(order.getRoofSlope() > 1){ %>    
-     <% 
-if(order.isShed() == true){
- %>
-                              
-<div class="svgShed" style="float: left; border:1px #111 solid ; ">
+                                  
+  
+<div class="svgSide" style="float: left;padding: 20px   ">
   <svg contentScriptType="text/ecmascript" width="<%=frameLength%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
              zoomAndPan="magnify" contentStyleType="text/css" height="<%=frameHeight%>" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
              version="1.0">
-           <line y2="177.0" fill="none" x1="<%=length%>" x2="0" stroke="#000000" y1="177.0"/>
+   <defs>
+    <pattern id="lines" height="10" width="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="5" y2="3" stroke-width="1" stroke="red"/>
+    </pattern>
+  
+  </defs>
+  <defs>
+ <pattern id="dotted" height="10" width="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="2" y2="2" stroke-width="1" stroke="blue"/>
+    </pattern>
+  </defs>
+   <% if(order.getRoofSlope() > 1){ %>   
+   
+     <rect fill="url(#dotted)" x="0" width="<%=length%>" height="<%=roofSlope%>" y="<%=90-roofSlope%>" stroke="#000000"/>
+   
+          
+            <%}else{%>
+           <rect fill="url(#dotted)" x="0" width="<%=length%>" height="10" y="90" stroke="#000000"/>
+            <%}%>
            
-           <line y2="177.0" fill="none" x1="<%=length/2%>" x2="<%=length%>" stroke="#000000" y1="<%=roofSlope%>"/>
-           <line y2="<%=roofSlope%>" fill="none" x1="0" x2="<%=length/2%>" stroke="#000000" y1="177.0"/>
-             <% if(post > 4){ %>    
-             <rect fill="none" x="<%=blue%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=green%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=red%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <%
-             }else {%>
-             <rect fill="none" x="<%=black%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=yellow%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-                <%}%>
-             <line y2="400" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="180"/>
+               <%
+                 int halfPost = post/2;
+                 double oneHDP = 100/halfPost;
+                 double lengthPP = length/100;
+                for (int i = 0; i < halfPost; i++) {
+                double partingLpP = lengthPP *oneHDP;
+                double partingLP = partingLpP * i;
+                %>
+                 <rect fill="black" x="<%=partingLP%>" width="10.0" height="<%=height%>" y="90" stroke="#000000"/>
+                 <% } %>
+
+             <line y2="310" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="90"/>
              <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
              
-             <line y2="410.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="410.0"/>
-             <text x="<%=length/2%>" y="440"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
-       
-    <rect fill="#330033" x="0" width="150" height="<%=height%>" y="178.0" stroke="#003333"/>
-    <line y2="420.0" fill="none" x1="3.0" x2="148.0" stroke="#000000" y1="420.0"/>
-    <text x="42.0" y="441.0"><tspan xml:space="preserve"><%=order.getShedLength()%> cm </tspan></text>
+             <line y2="345.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="345.0"/>
+             <text x="<%=length/2%>" y="365"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
+           
+                 <% if(order.isShed() == true){ %>
+             <rect fill="url(#lines)" x="0" width="<%=shedLength%>" height="<%=height%>" y="90" stroke="#003333"/>
+             <rect fill="url(#lines)" x="0" width="<%=shedLength%>" height="<%=height%>" y="90" stroke="#003333"/>
+            <line y2="320" fill="none" x1="0" x2="<%=shedLength%>" stroke="red" y1="320.0"/>
+            <text x="<%=shedLength/2%>" y="338.0"><tspan xml:space="preserve"><%=shedLength%> cm </tspan></text>
+                <% }%>
 </svg>
 </div>
-<% } else {
-%>
-<div class="svgSide" style="float: left; border:1px #111 solid ; padding: 20px ">
-         <svg contentScriptType="text/ecmascript" width="<%=frameLength%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
-             zoomAndPan="magnify" contentStyleType="text/css" height="<%=frameHeight%>" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-             version="1.0">
-           <line y2="177.0" fill="none" x1="<%=length%>" x2="0" stroke="#000000" y1="177.0"/>
-           
-           <line y2="177.0" fill="none" x1="<%=length/2%>" x2="<%=length%>" stroke="#000000" y1="<%=roofSlope%>"/>
-           <line y2="<%=roofSlope%>" fill="none" x1="0" x2="<%=length/2%>" stroke="#000000" y1="177.0"/>
-             <% if(post > 4){ %>    
-             <rect fill="none" x="<%=blue%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=green%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=red%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <%
-             }else {%>
-             <rect fill="none" x="<%=black%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=yellow%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-                <%}%>
-             <line y2="400" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="180"/>
-             <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve"><%=height%> cm </tspan></text>
-             
-             <line y2="410.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="410.0"/>
-             <text x="<%=length/2%>" y="440"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
-         </svg>
-</div>
-<% }%>            
-<div class="svgTop" style="float: left; border:1px #111 solid;  ">
+
+<div class="svgTop" style="float: left; padding-left: 50px  ">
         
         <svg contentScriptType="text/ecmascript" width="<%=frameLength + 200%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
     zoomAndPan="magnify" contentStyleType="text/css" height="<%=frameHeight%>" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
     version="1.0">
-        <!-- the box -->
-    <rect fill="none" x="-1.000021" width="<%=length%>" y="83.0" height="<%=width%>" stroke="purple"/>
-   <!-- the beams -->
-     <line y2="392" fill="none" x1="57" x2="57" stroke="red" y1="83"/>
-     <line y2="392" fill="none" x1="62" x2="62" y1="83.0" stroke="brown"/>
-     
-     <line y2="392" fill="none" x1="119" x2="119" stroke="orange" y1="85"/>
-     <line y2="392.0" fill="none" x1="124.0" x2="124.0" stroke="green" y1="85.0"/>
-      
-    <line y2="392.0" fill="none" x1="186.0" x2="186.0" y1="85.0" stroke="yellow"/>
-    <line y2="392" fill="none" x1="181" x2="181" stroke="purple" y1="85.0"/>
-    
-    <line y2="392" fill="none" x1="243" x2="243" stroke="red" y1="85"/>
-    <line y2="392.0" fill="none" x1="248" x2="248" stroke="blue" y1="85"/>
-    
-    <line y2="392" fill="none" x1="305" x2="305" stroke="green" y1="85"/>
-    <line y2="392" fill="none" x1="310" x2="310" stroke="blue" y1="85.0"/>
-
-    <line y2="392" fill="none" x1="367" x2="367" stroke="red" y1="85"/>
-    <line y2="392" fill="none" x1="372" x2="372" stroke="#000000" y1="85"/>
-    
-    <!-- beams horz -->
-    
-    <line y2="120" fill="none" x1="0" x2="420" stroke="red" y1="120"/>
-    <line y2="115" fill="none" x1="0" x2="420" y1="115" stroke="yellow"/>
-    
-    <line y2="355" fill="none" x1="0" x2="420" y1="355" stroke="orange"/>
-    <line y2="360" fill="none" x1="0" x2="420" y1="360" stroke="green"/>
-    <!-- post -->
-    <rect fill="none" x="100" width="10.0" height="10.0" y="115.0" stroke="red"/>
-    
-    <rect fill="none" x="100" width="10.0" y="338" height="10.0" stroke="#000000"/>
-    
-    <rect fill="none" x="300" width="10.0" y="338" height="10.0" stroke="#000000"/>
-    
-    <rect fill="none" x="300" width="10.0" y="115" height="10.0" stroke="#000000"/>
-    <!-- indicator lines and text -->
-    <line y2="360.0" fill="none" x1="430.0" x2="430.0" stroke="#ff3333" y1="116.0"/>
-    <text x="432.0" y="229.0"><tspan xml:space="preserve"><%=shedWidth%> cm </tspan></text>
-    <line y2="393.0" fill="none" x1="502.0" x2="503.0" stroke="#ff3333" y1="83.0"/>
-    <text x="509.0" y="220.0"><tspan xml:space="preserve"><%=width%> cm </tspan></text>
    
-    <line y2="457.0" fill="none" x1="<%=length%>" x2="1.0" stroke="#ff0033" y1="457.0"/>
-    <text x="159.0" y="486.0"><tspan xml:space="preserve"><%=length%> cm </tspan></text>
+ 
+   
+        <!-- the box -->
+    <rect fill="none" x="0" width="<%=length%>" y="0" height="<%=width%>" stroke="#000000"/>
+   <!-- the beams -->
+   
+   <%
+         //width is 100% if woodRoof is 6 then place roof beam every 16.6% until 100% on width
+         int woodRoof = orderD.getWoodRoof();
+         double oneHDWR = 100/orderD.getWoodRoof();
+            double lengthP = (length-30)/100;
+              for (int i = 0; i < woodRoof; i++) {
+                double partingLp = lengthP *oneHDWR;
+                double partingL = partingLp * i;
+                %>
+                
+                   <rect fill="none" x="<%=partingL %>" width="1" height="<%=width%>" y="0" stroke="#000000"/>
+                  
+                    
+                   <% }
+  double partingLp = lengthP *oneHDWR;
+                   %>
+
+                    <%
+               
+                for (int i = 0; i < halfPost; i++) {
+                double partingLpP = lengthPP *oneHDP;
+                double partingLP = partingLpP * i;
+                %>
+                                 
+<!-- post -->
+                   <rect x="<%=partingLP %>" y="15"  width="10.0" height="10.0" stroke="red" fill="black"/>
+                   <rect x="<%=partingLP %>" y="<%=width-25%>"    width="10.0" height="10.0" stroke="#000000" fill="black" />
+
+                
+                 <% } %>
+  
+    <!-- beams horz -->
+    <rect fill="none" x="0" width="<%=length%>" height="10" y="15" stroke="#000000"/>
+    <rect fill="none" x="0" width="<%=length%>" height="10" y="<%=width-25%>" stroke="#000000"/>
+   
+     <% if(order.getRoofSlope() > 1){ %>   
+    <rect fill="none" x="0" width="<%=length%>" height="10" y="<%=width/2%>" stroke="#000000"/>
+    <% }  %>
+
+   
     
-    <line y2="410.0" fill="none" x1="420.0" x2="371.0" stroke="#ff0000" y1="410.0"/>
-    <text x="373.0" y="422.0"><tspan xml:space="preserve">62 cm </tspan></text>
+     <!-- shed  -->
+        <% if(order.isShed() == true){ %> 
+    <rect fill="url(#lines)" x="0" width="<%=shedLength%>" height="<%=shedWidth%>" y="15" stroke="#000000"/>
+    <!-- indicator lines and text for shed-->
+        <line y2="<%=shedWidth + 15%>" fill="none" x1="<%=length +20%>" x2="<%=length+ 20%>" stroke="#ff3333" y1="15"/>
+        <text x="<%=length +30%>" y="<%=length/2%>"><tspan xml:space="preserve"><%=shedWidth%> cm </tspan></text>
+        <% }  %>
+
+    <!-- indicator lines and text -->
+
+    <line y2="<%=width%>" fill="none" x1="<%=length +80%>" x2="<%=length +80%>" stroke="#ff3333" y1="0"/>
+    <text x="<%=length + 90%>" y="<%=(length/2)+30%>"><tspan xml:space="preserve"><%=width%> cm </tspan></text>
+   
+    <line y2="<%=width+35%>" fill="none" x1="<%=length%>" x2="1.0" stroke="#ff0033" y1="<%=width+35%>"/>
+    <text x="<%=(length/2)-10%>" y="<%=width+55%>"><tspan xml:space="preserve"><%=length%> cm </tspan></text>
+    
+    <line y2="<%=width + 10 %>" fill="none" x1="0" x2="<%=partingLp%>" stroke="#ff0000" y1="<%=width + 10 %>"/>
+    <text x="10" y="<%=width + 25 %>"><tspan xml:space="preserve"><%=partingLp %> cm </tspan></text>
 </svg>
 </div>   
-   <% } else{%>
-                              <% 
-if(order.isShed() == true){
- %>
-                              
-<div class="svgShed" style="float: left; border:1px #111 solid ; ">
-<svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
-    zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-    version="1.0">
-    <rect fill="none" x="0" width="420" y="167" height="10" stroke="#000000"/>
-    <rect fill="none" x="100.0" width="25.0" y="178.0" height="220" stroke="#000000"/>
-    <rect fill="none" x="300" width="25.0" height="220" y="178.0" stroke="#000000"/>
-    <line y2="400" fill="none" x1="441.0" x2="442.0" y1="180" stroke="#ff0000"/>
-    <text x="455.0" y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
-    <rect fill="#330033" x="0" width="150" height="220" y="178.0" stroke="#003333"/>
-    <line y2="420.0" fill="none" x1="3.0" x2="148.0" stroke="#000000" y1="420.0"/>
-    <text x="42.0" y="441.0"><tspan xml:space="preserve"><%=order.getShedLength()%> cm </tspan></text>
-</svg>
-</div>
-<% } else {
-%>
-<div class="svgSide" style="float: left; border:1px #111 solid ; padding: 20px ">
-         <svg contentScriptType="text/ecmascript" width="<%=frameLength%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
+  
+
+<div class="svgFront" style="float: left;padding: 20px   ">
+  <svg contentScriptType="text/ecmascript" width="<%=frameLength%>" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
              zoomAndPan="magnify" contentStyleType="text/css" height="<%=frameHeight%>" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
              version="1.0">
-             <rect fill="none" x="0" width="<%=length%>" height="10" y="167" stroke="#000000"/>
-             <% if(post > 4){ %>    
-             <rect fill="none" x="<%=blue%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=green%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=red%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <%
-             }else {%>
-             <rect fill="none" x="<%=black%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-             <rect fill="none" x="<%=yellow%>" width="25.0" height="<%=height%>" y="178.0" stroke="#000000"/>
-                <%}%>
-             <line y2="400" fill="none" x1="<%=length%>" x2="<%=length%>" stroke="#ff0000" y1="180"/>
-             <text x="<%=length+5%>"  y="288.0"><tspan xml:space="preserve">220 cm </tspan></text>
+   <defs>
+    <pattern id="lines" height="10" width="10" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="5" y2="3" stroke-width="1" stroke="red"/>
+    </pattern>
+  </defs>
+
+   <% if(order.getRoofSlope() > 1){ %>   
+   
+           <line y2="90" fill="none" x1="<%=length%>" x2="0" stroke="blue" y1="90"/>
+           <line y2="90" fill="none" x1="<%=length/2%>" x2="<%=length%>" stroke="blue" y1="<%=roofSlope%>"/>
+           <line y2="<%=roofSlope%>" fill="none" x1="0" x2="<%=length/2%>" stroke="blue" y1="90"/>
+           
+       
+           <text x="0" y="30"><tspan xml:space="preserve"><%=roofSlope%> graders hændning ¤</tspan></text>
+            <%}else{%>
+           <rect fill="none" x="0" width="<%=length%>" height="10" y="90" stroke="#000000"/>
+            <%}%>
+           
              
-             <line y2="410.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="410.0"/>
-             <text x="<%=length/2%>" y="440"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
-         </svg>
-</div>
-<% }%>            
-<div class="svgTop" style="float: left; border:1px #111 solid ; ">
-        
-        <svg contentScriptType="text/ecmascript" width="600.0px" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full"
-    zoomAndPan="magnify" contentStyleType="text/css" height="600.0px" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-    version="1.0">
-    <rect fill="none" x="-1.000021" width="420" y="83.0" height="310.0" stroke="#000000"/>
-    <line y2="392" fill="none" x1="62" x2="62" y1="83.0" stroke="#000000"/>
-    <line y2="392.0" fill="none" x1="124.0" x2="124.0" stroke="#000000" y1="85.0"/>
-    <line y2="392.0" fill="none" x1="186.0" x2="186.0" y1="85.0" stroke="#000000"/>
-    <line y2="392.0" fill="none" x1="248" x2="248" stroke="#000000" y1="85"/>
-    <line y2="392" fill="none" x1="57" x2="57" stroke="#000000" y1="83"/>
-    <line y2="392" fill="none" x1="119" x2="119" stroke="#000000" y1="85"/>
-    <line y2="392" fill="none" x1="181" x2="181" stroke="#000000" y1="85.0"/>
-    <line y2="392" fill="none" x1="243" x2="243" stroke="#000000" y1="85"/>
-    <line y2="392" fill="none" x1="310" x2="310" stroke="#000000" y1="85.0"/>
-    <line y2="392" fill="none" x1="305" x2="305" stroke="#000000" y1="85"/>
-    <line y2="392" fill="none" x1="372" x2="372" stroke="#000000" y1="85"/>
-    <line y2="392" fill="none" x1="367" x2="367" stroke="#000000" y1="85"/>
-    <line y2="120" fill="none" x1="0" x2="420" stroke="#000000" y1="120"/>
-    <line y2="355" fill="none" x1="0" x2="420" y1="355" stroke="#000000"/>
-    <line y2="115" fill="none" x1="0" x2="420" y1="115" stroke="#000000"/>
-    <line y2="360" fill="none" x1="0" x2="420" y1="360" stroke="#000000"/>
-    <rect fill="none" x="100" width="25.0" height="23.0" y="115.0" stroke="#000000"/>
-    <rect fill="none" x="100" width="25.0" y="338" height="23.0" stroke="#000000"/>
-    <rect fill="none" x="300" width="25.0" y="338" height="23.0" stroke="#000000"/>
-    <rect fill="none" x="300" width="25.0" y="115" height="23.0" stroke="#000000"/>
-    <line y2="360.0" fill="none" x1="430.0" x2="430.0" stroke="#ff3333" y1="116.0"/>
-    <text x="432.0" y="229.0"><tspan xml:space="preserve">240 cm </tspan></text>
-    <line y2="393.0" fill="none" x1="502.0" x2="503.0" stroke="#ff3333" y1="83.0"/>
-    <text x="509.0" y="220.0"><tspan xml:space="preserve"><%=order.getWidth()%> cm </tspan></text>
-    <line y2="457.0" fill="none" x1="416.0" x2="1.0" stroke="#ff0033" y1="457.0"/>
-    <text x="159.0" y="486.0"><tspan xml:space="preserve"><%=order.getLength()%> cm </tspan></text>
-    <line y2="410.0" fill="none" x1="420.0" x2="371.0" stroke="#ff0000" y1="410.0"/>
-    <text x="373.0" y="422.0"><tspan xml:space="preserve">62 cm </tspan></text>
+                 <rect fill="black" x="0" width="10.0" height="<%=height%>" y="90" stroke="#000000"/>
+                 <rect fill="black" x="<%=length-10%>" width="10.0" height="<%=height%>" y="90" stroke="#000000"/>
+              
+
+             <line y2="310" fill="none" x1="<%=length+10%>" x2="<%=length+10%>" stroke="#ff0000" y1="90"/>
+             <text x="<%=length+15%>"  y="<%=height%>"><tspan xml:space="preserve">220 cm </tspan></text>
+             
+             <line y2="345.0" fill="none" x1="<%=length%>" x2="0" stroke="#ff0000" y1="345.0"/>
+             <text x="<%=length/2%>" y="365"><tspan xml:space="preserve"><%=length%> cm</tspan></text>
+           
+                 <% if(order.isShed() == true){ %>
+             <rect fill="url(#lines)" x="0" width="<%=length%>" height="<%=height%>" y="90" stroke="#003333"/>
+             <rect fill="url(#lines)" x="0" width="<%=length%>" height="<%=height%>" y="90" stroke="#003333"/>
+             
+                <% }%>
 </svg>
 </div>
-                              <%}%>
+
+
+
 
     </body>
 </html>
