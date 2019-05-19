@@ -285,7 +285,7 @@
            <line y2="<%=roofSlope%>" fill="none" x1="0" x2="<%=length/2%>" stroke="blue" y1="90"/>
            
        
-           <text x="0" y="30"><tspan xml:space="preserve"><%=roofSlope%> graders hændning ¤</tspan></text>
+           <text x="0" y="30"><tspan xml:space="preserve"><%=order.getRoofSlope()%> graders hældning ¤</tspan></text>
             <%}else{%>
            <rect fill="none" x="0" width="<%=length%>" height="10" y="90" stroke="#000000"/>
             <%}%>

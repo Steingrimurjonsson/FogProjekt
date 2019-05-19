@@ -43,7 +43,7 @@
         </head>
         <body> 
 
-            <div class="customerInfo" style='padding: 50px'>              
+            <div class="customerInfo" style='padding: 50px; float: left; width: 50%'>              
                 <h1>Velkommen <%= firstName%> <%= lastName%> her er din information og ordrehistorik</h1> <br>
             Email: <%= userEmail%><br>
             <br>
@@ -63,9 +63,9 @@
             <br>
             <a href="jsp/editcustomerinfo.jsp">Redigér din information her</a>
         </div>
-        <h1> LIST OF ORDERS: </h1>
+        <h1  style="padding: 50px;"> LIST OF ORDERS: </h1>
 
-        <table class="table table-striped" style="float: left ;width: 50%; right: 100%;">
+        <table class="table table-striped" style="padding: 50px; float: right ;width: 50%;">
             <thead>
                 <tr>
                     <th> Ordre ID</th>

@@ -38,9 +38,10 @@
         </head>
         <body>
 
-            <h1> LIST OF ORDERS: </h1>
+            <h1 style="padding-top: 10px; padding-left: 500px; float: right; width: 75%"> LIST OF ORDERS: </h1>
 
-            <table class="table table-striped">
+            <table class="table table-striped" style="padding: 50px; float: right ;width: 45%;">
+                      
                 <thead>
                     <tr>
                         <th> OrderID</th>
@@ -80,8 +81,8 @@
 
             </tbody>
         </table>
-    <body>
-        <h1>LIST OF USERS</h1>
+  
+                <h1 style="padding-top: 10px; float: left ;width: 50%;">LIST OF USERS</h1><br><br><br>
         <%
             User user = (User) request.getSession().getAttribute("user");
             String role = user.getRole();
@@ -91,7 +92,7 @@
             }
         %>
 
-        <table class="table table-striped">
+        <table class="table table-striped" style="padding: 50px; float: left ;width: 40%;">
             <thead>
                 <tr>
                     <th>UserID</th>
@@ -134,7 +135,7 @@
 
             </tbody>
         </table>
-        <form><button name="command" value="createPDF" >Create PDF</button></form>
+
     </body>
 </html>
 
