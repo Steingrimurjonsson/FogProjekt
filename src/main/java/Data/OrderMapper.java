@@ -5,6 +5,7 @@
  */
 package Data;
 
+import Logic.CustomerException;
 import Logic.Invoice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import Logic.Order;
 import Logic.OrderException;
+import Logic.User;
 import java.sql.Statement;
 
 /**
@@ -261,16 +263,17 @@ public class OrderMapper
             ids.next();
             int id = ids.getInt(1);
             invoice.setIdInvoice(id);
-            
+
         } catch (SQLException | ClassNotFoundException ex)
         {
             throw new OrderException(ex.getMessage());
 
         }
-         return invoice;
-       
+        return invoice;
+
     }
-        public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
+
+    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
     {
         try
         {
@@ -292,4 +295,52 @@ public class OrderMapper
         }
         return null;
     }
+
+    public static int getStockIdByMaterial(String material) throws SQLException, OrderException
+    {
+
+        int idMaterial = 0;
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT idMaterial FROM FOG.Stock where materialDesc = ?;";
+            
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, material);
+            System.out.println(ps);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next())
+            {
+                idMaterial = rs.getInt("idMaterial");
+                return idMaterial;
+            }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+        return idMaterial;
+    }
+
+    public static void updateStockById(int stockUsed, int idMaterial) throws OrderException
+    {
+
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE FOG.Stock set stock= stock- ? where idMaterial = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, stockUsed);
+            ps.setInt(2, idMaterial);
+            System.out.println(ps);
+             ps.executeUpdate();
+            
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+     
+    }
 }
+

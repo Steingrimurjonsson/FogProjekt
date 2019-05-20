@@ -3,6 +3,7 @@ package Logic;
 import Data.UserMapper;
 import Data.OrderDetails;
 import Data.OrderMapper;
+import java.sql.SQLException;
 import java.util.List;
 
 public class LogicFacade
@@ -81,4 +82,14 @@ public class LogicFacade
     {
         return OrderMapper.specificInvoiceDetails(idOrder);
     }
+     public static int getStockIdByMaterial(String material) throws SQLException, OrderException
+     {
+         return OrderMapper.getStockIdByMaterial(material);
+     }
+     
+     public static void updateStockById(int stockUsed, int idMaterial) throws OrderException
+     {
+        OrderMapper.updateStockById(stockUsed, idMaterial);
+     }
+    
 }

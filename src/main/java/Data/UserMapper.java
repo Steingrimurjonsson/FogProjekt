@@ -13,7 +13,7 @@ import java.util.List;
 public class UserMapper
 {
 
-    public static void createUser(User user) throws CustomerException
+    public static User createUser(User user) throws CustomerException
     {
         try
         {
@@ -39,9 +39,10 @@ public class UserMapper
         {
             throw new CustomerException(ex.getMessage());
         }
+        return user;
     }
 
-    public static void editUser(User user) throws CustomerException
+    public static User editUser(User user) throws CustomerException
     {
         try
         {
@@ -66,6 +67,7 @@ public class UserMapper
         {
             throw new CustomerException(ex.getMessage());
         }
+        return user;
     }
 
     public static User login(String email, String password) throws CustomerException
