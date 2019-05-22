@@ -1,5 +1,6 @@
 package Logic;
 
+import Data.Invoice;
 import Data.UserMapper;
 import Data.OrderDetails;
 import Data.OrderMapper;

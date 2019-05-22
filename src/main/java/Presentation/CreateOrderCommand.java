@@ -7,7 +7,7 @@ package Presentation;
 
 import Data.Carport;
 import Data.OrderDetails;
-import Logic.Invoice;
+import Data.Invoice;
 import Logic.LogicFacade;
 import Logic.Order;
 import Logic.OrderException;
