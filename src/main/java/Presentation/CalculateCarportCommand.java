@@ -6,10 +6,8 @@
 package Presentation;
 
 import Data.Carport;
-import Data.MaterialList;
 import Data.OrderDetails;
-import Logic.Calculator;
-import Logic.Invoice;
+import Data.Invoice;
 import Logic.OrderException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -311,8 +309,7 @@ public class CalculateCarportCommand extends Command
         Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
         session.setAttribute("carport", carport);
 
-        MaterialList materials = Calculator.calculateMaterials(carport);
-        session.setAttribute("materials", materials);
+      
         }
         }
         catch (Exception e){

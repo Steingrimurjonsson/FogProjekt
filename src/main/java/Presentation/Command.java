@@ -24,7 +24,6 @@ abstract class Command
         commands.put("emptyCart", new EmptyCartCommand());
         commands.put("createOrder", new CreateOrderCommand());
         commands.put("showOrder", new ShowOrderCommand());
-        commands.put( "createPDF", new PDFCommand() );
         commands.put( "customerpage", new CustomerPageCommand() );
         
     }

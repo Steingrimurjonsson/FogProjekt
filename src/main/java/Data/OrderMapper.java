@@ -6,7 +6,6 @@
 package Data;
 
 import Logic.CustomerException;
-import Logic.Invoice;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
