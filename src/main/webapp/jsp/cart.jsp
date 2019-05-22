@@ -54,8 +54,8 @@
                 <th> Carport Tagmateriale</th>
                 <th> Carport Taghældning</th>
                 <th> Carport Skur</th>
-                <th> Carport Skur Længde</th> 
-                <th> Carport Skur Bredde</th>
+                <th> Carport Redskabsrum Længde</th> 
+                <th> Carport Redskabsrum Bredde</th>
                 <th> Samlet Pris</th> 
              
             </tr>

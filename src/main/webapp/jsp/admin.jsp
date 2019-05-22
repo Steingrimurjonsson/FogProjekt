@@ -20,27 +20,27 @@
             <style>
 
             </style>        
-            <title>Employee home page</title>
+            <title>Admin side</title>
         </head>
         <body>
 
             
-            <h1 style="float: left ;padding-top: 25px">LIST OF USERS</h1>
-            <h1 style=" float: left; padding-top: 25px;padding-left: 800px"> LIST OF ORDERS: </h1>
+            <h1 style="float: left ;padding-top: 25px">Liste over brugere:</h1>
+            <h1 style=" float: left; padding-top: 25px;padding-left: 800px"> Liste over ordrer: </h1>
             <br><br><br><br><br>
             <table class="table table-striped" style=" padding-top: 25;float: right ;width: 48%;">
                       
                 <thead>
                     <tr>
-                        <th> OrderID</th>
-                        <th> UserID</th>
-                        <th> Length</th>
-                        <th> Width</th>
-                        <th> Roof Material </th>
-                        <th> Shed </th>
-                        <th> Roofslope </th>
-                        <th> Shed Length </th>
-                        <th> Shed Width </th>
+                        <th>Ordre ID</th>
+                        <th>Bruger ID</th>
+                        <th>Længde</th>
+                        <th>Bredde</th>
+                        <th>Tagmateriale</th>
+                        <th>Skur</th>
+                        <th>Taghældning</th>
+                        <th>Redskabsrum længde</th>
+                        <th>Redskabsrum bredde</th>
 
 
 
@@ -83,17 +83,17 @@
         <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
             <thead>
                 <tr>
-                    <th>UserID</th>
+                    <th>Bruger ID</th>
                     <th>Email</th>
-                    <th>Password</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone</th>
-                    <th>Street</th>
-                    <th>City</th>
-                    <th>Zip</th>
-                    <th>Country</th>                 
-                    <th>Role</th>
+                    <th>Kodeord</th>
+                    <th>Fornavn</th>
+                    <th>Efternavn</th>
+                    <th>Telefonnummer</th>
+                    <th>Adresse</th>
+                    <th>By</th>
+                    <th>Postnummer</th>
+                    <th>Land</th>                 
+                    <th>Rolle</th>
                 </tr>
             </thead>
             <%List<User> list = (List<User>) request.getAttribute("userList");
