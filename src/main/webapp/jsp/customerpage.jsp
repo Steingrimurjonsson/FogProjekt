@@ -63,7 +63,7 @@
             <br>
             <a href="jsp/editcustomerinfo.jsp">Redigér din information her</a>
         </div>
-        <h1  style="padding: 50px;"> LIST OF ORDERS: </h1>
+        <h1  style="padding: 50px;"> Liste over ordre: </h1>
 
         <table class="table table-striped" style="padding: 50px; float: right ;width: 50%;">
             <thead>

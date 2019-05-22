@@ -4,7 +4,7 @@
     Author     : NoellZane
 --%>
 
-<%@page import="Logic.Invoice"%>
+<%@page import="Data.Invoice"%>
 <%@page import="Data.OrderDetails"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
