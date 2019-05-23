@@ -154,7 +154,7 @@ public class LogicFacade
      * @param woodRoof
      * @param roofStone
      * @param roofPlast
-     * @return
+     * @return order details
      * @throws OrderException
      */
     public static OrderDetails createOrderDetail(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) throws OrderException {
@@ -164,9 +164,9 @@ public class LogicFacade
     }
     
     /**
-     *
+     * calls the corrosponding method in the OrderMapper and gives us the details for the specific order.
      * @param idOrder
-     * @return
+     * @return orderdetails for the order ID it's given.
      * @throws OrderException
      */
     public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
@@ -178,7 +178,7 @@ public class LogicFacade
      *
      * @param idOrder
      * @param totalPrice
-     * @return
+     * @return invoice
      * @throws OrderException
      */
     public static Invoice createInvoice(int idOrder, double totalPrice) throws OrderException {
@@ -199,7 +199,7 @@ public class LogicFacade
     }
 
     /**
-     *
+     *Calls corrosponding method in OrderMapper
      * @param material
      * @return
      * @throws SQLException
@@ -211,7 +211,7 @@ public class LogicFacade
      }
      
     /**
-     *
+     *Updates stock
      * @param stockUsed
      * @param idMaterial
      * @throws OrderException

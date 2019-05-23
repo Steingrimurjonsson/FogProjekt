@@ -27,7 +27,7 @@ public class Cart
 
     /**
      *
-     * @return list of carprts
+     * @return list of carports
      */
     public ArrayList<Carport> getCarport()
     {
@@ -44,7 +44,7 @@ public class Cart
     }
     
     /**
-     * add carport to list
+     * adds carport to cart
      * @param carport
      */
     public void addToCart(Carport carport)

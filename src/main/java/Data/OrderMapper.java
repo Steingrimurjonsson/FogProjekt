@@ -26,7 +26,7 @@ public class OrderMapper
 
     /**
      * Method to create an order of a carport, and add it to the datebase
-     * @param order
+     * @param order (Which contains idUser, length, width, roofMat, shed, slope, shedLength, shedWidth)
      * @return order
      * @throws OrderException
      */
@@ -94,11 +94,11 @@ public class OrderMapper
         }
 
     }
-    //This is not ready yet, it's just a draft of what orderlist COULD look like. Will edit once we decide on order structure
 
-    /**
-     * Gets all the orders from the database
-     * @return orderList
+     /**
+     * This method takes all orders in the database and puts them in an
+     * arraylist.
+     * @return an arraylist (orderList) filled with all orders in the system
      * @throws OrderException
      */
     public static List<Order> allOrders() throws OrderException
@@ -135,7 +135,7 @@ public class OrderMapper
     }
 
     /**
-     * Gets all orders based on UserID from the database
+     * Gets all orders made by a specific user, from the UserID from the database
      * @param idUser
      * @return orderByUserIDList
      * @throws OrderException
@@ -176,7 +176,7 @@ public class OrderMapper
     }
 
     /**
-     * Gets a specific order based on the order's Id from the database.
+     * Gets a specific order based on the order's ID from the database.
      * @param idOrder
      * @return order
      * @throws OrderException
@@ -349,7 +349,7 @@ public class OrderMapper
     }
 
     /**
-     * gets materialId based on material description.
+     * gets materialId based on material description, so that we can use it in updateStockById.
      * @param material
      * @return idMaterial
      * @throws SQLException
@@ -366,7 +366,6 @@ public class OrderMapper
             
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, material);
-            System.out.println(ps);
             ResultSet rs = ps.executeQuery();
             if (rs.next())
             {
@@ -382,7 +381,7 @@ public class OrderMapper
     }
 
     /**
-     * Updates the stocklist.
+     * Updates the stocklist, by using the materials used, when the order is created, and using the id we got from getStockIdByMaterial.
      * @param stockUsed
      * @param idMaterial
      * @throws OrderException
