@@ -11,6 +11,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <jsp:include page='header.jsp'></jsp:include> 
         <title>Log ind & Registrering</title>
+        <script>
+        
+            var url = window.location;
+            var query_string = url.search;
+            var search_params = new URLSearchParams(query_string); 
+            var errorMsg = search_params.get('error');
+            if(errorMsg === "true"){
+            var error = "Prøv igen Email og Kodeord passer ikke sammen";
+            document.write("<br><br><h1 style='color:red;'>" + error + "</h1>");
+            }   
+        </script>
+        
     </head>
     <body>
      
@@ -22,6 +34,9 @@
                         <input type="hidden" name="command" value="login"><br>
                         <input type="text" name="email" placeholder="E-mail" required><br>
                         <input type="password" name="password" placeholder="Kodeord" required><br><br>
+                        <% 
+                     
+                        %>
                          <input type="submit" value="Submit">
                     </form>
     </div>
