@@ -164,7 +164,7 @@
                     <form name="admin" action="FrontController" method="POST">
                         <input type="hidden" name="matID"  value="<%= element.getIdMaterial()%>">
                         <input type="number" name="stock" placeholder="" required>
-                       <button  name="command" value="admin">Tilføj</button>
+                       <button  name="command" value="admin" type="submit">Tilføj</button>
                     </form>
                     </th>
                     <%}%>

@@ -8,6 +8,11 @@
 
 <%@page import="Logic.User"%>
 <%
+        if (request.getRequestedSessionId() != null
+        && !request.isRequestedSessionIdValid()) {
+        // Session is expired
+         response.sendRedirect("logout");
+        }
      User user = (User) request.getSession().getAttribute("user");
     String username = "NULL";
     String role = "NULL";
@@ -32,8 +37,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script type = "text/javascript" src = "js/jsfile.js" ></script>
         <link rel="shortcut icon" href="img/faviconFog.ico"/>
-      
-        
+
         
     </head>
   
