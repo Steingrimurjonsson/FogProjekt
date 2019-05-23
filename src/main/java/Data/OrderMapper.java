@@ -437,5 +437,24 @@ public class OrderMapper
         return getStock;
     }
 
+     public static void addStockById(int idMaterial, int stock) throws OrderException
+     {
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE FOG.Stock set stock= stock+ ? where idMaterial = ?;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, stock);
+            ps.setInt(2, idMaterial);
+             ps.executeUpdate();
+            
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+     
+    }
+
 }
 

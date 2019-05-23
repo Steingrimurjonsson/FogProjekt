@@ -225,4 +225,9 @@ public class LogicFacade
     {
         return OrderMapper.getStock();
     }
+     public static void addStockById(int idMaterial, int stock) throws OrderException
+     {
+        OrderMapper.addStockById(idMaterial, stock);
+     }
+    
 }

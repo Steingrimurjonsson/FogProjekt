@@ -142,6 +142,7 @@
                     <th>Material ID</th>
                     <th>Material</th>
                     <th>Stock</th>
+                    <th>Add to stock</th>
                    
                 </tr>
             </thead>
@@ -157,8 +158,13 @@
                     <th> <%= element.getMaterialDesc()%> </th>  
                     <th> <%= element.getStock() %> <%if(element.getStock() < 99900){ %> <p style="color:red;">Bestil til lager!</p> <%}%></th> 
                         
-
+                    <th>
+                    <form name="admin" action="FrontController" method="POST">
+                        <input type="text" name="matID" value="<%=element.getIdMaterial()%>">><br>
+                        <input type="text" name="stock" placeholder="How much"><br>
+                    </form></th>
                     <%}%>
+        
                 </tr>
 
 

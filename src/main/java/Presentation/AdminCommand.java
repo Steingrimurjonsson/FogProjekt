@@ -29,6 +29,14 @@ public class AdminCommand extends Command
           request.setAttribute("orders", orderList);
           request.setAttribute("userList", userList);
           request.setAttribute("stockList", stockList);
+          
+          String matIdText = request.getParameter("matID");
+          String stockText = request.getParameter("stock");
+            int matID = Integer.parseInt(matIdText);     
+            int stock = Integer.parseInt(stockText);
+
+           LogicFacade.addStockById(matID, stock);
+          
             return "admin";
     }
 }
