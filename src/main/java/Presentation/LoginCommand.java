@@ -22,10 +22,6 @@ public class LoginCommand extends Command {
         HttpSession session = request.getSession();
         session.setAttribute( "user", user );
         session.setAttribute( "role", user.getRole() );
-        //            int idUser = ((User) request.getSession().getAttribute("user")).getId();
-
-    //    List<Order> orderByUserList =  LogicFacade.getAllOrdersByUserID(idUser);
-      //    session.setAttribute("ordersByUser", orderByUserList);
         return "../index";
     }
 
