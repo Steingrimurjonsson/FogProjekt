@@ -21,6 +21,12 @@
             var error = "Prøv igen Email og Kodeord passer ikke sammen";
             document.write("<br><br><h1 style='color:red;'>" + error + "</h1>");
             }   
+            var RerrorMsg = search_params.get('Rerror');
+            if(RerrorMsg === "true"){
+            var Rerror = "Prøv igen dine kodeord passer ikke med hindanden";
+            document.write("<br><br><h1 style='color:red;'>" + Rerror + "</h1>");
+            }   
+            
         </script>
         
     </head>

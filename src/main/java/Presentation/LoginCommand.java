@@ -4,6 +4,7 @@ import Logic.LogicFacade;
 import Logic.CustomerException;
 import Logic.User;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,9 @@ public class LoginCommand extends Command {
     String execute( HttpServletRequest request, HttpServletResponse response ) throws CustomerException, IOException {
        try {
         String email = request.getParameter( "email" );
+        byte[] bytes = email.getBytes(StandardCharsets.ISO_8859_1);
+        email = new String(bytes, StandardCharsets.UTF_8);
+     
         String password = request.getParameter( "password" );
         User user = LogicFacade.login( email, password );
       

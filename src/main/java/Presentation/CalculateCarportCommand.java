@@ -9,6 +9,7 @@ import Data.Carport;
 import Data.OrderDetails;
 import Data.Invoice;
 import Logic.OrderException;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -114,8 +115,13 @@ public class CalculateCarportCommand extends Command
                 } else if(roofSlope > 36 && roofSlope < 45){
                     roofStone = 50;
                 }
+
                 roofMat = request.getParameter("Tag");
-                
+               
+
+                byte[] bytes = roofMat.getBytes(StandardCharsets.ISO_8859_1);
+                roofMat = new String(bytes, StandardCharsets.UTF_8);
+     
         }
         
         //SHED CAL
