@@ -19,9 +19,14 @@
         <jsp:include page='header.jsp'></jsp:include> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 
-               <% 
-                   
-                            %>
+            <%
+            User user = (User) request.getSession().getAttribute("user");
+            String role = user.getRole();
+            if (!"admin".equals(role) )
+            {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
+        %>
             <script>
                 
                 if(1=1){
@@ -81,14 +86,7 @@
         </table>
   
                 
-        <%
-            User user = (User) request.getSession().getAttribute("user");
-            String role = user.getRole();
-            if (!"admin".equals(role))
-            {
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
-            }
-        %>
+  
 
         <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
             <thead>
@@ -160,8 +158,10 @@
                         
                     <th>
                     <form name="admin" action="FrontController" method="POST">
-                        <input type="text" name="matID" value="<%=element.getIdMaterial()%>">><br>
-                        <input type="text" name="stock" placeholder="How much"><br>
+                        <input type="hidden" name="command" value="admin">
+                        <input type="hidden" name="changeStock" value="yes">
+                        <input type="hidden" name="matID"  value="<%= element.getIdMaterial()%>">
+                        <input type="number" name="stock" placeholder="How much?">
                     </form></th>
                     <%}%>
         
