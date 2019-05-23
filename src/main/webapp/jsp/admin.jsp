@@ -4,6 +4,7 @@
     Author     : stein
 --%>
 
+<%@page import="Data.Stock"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page import="Logic.User"%>
 <%@page import="java.util.List"%>
@@ -17,9 +18,18 @@
         <title>Admin</title>
         <jsp:include page='header.jsp'></jsp:include> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <style>
-
-            </style>        
+                
+               <% 
+                   
+                            %>
+            <script>
+                
+                if(1=1){
+                    alert("Hello something works");
+                }
+                
+            </script>
+            
             <title>Admin side</title>
         </head>
         <body>
@@ -124,6 +134,38 @@
             </tbody>
         </table>
 
+                
+                <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
+           <h1 >Stock:</h1>
+                    <thead>
+                <tr>
+                    <th>Material ID</th>
+                    <th>Material</th>
+                    <th>Stock</th>
+                   
+                </tr>
+            </thead>
+            <%
+                List<Stock> stockList = (List<Stock>) request.getAttribute("stockList");
+                for (Stock element : stockList)
+                {%>
+
+            <tbody>
+                <tr>
+
+                    <th> <%= element.getIdMaterial()%> </th>        
+                    <th> <%= element.getMaterialDesc()%> </th>  
+                    <th> <%= element.getStock() %> <%if(element.getStock() < 99900){ %> <p style="color:red;">Bestil til lager!</p> <%}%></th> 
+                        
+
+                    <%}%>
+                </tr>
+
+
+
+            </tbody>
+        </table>
+                
     </body>
 </html>
 

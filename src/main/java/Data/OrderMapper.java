@@ -407,5 +407,35 @@ public class OrderMapper
         }
      
     }
+
+
+    public static List<Stock> getStock() throws OrderException
+    {
+        List<Stock> getStock;
+        try
+        {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * from `Stock`;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            getStock = new ArrayList<>();
+
+            while (rs.next())
+            {
+                int idMat = rs.getInt("idMaterial");
+                String materialDesc = rs.getString("materialDesc");
+                int stock = rs.getInt("stock");
+                
+                Stock sL = new Stock(idMat, materialDesc, stock);
+                getStock.add(sL);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex)
+        {
+            throw new OrderException(ex.getMessage());
+        }
+        return getStock;
+    }
+
 }
 

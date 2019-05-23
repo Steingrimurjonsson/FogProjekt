@@ -4,6 +4,7 @@ import Data.Invoice;
 import Data.UserMapper;
 import Data.OrderDetails;
 import Data.OrderMapper;
+import Data.Stock;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -220,4 +221,8 @@ public class LogicFacade
         OrderMapper.updateStockById(stockUsed, idMaterial);
      }
     
+    public static List<Stock> getStock() throws Exception
+    {
+        return OrderMapper.getStock();
+    }
 }

@@ -5,6 +5,7 @@
  */
 package Presentation;
 
+import Data.Stock;
 import Logic.LogicFacade;
 import Logic.Order;
 import Logic.User;
@@ -21,10 +22,13 @@ public class AdminCommand extends Command
           @Override
           String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
+          
+          List<Stock> stockList = LogicFacade.getStock();
           List<User> userList = LogicFacade.allUsers();
           List<Order> orderList =  LogicFacade.getAllOrders();
           request.setAttribute("orders", orderList);
           request.setAttribute("userList", userList);
+          request.setAttribute("stockList", stockList);
             return "admin";
     }
 }
