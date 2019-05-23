@@ -27,16 +27,16 @@ public class AdminCommand extends Command
         {
           HttpSession session = request.getSession();
 
-          String changeStock = "no";
-          changeStock = request.getParameter("changeStock");
-          if("yes".equals(changeStock)){
-          String matIdText = request.getParameter("matID");
-          String stockText = request.getParameter("stock");
-          int matID = Integer.parseInt(matIdText);     
-          int stock = Integer.parseInt(stockText);
-          LogicFacade.addStockById(matID, stock);
-        
-          }
+         
+          if(request.getParameter("stock") != null){
+            String matIdText = request.getParameter("matID");
+            String stockText = request.getParameter("stock");
+            int matID = Integer.parseInt(matIdText);     
+            int stock = Integer.parseInt(stockText);
+            LogicFacade.addStockById(matID, stock);
+            
+          } 
+         
           
           
           List<Stock> stockList = LogicFacade.getStock();
@@ -44,7 +44,6 @@ public class AdminCommand extends Command
           List<Order> orderList =  LogicFacade.getAllOrders();
           request.setAttribute("orders", orderList);
           request.setAttribute("userList", userList);
-      
           request.setAttribute("stockList", stockList);
         }
         catch (Exception e){

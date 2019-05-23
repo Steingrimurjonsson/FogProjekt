@@ -39,13 +39,12 @@
         </head>
         <body>
 
-            
-            <h1 style="float: left ;padding-top: 25px">Liste over brugere:</h1>
-            <h1 style=" float: left; padding-top: 25px;padding-left: 800px"> Liste over ordrer: </h1>
-            <br><br><br><br><br>
+          
+   
             <table class="table table-striped" style=" padding-top: 25;float: right ;width: 48%;">
-                      
-                <thead>
+                    <thead>  
+                <thead><th style="font-size:30px">Ordrer:</th></thead>
+
                     <tr>
                         <th>Ordre ID</th>
                         <th>Bruger ID</th>
@@ -90,6 +89,9 @@
 
         <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
             <thead>
+            <th style="font-size:30px">Brugere:</th>
+         
+                
                 <tr>
                     <th>Bruger ID</th>
                     <th>Email</th>
@@ -134,13 +136,15 @@
 
                 
                 <table class="table table-striped" style="padding-top: 25; float: left ;width: 48%;">
-           <h1 >Stock:</h1>
                     <thead>
+                          <tr>
+                     <th style="font-size:30px">Lager:</th>
+                     </tr>
                 <tr>
-                    <th>Material ID</th>
-                    <th>Material</th>
-                    <th>Stock</th>
-                    <th>Add to stock</th>
+                    <th>Materiale ID</th>
+                    <th>Materiale</th>
+                    <th>Antal på lager</th>
+                    <th>Tilføj til lager</th>
                    
                 </tr>
             </thead>
@@ -154,15 +158,15 @@
 
                     <th> <%= element.getIdMaterial()%> </th>        
                     <th> <%= element.getMaterialDesc()%> </th>  
-                    <th> <%= element.getStock() %> <%if(element.getStock() < 99900){ %> <p style="color:red;">Bestil til lager!</p> <%}%></th> 
+                    <th> <%= element.getStock() %> <%if(element.getStock() < 5000){ %> <p style="color:red;">Bestil til lager! Mindst <%= 5000 - element.getStock() %></p><script>alert("Bestil til lager");</script> <%}%></th> 
                         
                     <th>
                     <form name="admin" action="FrontController" method="POST">
-                        <input type="hidden" name="command" value="admin">
-                        <input type="hidden" name="changeStock" value="yes">
                         <input type="hidden" name="matID"  value="<%= element.getIdMaterial()%>">
-                        <input type="number" name="stock" placeholder="How much?">
-                    </form></th>
+                        <input type="number" name="stock" placeholder="" required>
+                       <button  name="command" value="admin">Tilføj</button>
+                    </form>
+                    </th>
                     <%}%>
         
                 </tr>
