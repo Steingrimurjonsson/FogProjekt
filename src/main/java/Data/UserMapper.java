@@ -18,7 +18,7 @@ public class UserMapper
 {
 
     /**
-     * Creates a user, and inserts set user into the database. 
+     * Creates a user, from parameters put in by user on our jsp and inserts it into the database. 
      * @param user
      * @return user
      * @throws CustomerException
@@ -129,8 +129,8 @@ public class UserMapper
     }
 
     /**
-     *  List all users from the database.
-     * @return userList
+     *  Lists all users from the database, by putting them into an ArrayList, to be displayed on admin page.
+     * @return userList (ArrayList)
      * @throws Exception
      */
     public static List<User> allUsers() throws Exception

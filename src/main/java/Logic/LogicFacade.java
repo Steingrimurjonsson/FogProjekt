@@ -8,6 +8,10 @@ import Data.Stock;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ *
+ * @author Sus
+ */
 public class LogicFacade
 {
 
@@ -154,7 +158,7 @@ public class LogicFacade
      * @param woodRoof
      * @param roofStone
      * @param roofPlast
-     * @return
+     * @return order details
      * @throws OrderException
      */
     public static OrderDetails createOrderDetail(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) throws OrderException {
@@ -164,9 +168,9 @@ public class LogicFacade
     }
     
     /**
-     *
+     * calls the corrosponding method in the OrderMapper and gives us the details for the specific order.
      * @param idOrder
-     * @return
+     * @return orderdetails for the order ID it's given.
      * @throws OrderException
      */
     public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
@@ -175,10 +179,10 @@ public class LogicFacade
     }
 
     /**
-     *
+     * Creates invoice, shows price and order ID.
      * @param idOrder
      * @param totalPrice
-     * @return
+     * @return invoice
      * @throws OrderException
      */
     public static Invoice createInvoice(int idOrder, double totalPrice) throws OrderException {
@@ -188,7 +192,7 @@ public class LogicFacade
     }
 
     /**
-     *
+     * Shows invoice for specific order.
      * @param idOrder
      * @return
      * @throws OrderException
@@ -199,7 +203,7 @@ public class LogicFacade
     }
 
     /**
-     *
+     *Calls corrosponding method in OrderMapper
      * @param material
      * @return
      * @throws SQLException
@@ -211,7 +215,7 @@ public class LogicFacade
      }
      
     /**
-     *
+     *Updates stock
      * @param stockUsed
      * @param idMaterial
      * @throws OrderException
@@ -221,11 +225,23 @@ public class LogicFacade
         OrderMapper.updateStockById(stockUsed, idMaterial);
      }
     
+    /**
+     * Takes stock from the database and puts it into a list
+     * @return list of stock
+     * @throws Exception
+     */
     public static List<Stock> getStock() throws Exception
     {
         return OrderMapper.getStock();
     }
-     public static void addStockById(int idMaterial, int stock) throws OrderException
+
+    /**
+     * Updates stock
+     * @param idMaterial
+     * @param stock
+     * @throws OrderException
+     */
+    public static void addStockById(int idMaterial, int stock) throws OrderException
      {
         OrderMapper.addStockById(idMaterial, stock);
      }
