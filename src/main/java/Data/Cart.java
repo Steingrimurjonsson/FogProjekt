@@ -16,32 +16,55 @@ public class Cart
     private ArrayList<Carport> carports = new ArrayList();
     private int userID;
     
+    /**
+     *
+     * @param id
+     */
     public Cart(int id)
     {
         this.userID = id;
     }
+
+    /**
+     *
+     * @return list of carprts
+     */
     public ArrayList<Carport> getCarport()
     {
         return carports;
     }
     
+    /**
+     *
+     * @param carport
+     */
     public void setCarport(ArrayList<Carport> carport)
     {
         this.carports = carport;
     }
     
+    /**
+     * add carport to list
+     * @param carport
+     */
     public void addToCart(Carport carport)
     {
         carports.add(carport);
     }
     
-    //deletes contents of the arraylist and returns a new cart
+
+    /**
+     * deletes contents of the arraylist and returns a new cart
+     */
     public void clearCart()
     {
         carports = new ArrayList();
     }
     
-    
+    /**
+     *
+     * @param itemNumber
+     */
     public void removeSpecificItem(int itemNumber)
     {
         carports.remove(itemNumber);

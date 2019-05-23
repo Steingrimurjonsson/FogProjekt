@@ -23,7 +23,14 @@ import javax.servlet.http.HttpSession;
  */
 public class CreateOrderCommand extends Command
 {
-
+/**
+     * 
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws OrderException, SQLException
     {

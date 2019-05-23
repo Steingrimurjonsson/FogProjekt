@@ -15,8 +15,12 @@ public class Material
     private String material;
     private int stock;
     
-   
-
+    /**
+     * constructor for materials.
+     * @param id
+     * @param material
+     * @param stock
+     */
     public Material(int id, String material, int stock)
     {
         this.id = id;
@@ -24,26 +28,50 @@ public class Material
         this.stock = stock;
     }
 
+    /**
+     *
+     * @return material id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return material description
+     */
     public String getMaterial() {
         return material;
     }
 
+    /**
+     *
+     * @param material
+     */
     public void setMaterial(String material) {
         this.material = material;
     }
 
+    /**
+     *
+     * @return stock amount
+     */
     public int getStock() {
         return stock;
     }
 
+    /**
+     *
+     * @param stock
+     */
     public void setStock(int stock) {
         this.stock = stock;
     }

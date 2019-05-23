@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- The purpose of LoginCommand is to...
+ The purpose of LoginCommand is to enable a user to login with their email and password
 
- @author kasper
+ @author stein
  */ 
 public class LoginCommand extends Command {
 

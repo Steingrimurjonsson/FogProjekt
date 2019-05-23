@@ -11,6 +11,10 @@ package Logic;
  */
 public class OrderException extends Exception {
 
+    /**
+     *message from exception
+     * @param msg
+     */
     public OrderException(String msg) {
         super(msg);
     }

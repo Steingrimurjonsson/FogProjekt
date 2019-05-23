@@ -10,9 +10,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author jojus1101
+ */
 public class UserMapper
 {
 
+    /**
+     * Creates a user, and inserts set user into the database. 
+     * @param user
+     * @return user
+     * @throws CustomerException
+     */
     public static User createUser(User user) throws CustomerException
     {
         try
@@ -42,6 +52,12 @@ public class UserMapper
         return user;
     }
 
+    /**
+     * Allows user to edit information, and updates in the database.
+     * @param user
+     * @return user
+     * @throws CustomerException
+     */
     public static User editUser(User user) throws CustomerException
     {
         try
@@ -70,6 +86,13 @@ public class UserMapper
         return user;
     }
 
+    /**
+     * Method to login as a user through users email and password.
+     * @param email
+     * @param password
+     * @return user
+     * @throws CustomerException
+     */
     public static User login(String email, String password) throws CustomerException
     {
         try
@@ -105,6 +128,11 @@ public class UserMapper
         }
     }
 
+    /**
+     *  List all users from the database.
+     * @return userList
+     * @throws Exception
+     */
     public static List<User> allUsers() throws Exception
     {
         List<User> userList = new ArrayList();

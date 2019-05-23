@@ -24,6 +24,12 @@ import java.sql.Statement;
 public class OrderMapper
 {
 
+    /**
+     * Method to create an order of a carport, and add it to the datebase
+     * @param order
+     * @return order
+     * @throws OrderException
+     */
     public static Order createOrder(Order order) throws OrderException
     {
         try
@@ -54,6 +60,12 @@ public class OrderMapper
         return order;
     }
 
+    /**
+     *  Gets the invoice of the user based on the userID from the database. 
+     * @param idUser
+     * @return list
+     * @throws OrderException
+     */
     public static List<Invoice> getInvoice(int idUser) throws OrderException
     {
         List<Invoice> list;
@@ -84,6 +96,11 @@ public class OrderMapper
     }
     //This is not ready yet, it's just a draft of what orderlist COULD look like. Will edit once we decide on order structure
 
+    /**
+     * Gets all the orders from the database
+     * @return orderList
+     * @throws OrderException
+     */
     public static List<Order> allOrders() throws OrderException
     {
         List<Order> orderList = new ArrayList();
@@ -117,6 +134,12 @@ public class OrderMapper
         return orderList;
     }
 
+    /**
+     * Gets all orders based on UserID from the database
+     * @param idUser
+     * @return orderByUserIDList
+     * @throws OrderException
+     */
     public static List<Order> allOrdersByUserID(int idUser) throws OrderException
     {
         List<Order> orderByUserIDList;
@@ -152,6 +175,12 @@ public class OrderMapper
         return orderByUserIDList;
     }
 
+    /**
+     * Gets a specific order based on the order's Id from the database.
+     * @param idOrder
+     * @return order
+     * @throws OrderException
+     */
     public static Order specificOrder(int idOrder) throws OrderException
     {
         try
@@ -184,6 +213,12 @@ public class OrderMapper
         return null;
     }
 
+    /**
+     * Creates orderdetails and inserts set order into the database
+     * @param od
+     * @return od
+     * @throws OrderException
+     */
     public static OrderDetails createOrderDetail(OrderDetails od) throws OrderException
     {
 
@@ -213,6 +248,12 @@ public class OrderMapper
         return od;
     }
 
+    /**
+     * Retrives the specific order and the details based on the Id of set order.
+     * @param idOrder
+     * @return od
+     * @throws OrderException
+     */
     public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
     {
         try
@@ -247,6 +288,12 @@ public class OrderMapper
         return null;
     }
 
+    /**
+     * Creates invoice and inserts into database.
+     * @param invoice
+     * @return invoice
+     * @throws OrderException
+     */
     public static Invoice createInvoice(Invoice invoice) throws OrderException
     {
         try
@@ -272,6 +319,12 @@ public class OrderMapper
 
     }
 
+    /**
+     * Gets specific invoice based on orderID
+     * @param idOrder
+     * @return inv
+     * @throws OrderException
+     */
     public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
     {
         try
@@ -295,6 +348,13 @@ public class OrderMapper
         return null;
     }
 
+    /**
+     * gets materialId based on material description.
+     * @param material
+     * @return idMaterial
+     * @throws SQLException
+     * @throws OrderException
+     */
     public static int getStockIdByMaterial(String material) throws SQLException, OrderException
     {
 
@@ -321,6 +381,12 @@ public class OrderMapper
         return idMaterial;
     }
 
+    /**
+     * Updates the stocklist.
+     * @param stockUsed
+     * @param idMaterial
+     * @throws OrderException
+     */
     public static void updateStockById(int stockUsed, int idMaterial) throws OrderException
     {
 

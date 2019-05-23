@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- The purpose of UnknownCommand is to...
+ The purpose of UnknownCommand is if the command is unknown, and will give user set message.
 
- @author kasper
+ @author stein
  */
 public class UnknownCommand extends Command {
 

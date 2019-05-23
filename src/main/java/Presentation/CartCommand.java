@@ -14,6 +14,15 @@ import javax.servlet.http.HttpServletResponse;
  * @author stein
  */
 public class CartCommand extends Command {
+
+    /**
+     * Redirects user to the cart.
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

@@ -16,6 +16,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CarportShop extends Command{
 
+    /**
+     * Directs user to choose between set carports to create.
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

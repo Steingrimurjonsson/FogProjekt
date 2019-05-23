@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- The purpose of Connector is to...
+ The purpose of Connector is to connect to the database to get informationen
+ * from the database and add to the database
 
  @author kasper
  */
@@ -22,6 +23,12 @@ public class Connector {
         singleton = con;
     }
 
+    /**
+     *
+     * @return singleton
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     public static Connection connection() throws ClassNotFoundException, SQLException {
         if ( singleton == null ) {
             Class.forName( "com.mysql.cj.jdbc.Driver" );

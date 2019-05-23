@@ -22,6 +22,17 @@ public class Order
     private int shedLength;
     private int shedWidth;
       
+    /**
+     *
+     * @param userID
+     * @param length
+     * @param width
+     * @param roofMat
+     * @param shed
+     * @param roofSlope
+     * @param shedLength
+     * @param shedWidth
+     */
     public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
     {
      
@@ -36,6 +47,18 @@ public class Order
        
     }
 
+    /**
+     *
+     * @param orderID
+     * @param userID
+     * @param length
+     * @param width
+     * @param roofMat
+     * @param shed
+     * @param roofSlope
+     * @param shedLength
+     * @param shedWidth
+     */
     public Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
         this.orderID = orderID;
         this.userID = userID;
@@ -48,74 +71,146 @@ public class Order
         this.shedWidth = shedWidth;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getOrderID() {
         return orderID;
     }
 
+    /**
+     *
+     * @param orderID
+     */
     public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getUserID() {
         return userID;
     }
 
+    /**
+     *
+     * @param userID
+     */
     public void setUserID(int userID) {
         this.userID = userID;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLength() {
         return length;
     }
 
+    /**
+     *
+     * @param length
+     */
     public void setLength(int length) {
         this.length = length;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     *
+     * @param width
+     */
     public void setWidth(int width) {
         this.width = width;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getroofMat() {
         return roofMat;
     }
 
+    /**
+     *
+     * @param roofMat
+     */
     public void setroofMat(String roofMat) {
         this.roofMat = roofMat;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isShed() {
         return shed;
     }
 
+    /**
+     *
+     * @param shed
+     */
     public void setShed(boolean shed) {
         this.shed = shed;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRoofSlope() {
         return roofSlope;
     }
 
+    /**
+     *
+     * @param roofSlope
+     */
     public void setRoofSlope(int roofSlope) {
         this.roofSlope = roofSlope;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getShedLength() {
         return shedLength;
     }
 
+    /**
+     *
+     * @param shedLength
+     */
     public void setShedLength(int shedLength) {
         this.shedLength = shedLength;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getShedWidth() {
         return shedWidth;
     }
 
+    /**
+     *
+     * @param shedWidth
+     */
     public void setShedWidth(int shedWidth) {
         this.shedWidth = shedWidth;
     }
