@@ -49,19 +49,19 @@ public class CalculateCarportCommand extends Command
         SALES PRICE VS CUSTOMER PRICE 40% ? 
         */
         
-        int doorHingePrice = 5; 
-        int doorPrice = 100;
-        int doorHandlePrice = 20;
+        int doorHingePrice = 30; 
+        int doorPrice = 200;
+        int doorHandlePrice = 100;
         
-        int roofScrewPrice = 2;
-        int screwPrice = 2;
+        int roofScrewPrice = 5;
+        int screwPrice = 5;
         
-        int postPrice = 50;
-        int woodSidePrice = 15;   
-        int woodRoofPrice = 20;
+        int postPrice = 150;
+        int woodSidePrice = 125;   
+        int woodRoofPrice = 120;
         
-        int roofStonePrice = 15;
-        int roofPlastPrice = 50;
+        int roofStonePrice = 55;
+        int roofPlastPrice = 250;
         
         
 

@@ -25,7 +25,7 @@ abstract class Command
         commands.put("createOrder", new CreateOrderCommand());
         commands.put("showOrder", new ShowOrderCommand());
         commands.put( "customerpage", new CustomerPageCommand() );  
-        commands.put( "addToStock", new AddToStockCommand() );
+        
         
     }
 
