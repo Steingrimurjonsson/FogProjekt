@@ -37,7 +37,7 @@
                     <form name="login" action="FrontController" method="POST">
                         <input type="hidden" name="command" value="login"><br>
                         <input type="text" name="email" placeholder="E-mail" required><br>
-                        <input type="password" name="password" placeholder="Kodeord" required>
+                        <input type="password" name="password" placeholder="Kodeord" required><br>
                         <input type="submit" value="Submit">
                     </form>
                 </div>
