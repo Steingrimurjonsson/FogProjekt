@@ -1,13 +1,14 @@
 package Data;
 
-public class Invoice 
-{
-private int idInvoice;
-private int idOrder;
-private double totalPrice;
+public class Invoice {
+
+    private int idInvoice;
+    private int idOrder;
+    private double totalPrice;
 
     /**
      * Constructor for invoice.
+     *
      * @param idInvoice
      * @param idOrder
      * @param totalPrice
@@ -20,21 +21,20 @@ private double totalPrice;
 
     /**
      * constructor for invoice without invoice ID
+     *
      * @param idOrder
      * @param totalPrice
      */
-    public Invoice(int idOrder, double totalPrice)
-    {
+    public Invoice(int idOrder, double totalPrice) {
         this.idOrder = idOrder;
         this.totalPrice = totalPrice;
     }
-    
+
     /**
      *
      * @return Invoice ID
      */
-    public int getIdInvoice()
-    {
+    public int getIdInvoice() {
         return idInvoice;
     }
 
@@ -42,8 +42,7 @@ private double totalPrice;
      *
      * @param idInvoice
      */
-    public void setIdInvoice(int idInvoice)
-    {
+    public void setIdInvoice(int idInvoice) {
         this.idInvoice = idInvoice;
     }
 
@@ -51,8 +50,7 @@ private double totalPrice;
      *
      * @return Order ID
      */
-    public int getIdOrder()
-    {
+    public int getIdOrder() {
         return idOrder;
     }
 
@@ -60,8 +58,7 @@ private double totalPrice;
      *
      * @param idOrder
      */
-    public void setIdOrder(int idOrder)
-    {
+    public void setIdOrder(int idOrder) {
         this.idOrder = idOrder;
     }
 
@@ -69,8 +66,7 @@ private double totalPrice;
      *
      * @return total price of order
      */
-    public double getPrice()
-    {
+    public double getPrice() {
         return totalPrice;
     }
 
@@ -78,10 +74,8 @@ private double totalPrice;
      *
      * @param price
      */
-    public void setPrice(double price)
-    {
+    public void setPrice(double price) {
         this.totalPrice = totalPrice;
     }
 
-  
 }

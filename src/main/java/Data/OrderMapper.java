@@ -21,19 +21,18 @@ import java.sql.Statement;
  *
  * @author stein
  */
-public class OrderMapper
-{
+public class OrderMapper {
 
     /**
      * Method to create an order of a carport, and add it to the datebase
-     * @param order (Which contains idUser, length, width, roofMat, shed, slope, shedLength, shedWidth)
+     *
+     * @param order (Which contains idUser, length, width, roofMat, shed, slope,
+     * shedLength, shedWidth)
      * @return order
      * @throws OrderException
      */
-    public static Order createOrder(Order order) throws OrderException
-    {
-        try
-        {
+    public static Order createOrder(Order order) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `Order` (idUser, length, width, roofMat, shed, slope, shedLength, shedWidth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -52,8 +51,7 @@ public class OrderMapper
             ids.next();
             int id = ids.getInt(1);
             order.setOrderID(id);
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new OrderException(ex.getMessage());
 
         }
@@ -61,24 +59,22 @@ public class OrderMapper
     }
 
     /**
-     *  Gets the invoice of the user based on the userID from the database. 
+     * Gets the invoice of the user based on the userID from the database.
+     *
      * @param idUser
      * @return list
      * @throws OrderException
      */
-    public static List<Invoice> getInvoice(int idUser) throws OrderException
-    {
+    public static List<Invoice> getInvoice(int idUser) throws OrderException {
         List<Invoice> list;
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Invoice` where idUser = (?)";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, idUser);
             ResultSet rs = ps.executeQuery();
             list = new ArrayList<>();
-            while (rs.next())
-            {
+            while (rs.next()) {
                 int idInvoice = rs.getInt("idInvoice");
                 double price = rs.getDouble("price");
 
@@ -88,31 +84,28 @@ public class OrderMapper
             }
             return list;
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
 
     }
 
-     /**
+    /**
      * This method takes all orders in the database and puts them in an
      * arraylist.
+     *
      * @return an arraylist (orderList) filled with all orders in the system
      * @throws OrderException
      */
-    public static List<Order> allOrders() throws OrderException
-    {
+    public static List<Order> allOrders() throws OrderException {
         List<Order> orderList = new ArrayList();
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order`";
             PreparedStatement ps = con.prepareStatement(SQL);
 
             ResultSet rs = ps.executeQuery();
-            while (rs.next())
-            {
+            while (rs.next()) {
                 int idOrder = rs.getInt("idOrder");
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
@@ -127,24 +120,23 @@ public class OrderMapper
                 orderList.add(o);
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return orderList;
     }
 
     /**
-     * Gets all orders made by a specific user, from the UserID from the database
+     * Gets all orders made by a specific user, from the UserID from the
+     * database
+     *
      * @param idUser
      * @return orderByUserIDList
      * @throws OrderException
      */
-    public static List<Order> allOrdersByUserID(int idUser) throws OrderException
-    {
+    public static List<Order> allOrdersByUserID(int idUser) throws OrderException {
         List<Order> orderByUserIDList;
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order` WHERE idUser=(?);";
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -152,8 +144,7 @@ public class OrderMapper
             ResultSet rs = ps.executeQuery();
             orderByUserIDList = new ArrayList<>();
 
-            while (rs.next())
-            {
+            while (rs.next()) {
                 int idOrder = rs.getInt("idOrder");
                 idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
@@ -168,8 +159,7 @@ public class OrderMapper
                 orderByUserIDList.add(o);
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return orderByUserIDList;
@@ -177,22 +167,20 @@ public class OrderMapper
 
     /**
      * Gets a specific order based on the order's ID from the database.
+     *
      * @param idOrder
      * @return order
      * @throws OrderException
      */
-    public static Order specificOrder(int idOrder) throws OrderException
-    {
-        try
-        {
+    public static Order specificOrder(int idOrder) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order` WHERE idOrder=(?);";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, idOrder);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next())
-            {
+            if (rs.next()) {
                 int idUser = rs.getInt("idUser");
                 int length = rs.getInt("length");
                 int width = rs.getInt("width");
@@ -206,8 +194,7 @@ public class OrderMapper
                 return order;
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return null;
@@ -215,15 +202,14 @@ public class OrderMapper
 
     /**
      * Creates orderdetails and inserts set order into the database
+     *
      * @param od
      * @return od
      * @throws OrderException
      */
-    public static OrderDetails createOrderDetail(OrderDetails od) throws OrderException
-    {
+    public static OrderDetails createOrderDetail(OrderDetails od) throws OrderException {
 
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `OrderDetails` (idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -241,8 +227,7 @@ public class OrderMapper
 
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new OrderException(ex.getMessage());
         }
         return od;
@@ -250,22 +235,20 @@ public class OrderMapper
 
     /**
      * Retrives the specific order and the details based on the Id of set order.
+     *
      * @param idOrder
      * @return od
      * @throws OrderException
      */
-    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException
-    {
-        try
-        {
+    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `OrderDetails` WHERE idOrder=(?);";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, idOrder);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next())
-            {
+            if (rs.next()) {
                 int doorHinge = rs.getInt("doorHinge");
                 int door = rs.getInt("door");
                 int doorHandle = rs.getInt("doorHandle");
@@ -281,8 +264,7 @@ public class OrderMapper
                 return od;
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return null;
@@ -290,14 +272,13 @@ public class OrderMapper
 
     /**
      * Creates invoice and inserts into database.
+     *
      * @param invoice
      * @return invoice
      * @throws OrderException
      */
-    public static Invoice createInvoice(Invoice invoice) throws OrderException
-    {
-        try
-        {
+    public static Invoice createInvoice(Invoice invoice) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `Invoice` (idOrder, totalPrice) VALUES (?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -310,8 +291,7 @@ public class OrderMapper
             int id = ids.getInt(1);
             invoice.setIdInvoice(id);
 
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new OrderException(ex.getMessage());
 
         }
@@ -321,139 +301,122 @@ public class OrderMapper
 
     /**
      * Gets specific invoice based on orderID
+     *
      * @param idOrder
      * @return inv
      * @throws OrderException
      */
-    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException
-    {
-        try
-        {
+    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Invoice` WHERE idOrder=(?);";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, idOrder);
             ResultSet rs = ps.executeQuery();
-            if (rs.next())
-            {
+            if (rs.next()) {
                 double totalPrice = rs.getDouble("totalPrice");
                 Invoice inv = new Invoice(idOrder, totalPrice);
                 return inv;
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return null;
     }
 
     /**
-     * gets materialId based on material description, so that we can use it in updateStockById.
+     * gets materialId based on material description, so that we can use it in
+     * updateStockById.
+     *
      * @param material
      * @return idMaterial
      * @throws SQLException
      * @throws OrderException
      */
-    public static int getStockIdByMaterial(String material) throws SQLException, OrderException
-    {
+    public static int getStockIdByMaterial(String material) throws SQLException, OrderException {
 
         int idMaterial = 0;
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT idMaterial FROM FOG.Stock where materialDesc = ?;";
-            
+
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, material);
             ResultSet rs = ps.executeQuery();
-            if (rs.next())
-            {
+            if (rs.next()) {
                 idMaterial = rs.getInt("idMaterial");
                 return idMaterial;
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return idMaterial;
     }
 
     /**
-     * Updates the stocklist, by using the materials used, when the order is created, and using the id we got from getStockIdByMaterial.
+     * Updates the stocklist, by using the materials used, when the order is
+     * created, and using the id we got from getStockIdByMaterial.
+     *
      * @param stockUsed
      * @param idMaterial
      * @throws OrderException
      */
-    public static void updateStockById(int stockUsed, int idMaterial) throws OrderException
-    {
+    public static void updateStockById(int stockUsed, int idMaterial) throws OrderException {
 
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "UPDATE FOG.Stock set stock= stock- ? where idMaterial = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, stockUsed);
             ps.setInt(2, idMaterial);
             System.out.println(ps);
-             ps.executeUpdate();
-            
+            ps.executeUpdate();
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
-     
+
     }
 
-
-    public static List<Stock> getStock() throws OrderException
-    {
+    public static List<Stock> getStock() throws OrderException {
         List<Stock> getStock;
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Stock`;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             getStock = new ArrayList<>();
 
-            while (rs.next())
-            {
+            while (rs.next()) {
                 int idMat = rs.getInt("idMaterial");
                 String materialDesc = rs.getString("materialDesc");
                 int stock = rs.getInt("stock");
-                
+
                 Stock sL = new Stock(idMat, materialDesc, stock);
                 getStock.add(sL);
             }
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
         return getStock;
     }
 
-     public static void addStockById(int idMaterial, int stock) throws OrderException
-     {
-        try
-        {
+    public static void addStockById(int idMaterial, int stock) throws OrderException {
+        try {
             Connection con = Connector.connection();
             String SQL = "UPDATE FOG.Stock set stock= stock+ ? where idMaterial = ?;";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setInt(1, stock);
             ps.setInt(2, idMaterial);
-             ps.executeUpdate();
-            
+            ps.executeUpdate();
 
-        } catch (ClassNotFoundException | SQLException ex)
-        {
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new OrderException(ex.getMessage());
         }
-     
+
     }
 
 }
-

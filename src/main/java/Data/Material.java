@@ -9,20 +9,20 @@ package Data;
  *
  * @author NoellZane
  */
-public class Material
-{
+public class Material {
+
     private int id;
     private String material;
     private int stock;
-    
+
     /**
      * constructor for materials.
+     *
      * @param id
      * @param material
      * @param stock
      */
-    public Material(int id, String material, int stock)
-    {
+    public Material(int id, String material, int stock) {
         this.id = id;
         this.material = material;
         this.stock = stock;

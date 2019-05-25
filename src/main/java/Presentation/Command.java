@@ -4,13 +4,11 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-abstract class Command
-{
+abstract class Command {
 
     private static HashMap<String, Command> commands;
 
-    private static void initCommands()
-    {
+    private static void initCommands() {
         commands = new HashMap<>();
 
         commands.put("login", new LoginCommand());
@@ -24,16 +22,13 @@ abstract class Command
         commands.put("emptyCart", new EmptyCartCommand());
         commands.put("createOrder", new CreateOrderCommand());
         commands.put("showOrder", new ShowOrderCommand());
-        commands.put( "customerpage", new CustomerPageCommand() );  
-        
-        
+        commands.put("customerpage", new CustomerPageCommand());
+
     }
 
-    static Command from(HttpServletRequest request)
-    {
+    static Command from(HttpServletRequest request) {
         String commandName = request.getParameter("command");
-        if (commands == null)
-        {
+        if (commands == null) {
             initCommands();
         }
         return commands.getOrDefault(commandName, new UnknownCommand());

@@ -9,25 +9,24 @@ package Data;
  *
  * @author NoellZane
  */
-public class Stock
-{
+public class Stock {
+
     private int idMaterial;
     private String materialDesc;
     private int stock;
 
-
     /**
      * Constructor for the stock of materials
+     *
      * @param idMaterial
      * @param materialDesc
      * @param stock
      */
-    public Stock(int idMaterial, String materialDesc, int stock)
-    {
+    public Stock(int idMaterial, String materialDesc, int stock) {
         this.idMaterial = idMaterial;
         this.materialDesc = materialDesc;
         this.stock = stock;
-    
+
     }
 
     public int getIdMaterial() {

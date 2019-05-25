@@ -14,10 +14,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stein
  */
-public class CarportShop extends Command{
+public class CarportShop extends Command {
 
     /**
      * Directs user to choose between set carports to create.
+     *
      * @param request
      * @param response
      * @return
@@ -25,8 +26,7 @@ public class CarportShop extends Command{
      * @throws IOException
      */
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("/jsp/carport.jsp").forward(request, response);
         return null;

@@ -4,11 +4,11 @@
  * and open the template in the editor.*/
 package Presentation;
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
  *
  * @author stein
@@ -17,6 +17,7 @@ public class CartCommand extends Command {
 
     /**
      * Redirects user to the cart.
+     *
      * @param request
      * @param response
      * @return
@@ -24,8 +25,7 @@ public class CartCommand extends Command {
      * @throws IOException
      */
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("jsp/cart.jsp").forward(request, response);
         return null;

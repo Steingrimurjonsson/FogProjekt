@@ -21,6 +21,7 @@ public class Carport {
 
     /**
      * A constructor that makes it possible to create a carport
+     *
      * @param length
      * @param width
      * @param roofMat
@@ -41,6 +42,7 @@ public class Carport {
 
     /**
      * Returns length of carport
+     *
      * @return
      */
     public int getLength() {
@@ -49,6 +51,7 @@ public class Carport {
 
     /**
      * Returns width of carport
+     *
      * @return
      */
     public int getWidth() {
@@ -95,10 +98,9 @@ public class Carport {
         return shedLength;
     }
 
-    
     @Override
     public String toString() {
         return "Carport{" + "length=" + length + ", width=" + width + ", roofMat=" + roofMat + ", shed=" + shed + ", Roofslope=" + roofSlope + ", shedwidth=" + shedWidth + ", shedlength=" + shedLength + '}';
     }
-    
+
 }

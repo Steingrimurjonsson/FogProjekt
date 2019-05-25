@@ -10,7 +10,8 @@ package Data;
  * @author stein
  */
 public class OrderDetails {
-     private int idOrder;
+
+    private int idOrder;
 
     private int doorHinge;
     private int door;
@@ -24,7 +25,8 @@ public class OrderDetails {
     private int roofPlast;
 
     /**
-     *  A constructor for orderdetails.
+     * A constructor for orderdetails.
+     *
      * @param idOrder
      * @param doorHinge
      * @param door
@@ -227,7 +229,4 @@ public class OrderDetails {
         this.roofPlast = roofPlast;
     }
 
-
-
-    
 }

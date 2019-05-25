@@ -18,41 +18,33 @@ import javax.servlet.http.HttpSession;
  *
  * @author NoellZane
  */
-public class AdminCommand extends Command
-{
-          @Override
-          String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
-          try
-        {
-          HttpSession session = request.getSession();
+public class AdminCommand extends Command {
 
-         
-          if(request.getParameter("stock") != null){
-            String matIdText = request.getParameter("matID");
-            String stockText = request.getParameter("stock");
-            int matID = Integer.parseInt(matIdText);     
-            int stock = Integer.parseInt(stockText);
-            LogicFacade.addStockById(matID, stock);
-            
-          } 
-         
-          
-          
-          List<Stock> stockList = LogicFacade.getStock();
-          List<User> userList = LogicFacade.allUsers();
-          List<Order> orderList =  LogicFacade.getAllOrders();
-          request.setAttribute("orders", orderList);
-          request.setAttribute("userList", userList);
-          request.setAttribute("stockList", stockList);
+    @Override
+    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        try {
+            HttpSession session = request.getSession();
+
+            if (request.getParameter("stock") != null) {
+                String matIdText = request.getParameter("matID");
+                String stockText = request.getParameter("stock");
+                int matID = Integer.parseInt(matIdText);
+                int stock = Integer.parseInt(stockText);
+                LogicFacade.addStockById(matID, stock);
+
+            }
+
+            List<Stock> stockList = LogicFacade.getStock();
+            List<User> userList = LogicFacade.allUsers();
+            List<Order> orderList = LogicFacade.getAllOrders();
+            request.setAttribute("orders", orderList);
+            request.setAttribute("userList", userList);
+            request.setAttribute("stockList", stockList);
+        } catch (Exception e) {
+            request.setAttribute("message", e.getMessage());
         }
-        catch (Exception e){
-        request.setAttribute("message", e.getMessage());
-        }
-    
+
         return "admin";
-         
+
     }
 }
-
-

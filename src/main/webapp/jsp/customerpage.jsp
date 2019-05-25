@@ -9,7 +9,6 @@
 <%@page import="Logic.User"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%
     User user = (User) session.getAttribute("user");
     request.getAttribute(user.getFirstName());
@@ -30,10 +29,7 @@
     String city = user.getCity();
     String zip = user.getZip();
     String country = user.getCountry();
-
-
 %>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,7 +38,6 @@
             <title>Kundeinformation</title>
         </head>
         <body> 
-
             <div class="customerInfo" style='padding: 50px; float: left; width: 50%'>              
                 <h1>Velkommen <%= firstName%> <%= lastName%> her er din information og ordrehistorik</h1> <br>
             Email: <%= userEmail%><br>
@@ -64,7 +59,6 @@
             <a href="jsp/editcustomerinfo.jsp">Redigér din information her</a>
         </div>
         <h1  style="padding: 50px;"> Liste over ordre: </h1>
-
         <table class="table table-striped" style="padding: 50px; float: right ;width: 50%;">
             <thead>
                 <tr>
@@ -80,14 +74,8 @@
                     <th> Ordre Specifikationer </th>
                 </tr>
             </thead>
-
-            <%
-
-                List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
-
-                for (Order element : orderByUserIDList)
-                {%>
-
+            <%List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
+                for (Order element : orderByUserIDList) {%>
             <tbody>
                 <tr>
                     <th> <%= element.getOrderID()%></th>        
@@ -100,13 +88,9 @@
                     <th> <%= element.getShedLength()%> </th> 
                     <th> <%= element.getShedWidth()%> </th> 
                     <th>   <form><input type="hidden" name="id" method="POST" value="<%= element.getOrderID()%>"/><button name="command" value="showOrder">Se Ordre</button></form> </th>    
-
                     <%}%>
                 </tr>
-
-
             </tbody>
         </table>
-
     </body>
 </html>

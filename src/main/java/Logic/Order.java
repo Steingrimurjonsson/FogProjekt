@@ -9,9 +9,8 @@ package Logic;
  *
  * @author NoellZane
  */
-public class Order
-{
-    
+public class Order {
+
     private int orderID;
     private int userID;
     private int length;
@@ -21,7 +20,7 @@ public class Order
     private int roofSlope;
     private int shedLength;
     private int shedWidth;
-      
+
     /**
      *
      * @param userID
@@ -33,9 +32,8 @@ public class Order
      * @param shedLength
      * @param shedWidth
      */
-    public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth)
-    {
-     
+    public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
+
         this.userID = userID;
         this.length = length;
         this.width = width;
@@ -44,7 +42,7 @@ public class Order
         this.roofSlope = roofSlope;
         this.shedLength = shedLength;
         this.shedWidth = shedWidth;
-       
+
     }
 
     /**
@@ -215,5 +213,4 @@ public class Order
         this.shedWidth = shedWidth;
     }
 
-   
 }

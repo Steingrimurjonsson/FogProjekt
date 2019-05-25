@@ -5,11 +5,11 @@ package Logic;
  *
  * @author kasper
  */
-public class User
-{
+public class User {
 
     /**
      * Constructor to create a user.
+     *
      * @param id
      * @param email
      * @param password
@@ -22,8 +22,7 @@ public class User
      * @param country
      * @param role
      */
-    public User(int id, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role)
-    {
+    public User(int id, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -51,6 +50,7 @@ public class User
 
     /**
      * Constructor to create a user.
+     *
      * @param email
      * @param password
      * @param firstName
@@ -62,8 +62,7 @@ public class User
      * @param country
      * @param role
      */
-    public User(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role)
-    {
+    public User(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
@@ -80,8 +79,7 @@ public class User
      *
      * @return firstname of user
      */
-    public String getFirstName()
-    {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -89,8 +87,7 @@ public class User
      *
      * @param firstName
      */
-    public void setFirstName(String firstName)
-    {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -98,8 +95,7 @@ public class User
      *
      * @return lastname of user
      */
-    public String getLastName()
-    {
+    public String getLastName() {
         return lastName;
     }
 
@@ -107,8 +103,7 @@ public class User
      *
      * @param lastName
      */
-    public void setLastName(String lastName)
-    {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -116,8 +111,7 @@ public class User
      *
      * @return phonenumber of user
      */
-    public String getPhone()
-    {
+    public String getPhone() {
         return phone;
     }
 
@@ -125,8 +119,7 @@ public class User
      *
      * @param phone
      */
-    public void setPhone(String phone)
-    {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -134,8 +127,7 @@ public class User
      *
      * @return streetname of user
      */
-    public String getStreet()
-    {
+    public String getStreet() {
         return street;
     }
 
@@ -143,8 +135,7 @@ public class User
      *
      * @param street
      */
-    public void setStreet(String street)
-    {
+    public void setStreet(String street) {
         this.street = street;
     }
 
@@ -152,8 +143,7 @@ public class User
      *
      * @return city of user
      */
-    public String getCity()
-    {
+    public String getCity() {
         return city;
     }
 
@@ -161,8 +151,7 @@ public class User
      *
      * @param city
      */
-    public void setCity(String city)
-    {
+    public void setCity(String city) {
         this.city = city;
     }
 
@@ -170,8 +159,7 @@ public class User
      *
      * @return zipcode of user
      */
-    public String getZip()
-    {
+    public String getZip() {
         return zip;
     }
 
@@ -179,8 +167,7 @@ public class User
      *
      * @param zip
      */
-    public void setZip(String zip)
-    {
+    public void setZip(String zip) {
         this.zip = zip;
     }
 
@@ -188,8 +175,7 @@ public class User
      *
      * @return country of user
      */
-    public String getCountry()
-    {
+    public String getCountry() {
         return country;
     }
 
@@ -197,8 +183,7 @@ public class User
      *
      * @param country
      */
-    public void setCountry(String country)
-    {
+    public void setCountry(String country) {
         this.country = country;
     }
 
@@ -206,8 +191,7 @@ public class User
      *
      * @return email of user
      */
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
@@ -215,8 +199,7 @@ public class User
      *
      * @param email
      */
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -224,8 +207,7 @@ public class User
      *
      * @return password of user
      */
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
@@ -233,8 +215,7 @@ public class User
      *
      * @param password
      */
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -242,8 +223,7 @@ public class User
      *
      * @return role of user
      */
-    public String getRole()
-    {
+    public String getRole() {
         return role;
     }
 
@@ -251,8 +231,7 @@ public class User
      *
      * @param role
      */
-    public void setRole(String role)
-    {
+    public void setRole(String role) {
         this.role = role;
     }
 
@@ -260,8 +239,7 @@ public class User
      *
      * @return id of user
      */
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
@@ -269,8 +247,7 @@ public class User
      *
      * @param id
      */
-    public void setId(int id)
-    {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -16,10 +16,11 @@ import javax.servlet.http.HttpSession;
  *
  * @author jojus1101
  */
-public class LogoutCommand extends Command{
+public class LogoutCommand extends Command {
 
     /**
      * Directs user to the index jsp.
+     *
      * @param request
      * @param response
      * @return
@@ -27,10 +28,8 @@ public class LogoutCommand extends Command{
      * @throws IOException
      */
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().invalidate();
         return "../index";
     }
 }
-

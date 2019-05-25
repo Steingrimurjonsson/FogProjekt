@@ -5,11 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-    
-   <div id="footer">
-       
+<div id="footer">
     <a id ="footerLink" href ="https://github.com/Steingrimurjonsson/FogProjekt" target="_blank">Projektside</a>   
-    
-   </div>
- 
+</div>
+

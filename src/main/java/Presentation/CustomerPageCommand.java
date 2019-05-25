@@ -16,12 +16,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stein
  */
-public class CustomerPageCommand extends Command
-{
+public class CustomerPageCommand extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception
-    {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         int idUser = ((User) request.getSession().getAttribute("user")).getId();
 
         List<Order> orderByUserIDList = LogicFacade.getAllOrdersByUserID(idUser);
