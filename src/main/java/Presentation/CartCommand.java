@@ -1,26 +1,23 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Presentation.Commands;
+ * and open the template in the editor.*/
+package Presentation;
 
-import Logic.Exceptions.CustomerException;
 import Presentation.Command;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author jojus1101
+ * @author stein
  */
-public class LogoutCommand extends Command {
+public class CartCommand extends Command {
 
     /**
-     * Directs user to the index jsp.
+     * Redirects user to the cart.
      *
      * @param request
      * @param response
@@ -30,7 +27,8 @@ public class LogoutCommand extends Command {
      */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getSession().invalidate();
-        return "../index";
+        response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("jsp/cart.jsp").forward(request, response);
+        return null;
     }
 }

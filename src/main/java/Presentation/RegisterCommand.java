@@ -1,4 +1,4 @@
-package Presentation.Commands;
+package Presentation;
 
 import Logic.LogicFacade;
 import Logic.Exceptions.CustomerException;

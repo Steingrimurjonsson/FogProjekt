@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation.Commands;
+package Presentation;
 
+import Logic.Exceptions.CustomerException;
 import Presentation.Command;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author stein
+ * @author jojus1101
  */
-public class CarportShop extends Command {
+public class LogoutCommand extends Command {
 
     /**
-     * Directs user to choose between set carports to create.
+     * Directs user to the index jsp.
      *
      * @param request
      * @param response
@@ -28,8 +30,7 @@ public class CarportShop extends Command {
      */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("/jsp/carport.jsp").forward(request, response);
-        return null;
+        request.getSession().invalidate();
+        return "../index";
     }
 }

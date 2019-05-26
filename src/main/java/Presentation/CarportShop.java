@@ -1,8 +1,9 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.*/
-package Presentation.Commands;
+ * and open the template in the editor.
+ */
+package Presentation;
 
 import Presentation.Command;
 import java.io.IOException;
@@ -14,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author stein
  */
-public class CartCommand extends Command {
+public class CarportShop extends Command {
 
     /**
-     * Redirects user to the cart.
+     * Directs user to choose between set carports to create.
      *
      * @param request
      * @param response
@@ -28,7 +29,7 @@ public class CartCommand extends Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("jsp/cart.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/carport.jsp").forward(request, response);
         return null;
     }
 }
