@@ -70,7 +70,7 @@
                     <button form="empty" onclick="return confirm('Er du sikker?')" style="float:left; color:white ; background: darkred;" name="command" value="emptyCart">Tøm Kurv</button>
                     <%if (user != null) { %>
                 </form><form id="succ" action="FrontController">
-                    <button form="succ" onclick="javascript:alert('Vi sender dig en e-mail med ordre specifikationerne. Du kan også se dem på din kundeside');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
+                    <button form="succ" onclick="javascript:alert('Du kan se din ordre på din kundeside');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>
                     <%  } else { %>
                 </form> <form id="errorCart" action="FrontController">
                     <button form="errorCart" onclick="javascript:alert('Vær venlig at lave en bruger eller log ind for at lave en ordre');" style="float:left; color:white ; background: darkgreen;" name="command" value="createOrder">Bekræft Køb</button>

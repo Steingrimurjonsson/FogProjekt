@@ -4,10 +4,3 @@
  * and open the template in the editor.
  */
 
-
-function addToCart(){
-    alert("Please add a cupcake to your cart");
-}
-function pleaseLogin(){
-    alert("Please login first");
-}

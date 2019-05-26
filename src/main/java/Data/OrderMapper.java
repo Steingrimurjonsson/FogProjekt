@@ -24,7 +24,7 @@ import java.sql.Statement;
 public class OrderMapper {
 
     /**
-     * Method to create an order of a carport, and add it to the datebase
+     * Method to create an order of a carport, and add it to the database
      *
      * @param order (Which contains idUser, length, width, roofMat, shed, slope,
      * shedLength, shedWidth)

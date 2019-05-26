@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * The purpose of Connector is to connect to the database to get informationen
  * from the database and add to the database
  *
- * @author kasper
+ * @author stein
  */
 public class Connector {
 
