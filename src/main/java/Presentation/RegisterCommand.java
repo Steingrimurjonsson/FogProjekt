@@ -2,7 +2,7 @@ package Presentation;
 
 import Logic.LogicFacade;
 import Logic.Exceptions.CustomerException;
-import Data.Models.Model_User;
+import Logic.Models.Model_User;
 import Presentation.Command;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

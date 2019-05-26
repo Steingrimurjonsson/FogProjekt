@@ -4,11 +4,11 @@
     Author     : stein
 --%>
 
-<%@page import="Data.Stock"%>
+<%@page import="Logic.Models.Model_Stock"%>
 <%@page import="Logic.LogicFacade"%>
-<%@page import="Logic.User"%>
+<%@page import="Logic.Models.Model_User"%>
 <%@page import="java.util.List"%>
-<%@page import="Logic.Order"%>
+<%@page import="Logic.Models.Model_Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <%
-            User user = (User) request.getSession().getAttribute("user");
+            Model_User user = (Model_User) request.getSession().getAttribute("user");
             String role = user.getRole();
             if (!"admin".equals(role)) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -42,8 +42,8 @@
             <th>Redskabsrum bredde</th>
         </tr>
     </thead>
-    <% List<Order> orderList = (List<Order>) request.getAttribute("orders");
-        for (Order element : orderList) {%>
+    <% List<Model_Order> orderList = (List<Model_Order>) request.getAttribute("orders");
+        for (Model_Order element : orderList) {%>
     <tbody>
         <tr>
             <th> <%= element.getOrderID()%> </th>        
@@ -77,8 +77,8 @@
         <th>Rolle</th>
     </tr>
 </thead>
-<%List<User> list = (List<User>) request.getAttribute("userList");
-    for (User element : list) {%>
+<%List<Model_User> list = (List<Model_User>) request.getAttribute("userList");
+    for (Model_User element : list) {%>
 <tbody>
     <tr>
         <th> <%= element.getId()%> </th>        
@@ -108,8 +108,8 @@
             <th>Tilføj til lager</th>
         </tr>
     </thead>
-    <%List<Stock> stockList = (List<Stock>) request.getAttribute("stockList");
-        for (Stock element : stockList) {%>
+    <%List<Model_Stock> stockList = (List<Model_Stock>) request.getAttribute("stockList");
+        for (Model_Stock element : stockList) {%>
     <tbody>
         <tr>
             <th> <%= element.getIdMaterial()%> </th>        

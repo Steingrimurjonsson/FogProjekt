@@ -3,14 +3,14 @@
     Created on : Apr 24, 2019, 2:10:12 PM
     Author     : stein
 --%>
-<%@page import="Logic.User"%>
+<%@page import="Logic.Models.Model_User"%>
 <%
     if (request.getRequestedSessionId() != null
             && !request.isRequestedSessionIdValid()) {
         // Session is expired
         response.sendRedirect("logout");
     }
-    User user = (User) request.getSession().getAttribute("user");
+    Model_User user = (Model_User) request.getSession().getAttribute("user");
     String username = "NULL";
     String role = "NULL";
     if (user != null) {

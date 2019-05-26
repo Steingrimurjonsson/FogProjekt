@@ -1,4 +1,4 @@
-package Data.Models;
+package Logic.Models;
 
 public class Model_Invoice {
 

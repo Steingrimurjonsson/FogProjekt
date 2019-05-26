@@ -4,11 +4,11 @@
     Author     : stein
 --%>
 
-<%@page import="Data.OrderDetails"%>
+<%@page import="Logic.Models.Model_OrderDetails"%>
 <%@page import="java.util.List"%>
-<%@page import="Data.Carport"%>
-<%@page import="Logic.User"%>
-<%@page import="Data.Cart"%>
+<%@page import="Logic.Models.Model_Carport"%>
+<%@page import="Logic.Models.Model_User"%>
+<%@page import="Logic.Models.Model_Cart"%>
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,8 +17,8 @@
     <head>
         <title>Kurv</title>
         <jsp:include page='header.jsp'></jsp:include> 
-        <%  User user = (User) session.getAttribute("user");
-            Carport carport = (Carport) session.getAttribute("carport");
+        <%  Model_User user = (Model_User) session.getAttribute("user");
+            Model_Carport carport = (Model_Carport) session.getAttribute("carport");
             double tPrice = 0;
             if (carport != null) {
                 tPrice = (double) session.getAttribute("tPrice");

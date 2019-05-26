@@ -3,7 +3,7 @@
     Created on : May 9, 2019, 8:59:13 PM
     Author     : stein
 --%>
-<%@page import="Logic.User"%>
+<%@page import="Logic.Models.Model_User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%

@@ -1,4 +1,4 @@
-package Data.Models;
+package Logic.Models;
 
 /**
  * The purpose of Model_User is to...

@@ -5,12 +5,12 @@
 --%>
 
 <%@page import="java.util.List"%>
-<%@page import="Logic.Order"%>
-<%@page import="Logic.User"%>
+<%@page import="Logic.Models.Model_Order"%>
+<%@page import="Logic.Models.Model_User"%>
 <%@page import="Logic.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    User user = (User) session.getAttribute("user");
+    Model_User user = (Model_User) session.getAttribute("user");
     request.getAttribute(user.getFirstName());
     request.getAttribute(user.getLastName());
     request.getAttribute(user.getCity());
@@ -74,8 +74,8 @@
                     <th> Ordre Specifikationer </th>
                 </tr>
             </thead>
-            <%List<Order> orderByUserIDList = (List<Order>) request.getAttribute("orders");
-                for (Order element : orderByUserIDList) {%>
+            <%List<Model_Order> orderByUserIDList = (List<Model_Order>) request.getAttribute("orders");
+                for (Model_Order element : orderByUserIDList) {%>
             <tbody>
                 <tr>
                     <th> <%= element.getOrderID()%></th>        

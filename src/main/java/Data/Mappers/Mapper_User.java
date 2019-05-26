@@ -1,7 +1,7 @@
 package Data.Mappers;
 
 import Data.Connector;
-import Data.Models.Model_User;
+import Logic.Models.Model_User;
 import Logic.Exceptions.CustomerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

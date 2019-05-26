@@ -2,13 +2,13 @@ package Logic;
 
 import Logic.Exceptions.OrderException;
 import Logic.Exceptions.CustomerException;
-import Data.Models.Model_User;
-import Data.Models.Model_Order;
-import Data.Models.Model_Invoice;
+import Logic.Models.Model_User;
+import Logic.Models.Model_Order;
+import Logic.Models.Model_Invoice;
 import Data.Mappers.Mapper_User;
-import Data.Models.Model_OrderDetails;
+import Logic.Models.Model_OrderDetails;
 import Data.Mappers.Mapper_Order;
-import Data.Models.Model_Stock;
+import Logic.Models.Model_Stock;
 import java.sql.SQLException;
 import java.util.List;
 

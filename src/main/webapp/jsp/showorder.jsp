@@ -4,12 +4,12 @@
     Author     : NoellZane
 --%>
 
-<%@page import="Data.Invoice"%>
-<%@page import="Data.OrderDetails"%>
+<%@page import="Logic.Models.Model_Invoice"%>
+<%@page import="Logic.Models.Model_OrderDetails"%>
 <%@page import="Logic.LogicFacade"%>
-<%@page import="Logic.User"%>
+<%@page import="Logic.Models.Model_User"%>
 <%@page import="java.util.List"%>
-<%@page import="Logic.Order"%>
+<%@page import="Logic.Models.Model_Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,9 +18,9 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Ordre Specifictioner</title>
         <% int idOrder = (int) request.getAttribute("id");
-            Order order = LogicFacade.specificOrder(idOrder);
-            OrderDetails orderD = LogicFacade.specificOrderDetails(idOrder);
-            Invoice invoice = LogicFacade.specificInvoiceDetails(idOrder);
+            Model_Order order = LogicFacade.specificOrder(idOrder);
+            Model_OrderDetails orderD = LogicFacade.specificOrderDetails(idOrder);
+            Model_Invoice invoice = LogicFacade.specificInvoiceDetails(idOrder);
 
             int height = 220;
             int width = order.getWidth();

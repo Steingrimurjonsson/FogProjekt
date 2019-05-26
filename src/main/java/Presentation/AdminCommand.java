@@ -5,10 +5,10 @@
  */
 package Presentation;
 
-import Data.Models.Model_Stock;
+import Logic.Models.Model_Stock;
 import Logic.LogicFacade;
-import Data.Models.Model_Order;
-import Data.Models.Model_User;
+import Logic.Models.Model_Order;
+import Logic.Models.Model_User;
 import Presentation.Command;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
