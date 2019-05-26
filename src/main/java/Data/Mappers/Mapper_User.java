@@ -1,7 +1,8 @@
-package Data;
+package Data.Mappers;
 
-import Logic.CustomerException;
-import Logic.User;
+import Data.Connector;
+import Data.Models.Model_User;
+import Logic.Exceptions.CustomerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +15,7 @@ import java.util.List;
  *
  * @author jojus1101
  */
-public class UserMapper {
+public class Mapper_User {
 
     /**
      * Creates a user, from parameters put in by user on our jsp and inserts it
@@ -24,7 +25,7 @@ public class UserMapper {
      * @return user
      * @throws CustomerException
      */
-    public static User createUser(User user) throws CustomerException {
+    public static Model_User createUser(Model_User user) throws CustomerException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO User (email, password, firstName, lastName, phone, street, city, zip, country, role) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -57,7 +58,7 @@ public class UserMapper {
      * @return user
      * @throws CustomerException
      */
-    public static User editUser(User user) throws CustomerException {
+    public static Model_User editUser(Model_User user) throws CustomerException {
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE User SET email =?, password =?, firstName =?, lastName =?, phone =?, street =?, city =?, zip =?, country =? WHERE id = ?;";
@@ -90,7 +91,7 @@ public class UserMapper {
      * @return user
      * @throws CustomerException
      */
-    public static User login(String email, String password) throws CustomerException {
+    public static Model_User login(String email, String password) throws CustomerException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT id, firstName, lastName, phone, street, city, zip, country, role FROM User  "
@@ -109,7 +110,7 @@ public class UserMapper {
                 String zip = rs.getString("zip");
                 String country = rs.getString("country");
                 int id = rs.getInt("id");
-                User user = new User(email, password, firstName, lastName, phone, street, city, zip, country, role);
+                Model_User user = new Model_User(email, password, firstName, lastName, phone, street, city, zip, country, role);
                 user.setId(id);
                 return user;
             } else {
@@ -127,8 +128,8 @@ public class UserMapper {
      * @return userList (ArrayList)
      * @throws Exception
      */
-    public static List<User> allUsers() throws Exception {
-        List<User> userList = new ArrayList();
+    public static List<Model_User> allUsers() throws Exception {
+        List<Model_User> userList = new ArrayList();
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `User`";
@@ -148,7 +149,7 @@ public class UserMapper {
                 String country = rs.getString("country");
                 String role = rs.getString("role");
 
-                User user = new User(id, email, password, firstName, lastName, phone, street, city, zip, country, role);
+                Model_User user = new Model_User(id, email, password, firstName, lastName, phone, street, city, zip, country, role);
                 userList.add(user);
             }
         } catch (ClassNotFoundException | SQLException ex) {

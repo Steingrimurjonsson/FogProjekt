@@ -1,11 +1,11 @@
-package Logic;
+package Data.Models;
 
 /**
- * The purpose of User is to...
+ * The purpose of Model_User is to...
  *
  * @author kasper
  */
-public class User {
+public class Model_User {
 
     /**
      * Constructor to create a user.
@@ -22,7 +22,7 @@ public class User {
      * @param country
      * @param role
      */
-    public User(int id, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
+    public Model_User(int id, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -62,7 +62,7 @@ public class User {
      * @param country
      * @param role
      */
-    public User(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
+    public Model_User(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country, String role) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;

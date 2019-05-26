@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.Commands;
 
-import Data.Stock;
+import Data.Models.Model_Stock;
 import Logic.LogicFacade;
-import Logic.Order;
-import Logic.User;
+import Data.Models.Model_Order;
+import Data.Models.Model_User;
+import Presentation.Command;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,9 +35,9 @@ public class AdminCommand extends Command {
 
             }
 
-            List<Stock> stockList = LogicFacade.getStock();
-            List<User> userList = LogicFacade.allUsers();
-            List<Order> orderList = LogicFacade.getAllOrders();
+            List<Model_Stock> stockList = LogicFacade.getStock();
+            List<Model_User> userList = LogicFacade.allUsers();
+            List<Model_Order> orderList = LogicFacade.getAllOrders();
             request.setAttribute("orders", orderList);
             request.setAttribute("userList", userList);
             request.setAttribute("stockList", stockList);

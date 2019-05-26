@@ -1,8 +1,9 @@
-package Presentation;
+package Presentation.Commands;
 
 import Logic.LogicFacade;
-import Logic.CustomerException;
-import Logic.User;
+import Logic.Exceptions.CustomerException;
+import Data.Models.Model_User;
+import Presentation.Command;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +39,7 @@ public class RegisterCommand extends Command {
             country = new String(CObytes, StandardCharsets.UTF_8);
 
             if (password1.equals(password2)) {
-                User user = LogicFacade.createUser(email, password2, firstName, lastName, phone, street, city, zip, country);
+                Model_User user = LogicFacade.createUser(email, password2, firstName, lastName, phone, street, city, zip, country);
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
                 // session.setAttribute( "role", user.getRole() );

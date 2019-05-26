@@ -1,6 +1,7 @@
-package Presentation;
+package Presentation.Commands;
 
-import Logic.CustomerException;
+import Logic.Exceptions.CustomerException;
+import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

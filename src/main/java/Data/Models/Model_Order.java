@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Logic;
+package Data.Models;
 
 /**
  *
  * @author NoellZane
  */
-public class Order {
+public class Model_Order {
 
     private int orderID;
     private int userID;
@@ -32,7 +32,7 @@ public class Order {
      * @param shedLength
      * @param shedWidth
      */
-    public Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
+    public Model_Order(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
 
         this.userID = userID;
         this.length = length;
@@ -57,7 +57,7 @@ public class Order {
      * @param shedLength
      * @param shedWidth
      */
-    public Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
+    public Model_Order(int orderID, int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) {
         this.orderID = orderID;
         this.userID = userID;
         this.length = length;

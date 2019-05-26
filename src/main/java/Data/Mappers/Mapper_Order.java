@@ -3,25 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Data.Mappers;
 
-import Logic.CustomerException;
+import Data.Connector;
+import Data.Models.Model_Invoice;
+import Data.Models.Model_OrderDetails;
+import Data.Models.Model_Stock;
+import Data.Models.Model_Order;
+import Logic.Exceptions.CustomerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import Logic.Order;
-import Logic.OrderException;
-import Logic.User;
+import Logic.Exceptions.OrderException;
 import java.sql.Statement;
 
 /**
  *
  * @author stein
  */
-public class OrderMapper {
+public class Mapper_Order {
 
     /**
      * Method to create an order of a carport, and add it to the database
@@ -31,7 +34,7 @@ public class OrderMapper {
      * @return order
      * @throws OrderException
      */
-    public static Order createOrder(Order order) throws OrderException {
+    public static Model_Order createOrder(Model_Order order) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `Order` (idUser, length, width, roofMat, shed, slope, shedLength, shedWidth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -65,8 +68,8 @@ public class OrderMapper {
      * @return list
      * @throws OrderException
      */
-    public static List<Invoice> getInvoice(int idUser) throws OrderException {
-        List<Invoice> list;
+    public static List<Model_Invoice> getInvoice(int idUser) throws OrderException {
+        List<Model_Invoice> list;
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Invoice` where idUser = (?)";
@@ -78,7 +81,7 @@ public class OrderMapper {
                 int idInvoice = rs.getInt("idInvoice");
                 double price = rs.getDouble("price");
 
-                Invoice iv = new Invoice(idInvoice, idUser, price);
+                Model_Invoice iv = new Model_Invoice(idInvoice, idUser, price);
                 list.add(iv);
 
             }
@@ -97,8 +100,8 @@ public class OrderMapper {
      * @return an arraylist (orderList) filled with all orders in the system
      * @throws OrderException
      */
-    public static List<Order> allOrders() throws OrderException {
-        List<Order> orderList = new ArrayList();
+    public static List<Model_Order> allOrders() throws OrderException {
+        List<Model_Order> orderList = new ArrayList();
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order`";
@@ -116,7 +119,7 @@ public class OrderMapper {
                 int shedLength = rs.getInt("shedLength");
                 int shedWidth = rs.getInt("shedWidth");
 
-                Order o = new Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
+                Model_Order o = new Model_Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
                 orderList.add(o);
             }
 
@@ -134,8 +137,8 @@ public class OrderMapper {
      * @return orderByUserIDList
      * @throws OrderException
      */
-    public static List<Order> allOrdersByUserID(int idUser) throws OrderException {
-        List<Order> orderByUserIDList;
+    public static List<Model_Order> allOrdersByUserID(int idUser) throws OrderException {
+        List<Model_Order> orderByUserIDList;
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order` WHERE idUser=(?);";
@@ -155,7 +158,7 @@ public class OrderMapper {
                 int shedLength = rs.getInt("shedLength");
                 int shedWidth = rs.getInt("shedWidth");
 
-                Order o = new Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
+                Model_Order o = new Model_Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
                 orderByUserIDList.add(o);
             }
 
@@ -172,7 +175,7 @@ public class OrderMapper {
      * @return order
      * @throws OrderException
      */
-    public static Order specificOrder(int idOrder) throws OrderException {
+    public static Model_Order specificOrder(int idOrder) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Order` WHERE idOrder=(?);";
@@ -190,7 +193,7 @@ public class OrderMapper {
                 int shedLength = rs.getInt("shedLength");
                 int shedWidth = rs.getInt("shedWidth");
 
-                Order order = new Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
+                Model_Order order = new Model_Order(idOrder, idUser, length, width, roofMat, shed, roofslope, shedLength, shedWidth);
                 return order;
             }
 
@@ -207,7 +210,7 @@ public class OrderMapper {
      * @return od
      * @throws OrderException
      */
-    public static OrderDetails createOrderDetail(OrderDetails od) throws OrderException {
+    public static Model_OrderDetails createOrderDetail(Model_OrderDetails od) throws OrderException {
 
         try {
             Connection con = Connector.connection();
@@ -240,7 +243,7 @@ public class OrderMapper {
      * @return od
      * @throws OrderException
      */
-    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException {
+    public static Model_OrderDetails specificOrderDetails(int idOrder) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `OrderDetails` WHERE idOrder=(?);";
@@ -260,7 +263,7 @@ public class OrderMapper {
                 int roofStone = rs.getInt("roofStone");
                 int roofPlast = rs.getInt("roofPlast");
 
-                OrderDetails od = new OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+                Model_OrderDetails od = new Model_OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
                 return od;
             }
 
@@ -277,7 +280,7 @@ public class OrderMapper {
      * @return invoice
      * @throws OrderException
      */
-    public static Invoice createInvoice(Invoice invoice) throws OrderException {
+    public static Model_Invoice createInvoice(Model_Invoice invoice) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO `Invoice` (idOrder, totalPrice) VALUES (?, ?)";
@@ -306,7 +309,7 @@ public class OrderMapper {
      * @return inv
      * @throws OrderException
      */
-    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException {
+    public static Model_Invoice specificInvoiceDetails(int idOrder) throws OrderException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Invoice` WHERE idOrder=(?);";
@@ -315,7 +318,7 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 double totalPrice = rs.getDouble("totalPrice");
-                Invoice inv = new Invoice(idOrder, totalPrice);
+                Model_Invoice inv = new Model_Invoice(idOrder, totalPrice);
                 return inv;
             }
 
@@ -380,8 +383,8 @@ public class OrderMapper {
 
     }
 
-    public static List<Stock> getStock() throws OrderException {
-        List<Stock> getStock;
+    public static List<Model_Stock> getStock() throws OrderException {
+        List<Model_Stock> getStock;
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * from `Stock`;";
@@ -394,7 +397,7 @@ public class OrderMapper {
                 String materialDesc = rs.getString("materialDesc");
                 int stock = rs.getInt("stock");
 
-                Stock sL = new Stock(idMat, materialDesc, stock);
+                Model_Stock sL = new Model_Stock(idMat, materialDesc, stock);
                 getStock.add(sL);
             }
 

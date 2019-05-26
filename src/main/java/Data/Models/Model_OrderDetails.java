@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Data.Models;
 
 /**
  *
  * @author stein
  */
-public class OrderDetails {
+public class Model_OrderDetails {
 
     private int idOrder;
 
@@ -39,7 +39,7 @@ public class OrderDetails {
      * @param roofStone
      * @param roofPlast
      */
-    public OrderDetails(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) {
+    public Model_OrderDetails(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) {
         this.idOrder = idOrder;
         this.doorHinge = doorHinge;
         this.door = door;

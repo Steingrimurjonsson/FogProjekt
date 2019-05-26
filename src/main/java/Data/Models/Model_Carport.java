@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Data.Models;
 
 /**
  *
  * @author jojus1101
  */
-public class Carport {
+public class Model_Carport {
 
     private final int length;
     private final int width;
@@ -30,7 +30,7 @@ public class Carport {
      * @param shedlength
      * @param roofslope
      */
-    public Carport(int length, int width, String roofMat, boolean shed, int shedwidth, int shedlength, int roofslope) {
+    public Model_Carport(int length, int width, String roofMat, boolean shed, int shedwidth, int shedlength, int roofslope) {
         this.length = length;
         this.width = width;
         this.roofMat = roofMat;

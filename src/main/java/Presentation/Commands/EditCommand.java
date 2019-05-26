@@ -1,8 +1,9 @@
-package Presentation;
+package Presentation.Commands;
 
 import Logic.LogicFacade;
-import Logic.CustomerException;
-import Logic.User;
+import Logic.Exceptions.CustomerException;
+import Data.Models.Model_User;
+import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -24,10 +25,10 @@ public class EditCommand extends Command {
         String country = request.getParameter("country");
 
         HttpSession session = request.getSession();
-        User oldUserData = (User) session.getAttribute("user");
+        Model_User oldUserData = (Model_User) session.getAttribute("user");
 
         if (password1.equals(password2)) {
-            User user = LogicFacade.editUser(oldUserData.getId(), email, password1, firstName, lastName, phone, street, city, zip, country);
+            Model_User user = LogicFacade.editUser(oldUserData.getId(), email, password1, firstName, lastName, phone, street, city, zip, country);
 
             session.setAttribute("user", user);
 

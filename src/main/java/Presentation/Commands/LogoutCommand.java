@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.Commands;
 
-import Logic.CustomerException;
+import Logic.Exceptions.CustomerException;
+import Presentation.Command;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -1,10 +1,14 @@
 package Logic;
 
-import Data.Invoice;
-import Data.UserMapper;
-import Data.OrderDetails;
-import Data.OrderMapper;
-import Data.Stock;
+import Logic.Exceptions.OrderException;
+import Logic.Exceptions.CustomerException;
+import Data.Models.Model_User;
+import Data.Models.Model_Order;
+import Data.Models.Model_Invoice;
+import Data.Mappers.Mapper_User;
+import Data.Models.Model_OrderDetails;
+import Data.Mappers.Mapper_Order;
+import Data.Models.Model_Stock;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -22,8 +26,8 @@ public class LogicFacade {
      * @return
      * @throws CustomerException
      */
-    public static User login(String email, String password) throws CustomerException {
-        return UserMapper.login(email, password);
+    public static Model_User login(String email, String password) throws CustomerException {
+        return Mapper_User.login(email, password);
     }
 
     /**
@@ -40,9 +44,9 @@ public class LogicFacade {
      * @return
      * @throws CustomerException
      */
-    public static User createUser(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException {
-        User user = new User(email, password, firstName, lastName, phone, street, city, zip, country, "customer");
-        UserMapper.createUser(user);
+    public static Model_User createUser(String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException {
+        Model_User user = new Model_User(email, password, firstName, lastName, phone, street, city, zip, country, "customer");
+        Mapper_User.createUser(user);
         return user;
     }
 
@@ -52,8 +56,8 @@ public class LogicFacade {
      * @return
      * @throws Exception
      */
-    public static List<Invoice> getOrders(int idUser) throws Exception {
-        List<Invoice> orders = OrderMapper.getInvoice(idUser);
+    public static List<Model_Invoice> getOrders(int idUser) throws Exception {
+        List<Model_Invoice> orders = Mapper_Order.getInvoice(idUser);
         return orders;
     }
 
@@ -72,9 +76,9 @@ public class LogicFacade {
      * @return
      * @throws CustomerException
      */
-    public static User editUser(int userID, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException {
-        User user = new User(userID, email, password, firstName, lastName, phone, street, city, zip, country, phone);
-        UserMapper.editUser(user);
+    public static Model_User editUser(int userID, String email, String password, String firstName, String lastName, String phone, String street, String city, String zip, String country) throws CustomerException {
+        Model_User user = new Model_User(userID, email, password, firstName, lastName, phone, street, city, zip, country, phone);
+        Mapper_User.editUser(user);
         return user;
     }
 
@@ -82,8 +86,8 @@ public class LogicFacade {
      *
      * @return @throws Exception
      */
-    public static List<User> allUsers() throws Exception {
-        return UserMapper.allUsers();
+    public static List<Model_User> allUsers() throws Exception {
+        return Mapper_User.allUsers();
 
     }
 
@@ -91,8 +95,8 @@ public class LogicFacade {
      *
      * @return @throws Exception
      */
-    public static List<Order> getAllOrders() throws Exception {
-        return OrderMapper.allOrders();
+    public static List<Model_Order> getAllOrders() throws Exception {
+        return Mapper_Order.allOrders();
     }
 
     /**
@@ -101,8 +105,8 @@ public class LogicFacade {
      * @return
      * @throws Exception
      */
-    public static List<Order> getAllOrdersByUserID(int idUser) throws Exception {
-        return OrderMapper.allOrdersByUserID(idUser);
+    public static List<Model_Order> getAllOrdersByUserID(int idUser) throws Exception {
+        return Mapper_Order.allOrdersByUserID(idUser);
     }
 
     /**
@@ -118,9 +122,9 @@ public class LogicFacade {
      * @return
      * @throws OrderException
      */
-    public static Order createOrder(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) throws OrderException {
-        Order order = new Order(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
-        OrderMapper.createOrder(order);
+    public static Model_Order createOrder(int userID, int length, int width, String roofMat, boolean shed, int roofSlope, int shedLength, int shedWidth) throws OrderException {
+        Model_Order order = new Model_Order(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
+        Mapper_Order.createOrder(order);
         return order;
     }
 
@@ -130,8 +134,8 @@ public class LogicFacade {
      * @return
      * @throws OrderException
      */
-    public static Order specificOrder(int idOrder) throws OrderException {
-        return OrderMapper.specificOrder(idOrder);
+    public static Model_Order specificOrder(int idOrder) throws OrderException {
+        return Mapper_Order.specificOrder(idOrder);
     }
 
     /**
@@ -150,22 +154,22 @@ public class LogicFacade {
      * @return order details
      * @throws OrderException
      */
-    public static OrderDetails createOrderDetail(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) throws OrderException {
-        OrderDetails orderD = new OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
-        OrderMapper.createOrderDetail(orderD);
+    public static Model_OrderDetails createOrderDetail(int idOrder, int doorHinge, int door, int doorHandle, int roofScrew, int screw, int post, int woodSide, int woodRoof, int roofStone, int roofPlast) throws OrderException {
+        Model_OrderDetails orderD = new Model_OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+        Mapper_Order.createOrderDetail(orderD);
         return orderD;
     }
 
     /**
-     * calls the corrosponding method in the OrderMapper and gives us the
-     * details for the specific order.
+     * calls the corrosponding method in the Mapper_Order and gives us the
+ details for the specific order.
      *
      * @param idOrder
      * @return orderdetails for the order ID it's given.
      * @throws OrderException
      */
-    public static OrderDetails specificOrderDetails(int idOrder) throws OrderException {
-        return OrderMapper.specificOrderDetails(idOrder);
+    public static Model_OrderDetails specificOrderDetails(int idOrder) throws OrderException {
+        return Mapper_Order.specificOrderDetails(idOrder);
     }
 
     /**
@@ -176,9 +180,9 @@ public class LogicFacade {
      * @return invoice
      * @throws OrderException
      */
-    public static Invoice createInvoice(int idOrder, double totalPrice) throws OrderException {
-        Invoice invoice = new Invoice(idOrder, totalPrice);
-        OrderMapper.createInvoice(invoice);
+    public static Model_Invoice createInvoice(int idOrder, double totalPrice) throws OrderException {
+        Model_Invoice invoice = new Model_Invoice(idOrder, totalPrice);
+        Mapper_Order.createInvoice(invoice);
         return invoice;
     }
 
@@ -189,12 +193,12 @@ public class LogicFacade {
      * @return
      * @throws OrderException
      */
-    public static Invoice specificInvoiceDetails(int idOrder) throws OrderException {
-        return OrderMapper.specificInvoiceDetails(idOrder);
+    public static Model_Invoice specificInvoiceDetails(int idOrder) throws OrderException {
+        return Mapper_Order.specificInvoiceDetails(idOrder);
     }
 
     /**
-     * Calls corrosponding method in OrderMapper
+     * Calls corrosponding method in Mapper_Order
      *
      * @param material
      * @return
@@ -202,7 +206,7 @@ public class LogicFacade {
      * @throws OrderException
      */
     public static int getStockIdByMaterial(String material) throws SQLException, OrderException {
-        return OrderMapper.getStockIdByMaterial(material);
+        return Mapper_Order.getStockIdByMaterial(material);
     }
 
     /**
@@ -213,7 +217,7 @@ public class LogicFacade {
      * @throws OrderException
      */
     public static void updateStockById(int stockUsed, int idMaterial) throws OrderException {
-        OrderMapper.updateStockById(stockUsed, idMaterial);
+        Mapper_Order.updateStockById(stockUsed, idMaterial);
     }
 
     /**
@@ -222,8 +226,8 @@ public class LogicFacade {
      * @return list of stock
      * @throws Exception
      */
-    public static List<Stock> getStock() throws Exception {
-        return OrderMapper.getStock();
+    public static List<Model_Stock> getStock() throws Exception {
+        return Mapper_Order.getStock();
     }
 
     /**
@@ -234,7 +238,7 @@ public class LogicFacade {
      * @throws OrderException
      */
     public static void addStockById(int idMaterial, int stock) throws OrderException {
-        OrderMapper.addStockById(idMaterial, stock);
+        Mapper_Order.addStockById(idMaterial, stock);
     }
 
 }

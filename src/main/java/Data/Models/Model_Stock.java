@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Data.Models;
 
 /**
  *
  * @author NoellZane
  */
-public class Stock {
+public class Model_Stock {
 
     private int idMaterial;
     private String materialDesc;
@@ -22,7 +22,7 @@ public class Stock {
      * @param materialDesc
      * @param stock
      */
-    public Stock(int idMaterial, String materialDesc, int stock) {
+    public Model_Stock(int idMaterial, String materialDesc, int stock) {
         this.idMaterial = idMaterial;
         this.materialDesc = materialDesc;
         this.stock = stock;

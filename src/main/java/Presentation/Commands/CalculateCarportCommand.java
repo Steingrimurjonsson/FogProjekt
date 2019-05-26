@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.Commands;
 
-import Data.Carport;
-import Data.OrderDetails;
-import Data.Invoice;
-import Logic.OrderException;
+import Data.Models.Model_Carport;
+import Data.Models.Model_OrderDetails;
+import Data.Models.Model_Invoice;
+import Logic.Exceptions.OrderException;
+import Presentation.Command;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -287,14 +288,14 @@ public class CalculateCarportCommand extends Command {
                 session.setAttribute("tPrice", totalPrice);
 
                 int idOrder = 0;
-                OrderDetails orderD = new OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
+                Model_OrderDetails orderD = new Model_OrderDetails(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
                 session.setAttribute("orderDetails", orderD);
 
-                Invoice invoice = new Invoice(idOrder, totalPrice);
+                Model_Invoice invoice = new Model_Invoice(idOrder, totalPrice);
                 session.setAttribute("invoice", invoice);
 
                 //Carport Input
-                Carport carport = new Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
+                Model_Carport carport = new Model_Carport(length, width, roofMat, shed, shedWidth, shedLength, roofSlope);
                 session.setAttribute("carport", carport);
 
             }

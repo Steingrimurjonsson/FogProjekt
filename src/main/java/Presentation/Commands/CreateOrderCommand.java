@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.Commands;
 
-import Data.Carport;
-import Data.OrderDetails;
-import Data.Invoice;
+import Data.Models.Model_Carport;
+import Data.Models.Model_OrderDetails;
+import Data.Models.Model_Invoice;
 import Logic.LogicFacade;
-import Logic.Order;
-import Logic.OrderException;
-import Logic.User;
+import Data.Models.Model_Order;
+import Logic.Exceptions.OrderException;
+import Data.Models.Model_User;
+import Presentation.Command;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,8 +42,8 @@ public class CreateOrderCommand extends Command {
             } else {
 
                 // session.getAttribute("carport");
-                User user = (User) request.getSession().getAttribute("user");
-                Carport carport = (Carport) session.getAttribute("carport");
+                Model_User user = (Model_User) request.getSession().getAttribute("user");
+                Model_Carport carport = (Model_Carport) session.getAttribute("carport");
                 int userID = user.getId();
                 int length = carport.getLength();
                 int width = carport.getWidth();
@@ -51,9 +52,9 @@ public class CreateOrderCommand extends Command {
                 int roofSlope = carport.getRoofSlope();
                 int shedLength = carport.getShedLength();
                 int shedWidth = carport.getShedWidth();
-                Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
+                Model_Order order = LogicFacade.createOrder(userID, length, width, roofMat, shed, roofSlope, shedLength, shedWidth);
 
-                OrderDetails orderD = (OrderDetails) session.getAttribute("orderDetails");
+                Model_OrderDetails orderD = (Model_OrderDetails) session.getAttribute("orderDetails");
                 int idOrder = order.getOrderID();
                 int doorHinge = orderD.getDoorHinge();
                 int door = orderD.getDoor();
@@ -68,7 +69,7 @@ public class CreateOrderCommand extends Command {
 
                 LogicFacade.createOrderDetail(idOrder, doorHinge, door, doorHandle, roofScrew, screw, post, woodSide, woodRoof, roofStone, roofPlast);
 
-                Invoice invoiceD = (Invoice) session.getAttribute("invoice");
+                Model_Invoice invoiceD = (Model_Invoice) session.getAttribute("invoice");
 
                 double totalPrice = invoiceD.getPrice();
 

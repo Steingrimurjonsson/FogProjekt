@@ -1,4 +1,4 @@
-package Logic;
+package Logic.Exceptions;
 
 /**
  * The purpose of CustomerException is a custom exception for all uses about a

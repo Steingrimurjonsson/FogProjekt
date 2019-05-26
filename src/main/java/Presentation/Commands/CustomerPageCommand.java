@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.Commands;
 
 import Logic.LogicFacade;
-import Logic.Order;
-import Logic.User;
+import Data.Models.Model_Order;
+import Data.Models.Model_User;
+import Presentation.Command;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,9 +21,9 @@ public class CustomerPageCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        int idUser = ((User) request.getSession().getAttribute("user")).getId();
+        int idUser = ((Model_User) request.getSession().getAttribute("user")).getId();
 
-        List<Order> orderByUserIDList = LogicFacade.getAllOrdersByUserID(idUser);
+        List<Model_Order> orderByUserIDList = LogicFacade.getAllOrdersByUserID(idUser);
         request.setAttribute("orders", orderByUserIDList);
 
         return "customerpage";

@@ -1,6 +1,6 @@
-package Data;
+package Data.Models;
 
-public class Invoice {
+public class Model_Invoice {
 
     private int idInvoice;
     private int idOrder;
@@ -13,7 +13,7 @@ public class Invoice {
      * @param idOrder
      * @param totalPrice
      */
-    public Invoice(int idInvoice, int idOrder, double totalPrice) {
+    public Model_Invoice(int idInvoice, int idOrder, double totalPrice) {
         this.idInvoice = idInvoice;
         this.idOrder = idOrder;
         this.totalPrice = totalPrice;
@@ -25,14 +25,14 @@ public class Invoice {
      * @param idOrder
      * @param totalPrice
      */
-    public Invoice(int idOrder, double totalPrice) {
+    public Model_Invoice(int idOrder, double totalPrice) {
         this.idOrder = idOrder;
         this.totalPrice = totalPrice;
     }
 
     /**
      *
-     * @return Invoice ID
+     * @return Model_Invoice ID
      */
     public int getIdInvoice() {
         return idInvoice;

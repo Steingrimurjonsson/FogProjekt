@@ -1,8 +1,9 @@
-package Presentation;
+package Presentation.Commands;
 
 import Logic.LogicFacade;
-import Logic.CustomerException;
-import Logic.User;
+import Logic.Exceptions.CustomerException;
+import Data.Models.Model_User;
+import Presentation.Command;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ public class LoginCommand extends Command {
             email = new String(bytes, StandardCharsets.UTF_8);
 
             String password = request.getParameter("password");
-            User user = LogicFacade.login(email, password);
+            Model_User user = LogicFacade.login(email, password);
 
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
