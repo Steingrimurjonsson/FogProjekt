@@ -60,20 +60,20 @@ public class Mapper_UserTest {
     @Test
     public void testLogin01() throws LoginSampleException {
         // Can we log in
-        User user = Mapper_User.login("king@kong.com", "uhahvorhemmeligt");
+        User user = Mapper_User.login("ki3333333@feed.dk", "uhahvorhemmeligt");
         assertTrue(user != null);
     }
 
     @Test//(expected = LoginSampleException.class)
     public void testLogin02() throws LoginSampleException {
         // We should get an exception if we use the wrong password
-        User user = Mapper_User.login("king@kong.com", "uhahvorhemmeligt");
+        User user = Mapper_User.login("ki3333333@feed.dk", "uhahvorhemmeligt");
     }
 
     @Test
     public void testLogin03() throws LoginSampleException {
         // Jens is supposed to be a customer
-        User user = Mapper_User.login("king@kong.com", "uhahvorhemmeligt");
+        User user = Mapper_User.login("ki3333333@feed.dk", "uhahvorhemmeligt");
         user.setRole("customer");
         assertEquals("customer", user.getRole());
     }
@@ -82,9 +82,9 @@ public class Mapper_UserTest {
     public void testCreateUser01() throws LoginSampleException {
         // Can we create a new user - Notice, if login fails, this will fail
         // but so would login01, so this is OK
-        User original = new User("king@fed.com", "uhahvorhemmeligt", "d", "dd", "se", "dde", "sef", "ferw", "sef", "s");
+        User original = new User("ki3333333@feed.dk", "uhahvorhemmeligt", "d", "dd", "se", "dde", "sef", "ferw", "sef", "s");
         Mapper_User.createUser(original);
-        User retrieved = Mapper_User.login("king@fed.com", "uhahvorhemmeligt");
+        User retrieved = Mapper_User.login("ki3333333@feed.dk", "uhahvorhemmeligt");
         assertEquals("s", retrieved.getRole());
     }
 }
