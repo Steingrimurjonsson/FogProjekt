@@ -19,7 +19,6 @@ public class AdminCommand extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         try {
-            HttpSession session = request.getSession();
             if (request.getParameter("stock") != null) {
                 String matIdText = request.getParameter("matID");
                 String stockText = request.getParameter("stock");
