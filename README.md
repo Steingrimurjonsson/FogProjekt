@@ -44,4 +44,5 @@ The solution must respect the following set of technical and design related cons
 * **Christoffer Skov** - [ChrisSkov](https://github.com/ChrisSkov)
 * **Joachim Justesen** - [jojus1101](https://github.com/jojus1101)
 * **Artin Sohrabi** - [MasterYoda300](https://github.com/MasterYoda300)
+
 See also the list of [contributors](https://github.com/Steingrimurjonsson/FogProjekt/contributors) who participated in this project.
