@@ -37,6 +37,8 @@ The solution must respect the following set of technical and design related cons
 
 * The Javadoc should be available online put link on front page of reports.
 
+## JavaDoc
+* **JavaDoc** - [JavaDoc](https://steingrimurjonsson.github.io/FogProjekt/)
 
 ## Authors
 * **Steingrimur Jonsson** - [Steingrimurjonsson](https://github.com/Steingrimurjonsson)
