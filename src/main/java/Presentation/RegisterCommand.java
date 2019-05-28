@@ -3,7 +3,6 @@ package Presentation;
 import Logic.LogicFacade;
 import Logic.Exceptions.CustomerException;
 import Logic.Models.Model_User;
-import Presentation.Command;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;

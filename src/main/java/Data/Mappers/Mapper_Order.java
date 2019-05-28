@@ -10,7 +10,6 @@ import Logic.Models.Model_Invoice;
 import Logic.Models.Model_OrderDetails;
 import Logic.Models.Model_Stock;
 import Logic.Models.Model_Order;
-import Logic.Exceptions.CustomerException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,7 +1,6 @@
 package Presentation;
 
 import Logic.Exceptions.CustomerException;
-import Presentation.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

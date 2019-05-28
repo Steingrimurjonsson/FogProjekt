@@ -5,7 +5,6 @@
  */
 package Presentation;
 
-import Logic.Exceptions.CustomerException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
