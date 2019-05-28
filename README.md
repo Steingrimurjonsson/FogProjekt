@@ -38,40 +38,11 @@ The solution must respect the following set of technical and design related cons
 * The Javadoc should be available online put link on front page of reports.
 
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-## Built With
-ADD MORE
-* [Maven](https://maven.apache.org/) - Dependency Management
-
 ## Authors
-ADD MORE
 * **Steingrimur Jonsson** - [Steingrimurjonsson](https://github.com/Steingrimurjonsson)
+* **Noell Zane Yanpei Gierringe** - [NoellZane](https://github.com/NoellZane)
+* **Christoffer Skov** - [ChrisSkov](https://github.com/ChrisSkov)
+* **Joachim Justesen** - [jojus1101](https://github.com/jojus1101)
+* **Artin Sohrabi** - [MasterYoda300](https://github.com/MasterYoda300)
 
 See also the list of [contributors](https://github.com/Steingrimurjonsson/FogProjekt/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
