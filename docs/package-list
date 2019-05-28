@@ -1,3 +1,6 @@
 Data
+Data.Mappers
 Logic
+Logic.Exceptions
+Logic.Models
 Presentation
