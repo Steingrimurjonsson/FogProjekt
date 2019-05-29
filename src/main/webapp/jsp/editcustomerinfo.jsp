@@ -41,7 +41,7 @@
         if(changeMade != null){
         %>
     <h1>Du har nu lavet din information om <form name="customerpage" action="FrontController" method="post">
-                                        <button value="customerpage" name="command" type="submit">Click her for at komme tilbage til din Kundeside</button>
+                                        <button value="customerpage" name="command" type="submit">Klik her for at komme tilbage til din Kundeside</button>
                                     </form> </h1><br>
         <% } %>
 
@@ -83,7 +83,7 @@
                 Land: <br>
                 <input type="text" name="country" value="<%= country%>">
                 <br>
-                <input type="submit" value="Redigér">
+                <button type="submit">Redigér</button>
             </form>
     </body>
 </html>
