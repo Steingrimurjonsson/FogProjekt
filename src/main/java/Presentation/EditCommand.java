@@ -3,6 +3,8 @@ package Presentation;
 import Logic.LogicFacade;
 import Logic.Exceptions.CustomerException;
 import Logic.Models.Model_User;
+import java.io.IOException;
+
 import java.nio.charset.StandardCharsets;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,8 +13,9 @@ import javax.servlet.http.HttpSession;
 public class EditCommand extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomerException {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomerException, IOException {
         //Changes the user information and makes it the right charset format
+    
             String email = request.getParameter("email");
             byte[] bytes = email.getBytes(StandardCharsets.ISO_8859_1);
             email = new String(bytes, StandardCharsets.UTF_8);
@@ -35,12 +38,13 @@ public class EditCommand extends Command {
             String country = request.getParameter("country");
             byte[] CObytes = country.getBytes(StandardCharsets.ISO_8859_1);
             country = new String(CObytes, StandardCharsets.UTF_8);
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession();    
         Model_User oldUserData = (Model_User) session.getAttribute("user");
         if (password1.equals(password2)) {
             Model_User user = LogicFacade.editUser(oldUserData.getId(), email, password1, firstName, lastName, phone, street, city, zip, country);
             session.setAttribute("user", user);
+            response.sendRedirect(request.getHeader("Referer") + "?changeMade=true");
         }
-        return "customerpage";
+        return "editcustomerinfo";
     }
 }

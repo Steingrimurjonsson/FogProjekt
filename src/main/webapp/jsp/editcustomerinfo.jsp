@@ -27,6 +27,7 @@
     String city = user.getCity();
     String zip = user.getZip();
     String country = user.getCountry();
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -34,6 +35,17 @@
         <jsp:include page='header.jsp'></jsp:include> 
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Redigér Kundeinformation</title>
+        <%
+        String changeMade = "";
+        changeMade = request.getParameter("changeMade");
+        if(changeMade != null){
+        %>
+    <h1>Du har nu lavet din information om <form name="customerpage" action="FrontController" method="post">
+                                        <button value="customerpage" name="command" type="submit">Click her for at komme tilbage til din Kundeside</button>
+                                    </form> </h1><br>
+        <% } %>
+
+            
         </head>
         <body> 
             <div class="customerInfo" style='padding: 50px'>              
