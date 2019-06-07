@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 abstract class Command {
 
     private static HashMap<String, Command> commands;
-
+//
     private static void initCommands() {
         commands = new HashMap<>();
 
